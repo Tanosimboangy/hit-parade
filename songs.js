@@ -1,4 +1,4 @@
-[
+const songs = [
   {
     "title": "Jazz in Paris",
     "artist": "Media Right Productions",
@@ -55,3 +55,5 @@
     "id": 1605844202704
   }
 ]
+ 
+export default songs;

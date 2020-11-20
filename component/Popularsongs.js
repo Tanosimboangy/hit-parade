@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import shopping_cart from "../img/shopping_cart.svg";
 import arrow_up from "../img/arrow_up.svg";
 import arrow_down from "../img/arrow_down.svg";
 import more_horiz from "../img/more_horiz.svg";
 import favorite from "../img/favorite.svg";
 import favorite_border from "../img/favorite_border.svg";
-import songs from "../songs.json";
+import { Context } from "../Context";
 
 function Popularsongs() {
+    const { allSongs } = useContext(Context);
+
     return (
         <>
-            {songs.map(item => {
+            {allSongs.map(item => {
                 return (
                     <ul className="container" key={item.id}>
                         <li><img src={item.isFavorite === "True" ? favorite : favorite_border} alt="heart"/></li>

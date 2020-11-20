@@ -33853,20 +33853,14 @@ if ("development" !== "production") {
     style: _propTypes.default.object
   });
 }
-},{"react-router":"node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","history":"node_modules/history/esm/history.js","prop-types":"node_modules/prop-types/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"img/shopping_cart.svg":[function(require,module,exports) {
-module.exports = "/shopping_cart.1080d496.svg";
-},{}],"img/arrow_up.svg":[function(require,module,exports) {
-module.exports = "/arrow_up.4737aec9.svg";
-},{}],"img/arrow_down.svg":[function(require,module,exports) {
-module.exports = "/arrow_down.3d6b8982.svg";
-},{}],"img/more_horiz.svg":[function(require,module,exports) {
-module.exports = "/more_horiz.540c0812.svg";
-},{}],"img/favorite.svg":[function(require,module,exports) {
-module.exports = "/favorite.4d127cd3.svg";
-},{}],"img/favorite_border.svg":[function(require,module,exports) {
-module.exports = "/favorite_border.02c7f6ff.svg";
-},{}],"songs.json":[function(require,module,exports) {
-module.exports = [{
+},{"react-router":"node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","history":"node_modules/history/esm/history.js","prop-types":"node_modules/prop-types/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"songs.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var songs = [{
   "title": "Jazz in Paris",
   "artist": "Media Right Productions",
   "price": 68,
@@ -33917,6 +33911,70 @@ module.exports = [{
   "dislike": 5,
   "id": 1605844202704
 }];
+var _default = songs;
+exports.default = _default;
+},{}],"Context.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.ContextProvider = ContextProvider;
+exports.Context = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _songs = _interopRequireDefault(require("./songs"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var Context = _react.default.createContext();
+
+exports.Context = Context;
+
+function ContextProvider(props) {
+  var _useState = (0, _react.useState)([]),
+      _useState2 = _slicedToArray(_useState, 2),
+      allSongs = _useState2[0],
+      setAllSongs = _useState2[1];
+
+  (0, _react.useEffect)(function () {
+    setAllSongs(_songs.default);
+  }, []);
+  return /*#__PURE__*/_react.default.createElement(Context.Provider, {
+    value: {
+      allSongs: allSongs
+    }
+  }, props.children);
+}
+},{"react":"node_modules/react/index.js","./songs":"songs.js"}],"img/shopping_cart.svg":[function(require,module,exports) {
+module.exports = "/shopping_cart.1080d496.svg";
+},{}],"img/arrow_up.svg":[function(require,module,exports) {
+module.exports = "/arrow_up.4737aec9.svg";
+},{}],"img/arrow_down.svg":[function(require,module,exports) {
+module.exports = "/arrow_down.3d6b8982.svg";
+},{}],"img/more_horiz.svg":[function(require,module,exports) {
+module.exports = "/more_horiz.540c0812.svg";
+},{}],"img/favorite.svg":[function(require,module,exports) {
+module.exports = "/favorite.4d127cd3.svg";
+},{}],"img/favorite_border.svg":[function(require,module,exports) {
+module.exports = "/favorite_border.02c7f6ff.svg";
 },{}],"component/Popularsongs.js":[function(require,module,exports) {
 "use strict";
 
@@ -33925,7 +33983,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 
 var _shopping_cart = _interopRequireDefault(require("../img/shopping_cart.svg"));
 
@@ -33939,12 +33997,19 @@ var _favorite = _interopRequireDefault(require("../img/favorite.svg"));
 
 var _favorite_border = _interopRequireDefault(require("../img/favorite_border.svg"));
 
-var _songs = _interopRequireDefault(require("../songs.json"));
+var _Context = require("../Context");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
 function Popularsongs() {
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, _songs.default.map(function (item) {
+  var _useContext = (0, _react.useContext)(_Context.Context),
+      allSongs = _useContext.allSongs;
+
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, allSongs.map(function (item) {
     return /*#__PURE__*/_react.default.createElement("ul", {
       className: "container",
       key: item.id
@@ -33973,7 +34038,7 @@ function Popularsongs() {
 
 var _default = Popularsongs;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../img/shopping_cart.svg":"img/shopping_cart.svg","../img/arrow_up.svg":"img/arrow_up.svg","../img/arrow_down.svg":"img/arrow_down.svg","../img/more_horiz.svg":"img/more_horiz.svg","../img/favorite.svg":"img/favorite.svg","../img/favorite_border.svg":"img/favorite_border.svg","../songs.json":"songs.json"}],"img/headset.svg":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../img/shopping_cart.svg":"img/shopping_cart.svg","../img/arrow_up.svg":"img/arrow_up.svg","../img/arrow_down.svg":"img/arrow_down.svg","../img/more_horiz.svg":"img/more_horiz.svg","../img/favorite.svg":"img/favorite.svg","../img/favorite_border.svg":"img/favorite_border.svg","../Context":"Context.js"}],"img/headset.svg":[function(require,module,exports) {
 module.exports = "/headset.a73dacc1.svg";
 },{}],"component/Styles.js":[function(require,module,exports) {
 "use strict";
@@ -34123,12 +34188,14 @@ var _reactDom = _interopRequireDefault(require("react-dom"));
 
 var _reactRouterDom = require("react-router-dom");
 
+var _Context = require("./Context");
+
 var _App = _interopRequireDefault(require("./App.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom.default.render( /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement(_App.default, null)), document.getElementById("root"));
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./App.js":"App.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+_reactDom.default.render( /*#__PURE__*/_react.default.createElement(_Context.ContextProvider, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement(_App.default, null))), document.getElementById("root"));
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./Context":"Context.js","./App.js":"App.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -34156,7 +34223,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53581" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56120" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
