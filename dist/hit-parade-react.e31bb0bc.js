@@ -33917,7 +33917,7 @@ module.exports = [{
   "dislike": 5,
   "id": 1605844202704
 }];
-},{}],"Popularsongs.js":[function(require,module,exports) {
+},{}],"component/Popularsongs.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33927,19 +33927,19 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _shopping_cart = _interopRequireDefault(require("./img/shopping_cart.svg"));
+var _shopping_cart = _interopRequireDefault(require("../img/shopping_cart.svg"));
 
-var _arrow_up = _interopRequireDefault(require("./img/arrow_up.svg"));
+var _arrow_up = _interopRequireDefault(require("../img/arrow_up.svg"));
 
-var _arrow_down = _interopRequireDefault(require("./img/arrow_down.svg"));
+var _arrow_down = _interopRequireDefault(require("../img/arrow_down.svg"));
 
-var _more_horiz = _interopRequireDefault(require("./img/more_horiz.svg"));
+var _more_horiz = _interopRequireDefault(require("../img/more_horiz.svg"));
 
-var _favorite = _interopRequireDefault(require("./img/favorite.svg"));
+var _favorite = _interopRequireDefault(require("../img/favorite.svg"));
 
-var _favorite_border = _interopRequireDefault(require("./img/favorite_border.svg"));
+var _favorite_border = _interopRequireDefault(require("../img/favorite_border.svg"));
 
-var _songs = _interopRequireDefault(require("./songs.json"));
+var _songs = _interopRequireDefault(require("../songs.json"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -33973,7 +33973,7 @@ function Popularsongs() {
 
 var _default = Popularsongs;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./img/shopping_cart.svg":"img/shopping_cart.svg","./img/arrow_up.svg":"img/arrow_up.svg","./img/arrow_down.svg":"img/arrow_down.svg","./img/more_horiz.svg":"img/more_horiz.svg","./img/favorite.svg":"img/favorite.svg","./img/favorite_border.svg":"img/favorite_border.svg","./songs.json":"songs.json"}],"App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../img/shopping_cart.svg":"img/shopping_cart.svg","../img/arrow_up.svg":"img/arrow_up.svg","../img/arrow_down.svg":"img/arrow_down.svg","../img/more_horiz.svg":"img/more_horiz.svg","../img/favorite.svg":"img/favorite.svg","../img/favorite_border.svg":"img/favorite_border.svg","../songs.json":"songs.json"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33983,7 +33983,7 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _Popularsongs = _interopRequireDefault(require("./Popularsongs"));
+var _Popularsongs = _interopRequireDefault(require("./component/Popularsongs"));
 
 var _reactRouterDom = require("react-router-dom");
 
@@ -34015,7 +34015,7 @@ function App() {
 
 var _default = App;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./Popularsongs":"Popularsongs.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./component/Popularsongs":"component/Popularsongs.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -34057,7 +34057,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49574" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51228" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

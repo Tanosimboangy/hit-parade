@@ -1,5 +1,5 @@
 import React from 'react';
-import Popularsongs from './Popularsongs';
+import Popularsongs from './component/Popularsongs';
 import { Link, Route, Switch } from 'react-router-dom';
 
 function App() {
