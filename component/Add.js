@@ -15,7 +15,7 @@ function Add() {
                     <option value="Rap">Rap</option>
                     <option value="Rock">Rock</option>
                 </select>
-                <input type="textarea" className="form_lyrics" required/>
+                <textarea cols="50" rows="5" className="form_lyrics" required />
                 <button className="form_button" type="submit">Add</button>
             </form>  
         </>

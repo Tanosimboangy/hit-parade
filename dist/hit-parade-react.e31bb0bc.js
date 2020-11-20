@@ -33861,55 +33861,55 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 var songs = [{
-  "title": "Jazz in Paris",
-  "artist": "Media Right Productions",
-  "price": 68,
-  "isFavorite": "False",
-  "style": "Rock",
-  "lyrics": "I love you so much that I can not think of anyone else in the world apart from you.",
-  "like": 25,
-  "dislike": 7,
-  "id": 1605844138557
+  title: "Jazz in Paris",
+  artist: "Media Right Productions",
+  price: 68,
+  isFavorite: "False",
+  style: "Rock",
+  lyrics: "I love you so much that I can not think of anyone else in the world apart from you.",
+  like: 25,
+  dislike: 7,
+  id: 1605844138557
 }, {
-  "title": "The Messenger",
-  "artist": "Silent Partner",
-  "price": 289,
-  "isFavorite": "True",
-  "style": "Salegy",
-  "lyrics": "I love you so much that I can not think of anyone else in the world apart from you.",
-  "like": 12,
-  "dislike": 30,
-  "id": 1605844159908
+  title: "The Messenger",
+  artist: "Silent Partner",
+  price: 289,
+  isFavorite: "True",
+  style: "Salegy",
+  lyrics: "I love you so much that I can not think of anyone else in the world apart from you.",
+  like: 12,
+  dislike: 30,
+  id: 1605844159908
 }, {
-  "title": "Talkies",
-  "artist": "Huma-Huma",
-  "price": 753,
-  "isFavorite": "False",
-  "style": "Rock",
-  "lyrics": "I love you so much that I can not think of anyone else in the world apart from you.",
-  "like": 3,
-  "dislike": 7,
-  "id": 1605844177341
+  title: "Talkies",
+  artist: "Huma-Huma",
+  price: 753,
+  isFavorite: "False",
+  style: "Rock",
+  lyrics: "I love you so much that I can not think of anyone else in the world apart from you.",
+  like: 3,
+  dislike: 7,
+  id: 1605844177341
 }, {
-  "title": "On the Bach",
-  "artist": "Jingle Punks",
-  "price": 834,
-  "isFavorite": "True",
-  "style": "Rap",
-  "lyrics": "I love you so much that I can not think of anyone else in the world apart from you.",
-  "like": 10,
-  "dislike": 13,
-  "id": 1605844192562
+  title: "On the Bach",
+  artist: "Jingle Punks",
+  price: 834,
+  isFavorite: "True",
+  style: "Rap",
+  lyrics: "I love you so much that I can not think of anyone else in the world apart from you.",
+  like: 10,
+  dislike: 13,
+  id: 1605844192562
 }, {
-  "title": "The Story Unfolds",
-  "artist": "Jingle Punks",
-  "price": 387,
-  "isFavorite": "False",
-  "style": "Rap",
-  "lyrics": "I love you so much that I can not think of anyone else in the world apart from you.",
-  "like": 4,
-  "dislike": 5,
-  "id": 1605844202704
+  title: "The Story Unfolds",
+  artist: "Jingle Punks",
+  price: 387,
+  isFavorite: "False",
+  style: "Rap",
+  lyrics: "I love you so much that I can not think of anyone else in the world apart from you.",
+  like: 4,
+  dislike: 5,
+  id: 1605844202704
 }];
 var _default = songs;
 exports.default = _default;
@@ -33959,7 +33959,8 @@ function ContextProvider(props) {
   }, []);
   return /*#__PURE__*/_react.default.createElement(Context.Provider, {
     value: {
-      allSongs: allSongs
+      allSongs: allSongs,
+      setAllSongs: setAllSongs
     }
   }, props.children);
 }
@@ -34005,26 +34006,82 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function Popularsongs() {
   var _useContext = (0, _react.useContext)(_Context.Context),
-      allSongs = _useContext.allSongs;
+      allSongs = _useContext.allSongs,
+      setAllSongs = _useContext.setAllSongs;
+
+  function increments(itemId) {
+    var newList = allSongs.map(function (item) {
+      if (item.id === itemId) {
+        return _objectSpread(_objectSpread({}, item), {}, {
+          like: item.like + 1
+        });
+      }
+
+      return item;
+    });
+    setAllSongs(newList);
+  }
+
+  function decreaments(itemId) {
+    var newList = allSongs.map(function (item) {
+      if (item.id === itemId) {
+        return _objectSpread(_objectSpread({}, item), {}, {
+          dislike: item.dislike - 1
+        });
+      }
+
+      return item;
+    });
+    setAllSongs(newList);
+  }
+
+  function handleFavorite(Id) {
+    var newArraySong = allSongs.map(function (item) {
+      if (item.id === Id) {
+        console.log(item.id);
+        return _objectSpread(_objectSpread({}, item), {}, {
+          isFavorite: !item.isFavorite
+        });
+      }
+
+      return _objectSpread({}, item);
+    });
+    setAllSongs(newArraySong);
+  }
 
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, allSongs.map(function (item) {
     return /*#__PURE__*/_react.default.createElement("ul", {
       className: "container",
       key: item.id
     }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+      onClick: function onClick() {
+        return handleFavorite(item.id);
+      },
       src: item.isFavorite === "True" ? _favorite.default : _favorite_border.default,
       alt: "heart"
     })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h3", null, "Title: ", item.title), /*#__PURE__*/_react.default.createElement("small", null, "Artist: ", item.artist)), /*#__PURE__*/_react.default.createElement("li", {
       className: "arrow"
     }, item.like, " ", /*#__PURE__*/_react.default.createElement("img", {
       src: _arrow_up.default,
+      onClick: function onClick() {
+        return increments(item.id);
+      },
       alt: "arrow_up"
     })), /*#__PURE__*/_react.default.createElement("li", {
       className: "arrow"
     }, item.dislike, " ", /*#__PURE__*/_react.default.createElement("img", {
       src: _arrow_down.default,
+      onClick: function onClick() {
+        return decreaments(item.id);
+      },
       alt: "arrow_down"
     })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
       src: _shopping_cart.default,
@@ -34120,8 +34177,9 @@ function Add() {
     value: "Rap"
   }, "Rap"), /*#__PURE__*/_react.default.createElement("option", {
     value: "Rock"
-  }, "Rock")), /*#__PURE__*/_react.default.createElement("input", {
-    type: "textarea",
+  }, "Rock")), /*#__PURE__*/_react.default.createElement("textarea", {
+    cols: "50",
+    rows: "5",
     className: "form_lyrics",
     required: true
   }), /*#__PURE__*/_react.default.createElement("button", {
@@ -34131,6 +34189,24 @@ function Add() {
 }
 
 var _default = Add;
+exports.default = _default;
+},{"react":"node_modules/react/index.js"}],"component/Carts.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Carts() {
+  return /*#__PURE__*/_react.default.createElement("div", null, "hello");
+}
+
+var _default = Carts;
 exports.default = _default;
 },{"react":"node_modules/react/index.js"}],"App.js":[function(require,module,exports) {
 "use strict";
@@ -34147,6 +34223,8 @@ var _Popularsongs = _interopRequireDefault(require("./component/Popularsongs"));
 var _Styles = _interopRequireDefault(require("./component/Styles"));
 
 var _Add = _interopRequireDefault(require("./component/Add"));
+
+var _Carts = _interopRequireDefault(require("./component/Carts"));
 
 var _reactRouterDom = require("react-router-dom");
 
@@ -34174,12 +34252,12 @@ function App() {
     path: "/add"
   }, /*#__PURE__*/_react.default.createElement(_Add.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/cart"
-  })));
+  }, /*#__PURE__*/_react.default.createElement(_Carts.default, null))));
 }
 
 var _default = App;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./component/Popularsongs":"component/Popularsongs.js","./component/Styles":"component/Styles.js","./component/Add":"component/Add.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./component/Popularsongs":"component/Popularsongs.js","./component/Styles":"component/Styles.js","./component/Add":"component/Add.js","./component/Carts":"component/Carts.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));

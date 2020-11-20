@@ -10,7 +10,7 @@ function ContextProvider(props) {
     }, []);
     
     return(
-        <Context.Provider value={{allSongs}}>
+        <Context.Provider value={{allSongs, setAllSongs}}>
             {props.children}
         </Context.Provider>
     )

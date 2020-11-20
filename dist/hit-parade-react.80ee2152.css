@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  padding: 16px;
+  padding: 8px;
   font-family: "Lato";
 }
 body a {
@@ -21,7 +21,7 @@ body h1 {
   text-align: center;
 }
 body .wrapper {
-  max-width: 90%;
+  max-width: 100%;
   margin: auto;
 }
 body .wrapper .list_headings {
@@ -68,11 +68,14 @@ body .wrapper .form_container input, body .wrapper .form_container select {
   outline: none;
   cursor: pointer;
 }
-body .wrapper .form_container input:hover, body .wrapper .form_container select:hover {
+body .wrapper .form_container input:hover, body .wrapper .form_container select:hover, body .wrapper .form_container textarea:hover {
   box-shadow: 1px 1px 5px blue;
 }
 body .wrapper .form_container .form_lyrics {
-  height: 100px;
+  margin-bottom: 10px;
+  outline: none;
+  cursor: pointer;
+  border-radius: 4px;
 }
 body .wrapper .form_container .form_button {
   background-color: white;
@@ -95,6 +98,7 @@ body .wrapper .styles {
   border-radius: 16px;
   box-shadow: 2px 2px 10px black;
   max-width: 50%;
+  margin: auto;
 }
 body .wrapper .styles li h2 {
   padding-top: 10px;
@@ -103,11 +107,8 @@ body .wrapper .styles li h2 {
 }
 
 @media (min-width: 720px) {
-  body {
-    padding: 0;
-  }
   body .wrapper {
-    max-width: 95%;
+    max-width: 600px;
     margin: auto;
   }
 }

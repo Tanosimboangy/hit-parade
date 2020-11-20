@@ -2,6 +2,7 @@ import React from 'react';
 import Popularsongs from './component/Popularsongs';
 import Styles from './component/Styles';
 import Add from './component/Add';
+import Carts from './component/Carts';
 import { Link, Route, Switch } from 'react-router-dom';
 
 function App() {
@@ -18,7 +19,7 @@ function App() {
                 <Route exact path="/"><Popularsongs /></Route>
                 <Route path="/style">< Styles/></Route>
                 <Route path="/add"><Add /></Route>
-                <Route path="/cart"></Route>
+                <Route path="/cart"><Carts /></Route>
             </Switch>
         </div>
     )
