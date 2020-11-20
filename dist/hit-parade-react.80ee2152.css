@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  padding: 16px;
+}
+body a {
+  text-decoration: none;
+}
+body ul {
+  margin: 0;
+  padding: 0;
+}
+body ul li {
+  list-style: none;
+}
+
+@font-face {
+  font-family: "Lato_bold";
+  src: local(Lato), url(/Lato-Bold.a497623e.woff2) format("woff2"), url(/Lato-Bold.2ba61289.woff) format("woff");
+}
+@font-face {
+  font-family: "Lato";
+  src: local(Lato), url(/Lato-Regular.1c034558.woff2) format("woff2"), url(/Lato-Regular.5200f20d.woff) format("woff");
+}
+
+/*# sourceMappingURL=/hit-parade-react.80ee2152.css.map */
