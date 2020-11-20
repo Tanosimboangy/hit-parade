@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 16px;
+    font-family: "Lato";
     a {
         text-decoration: none;
     }
@@ -14,6 +15,12 @@ body {
     .wrapper {
         max-width: 90%;
         margin: auto;
+        .list_headings {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
         .container {
             display: flex;
             flex-direction: row;
@@ -23,6 +30,12 @@ body {
             background-color: black;
             padding: 16px;
             margin-bottom: 16px;
+            .arrow {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
         }
     }
 }

@@ -1,6 +1,7 @@
 body {
   margin: 0;
   padding: 16px;
+  font-family: "Lato";
 }
 body a {
   text-decoration: none;
@@ -16,6 +17,12 @@ body .wrapper {
   max-width: 90%;
   margin: auto;
 }
+body .wrapper .list_headings {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
 body .wrapper .container {
   display: flex;
   flex-direction: row;
@@ -25,6 +32,12 @@ body .wrapper .container {
   background-color: black;
   padding: 16px;
   margin-bottom: 16px;
+}
+body .wrapper .container .arrow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @font-face {
