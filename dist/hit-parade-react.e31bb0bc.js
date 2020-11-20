@@ -29772,7 +29772,15 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"songs.json":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"img/shopping_cart.svg":[function(require,module,exports) {
+module.exports = "/shopping_cart.1080d496.svg";
+},{}],"img/arrow_up.svg":[function(require,module,exports) {
+module.exports = "/arrow_up.4737aec9.svg";
+},{}],"img/arrow_down.svg":[function(require,module,exports) {
+module.exports = "/arrow_down.3d6b8982.svg";
+},{}],"img/more_horiz.svg":[function(require,module,exports) {
+module.exports = "/more_horiz.540c0812.svg";
+},{}],"songs.json":[function(require,module,exports) {
 module.exports = [{
   "title": "Jazz in Paris",
   "artist": "Media Right Productions",
@@ -29824,12 +29832,6 @@ module.exports = [{
   "dislike": 5,
   "id": 1605844202704
 }];
-},{}],"img/shopping_cart.svg":[function(require,module,exports) {
-module.exports = "/a70a0e276b35768533c4b7161080d496.svg";
-},{}],"img/arrow_up.svg":[function(require,module,exports) {
-module.exports = "/88301ff4b901daa25e4f31384737aec9.svg";
-},{}],"img/arrow_down.svg":[function(require,module,exports) {
-module.exports = "/c13da9ef84430a5a7cb8e2ab3d6b8982.svg";
 },{}],"App.js":[function(require,module,exports) {
 "use strict";
 
@@ -29840,21 +29842,21 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _songs = _interopRequireDefault(require("./songs.json"));
-
 var _shopping_cart = _interopRequireDefault(require("./img/shopping_cart.svg"));
 
 var _arrow_up = _interopRequireDefault(require("./img/arrow_up.svg"));
 
 var _arrow_down = _interopRequireDefault(require("./img/arrow_down.svg"));
 
+var _more_horiz = _interopRequireDefault(require("./img/more_horiz.svg"));
+
+var _songs = _interopRequireDefault(require("./songs.json"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// import { context } from "./useContext.js";
 function App() {
-  console.log(Number(Date.now()));
-  return /*#__PURE__*/_react.default.createElement("div", {
-    className: "wrapper"
-  }, /*#__PURE__*/_react.default.createElement("h1", null, "Hit Parade Project"), _songs.default.map(function (item) {
+  var songLists = _songs.default.map(function (item) {
     return /*#__PURE__*/_react.default.createElement("ul", {
       className: "container",
       key: item.id
@@ -29867,13 +29869,20 @@ function App() {
     })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
       src: _shopping_cart.default,
       alt: "shopping_cart"
+    })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+      src: _more_horiz.default,
+      alt: "more_horiz"
     })));
-  }));
+  });
+
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "wrapper"
+  }, /*#__PURE__*/_react.default.createElement("h1", null, "Hit Parade"), /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, "Popular songs")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, "Styles")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, "Popular songs")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, "Popular songs"))), songLists);
 }
 
 var _default = App;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./songs.json":"songs.json","./img/shopping_cart.svg":"img/shopping_cart.svg","./img/arrow_up.svg":"img/arrow_up.svg","./img/arrow_down.svg":"img/arrow_down.svg"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./img/shopping_cart.svg":"img/shopping_cart.svg","./img/arrow_up.svg":"img/arrow_up.svg","./img/arrow_down.svg":"img/arrow_down.svg","./img/more_horiz.svg":"img/more_horiz.svg","./songs.json":"songs.json"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -29913,7 +29922,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62232" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64629" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

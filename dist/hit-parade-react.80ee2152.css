@@ -12,6 +12,20 @@ body ul {
 body ul li {
   list-style: none;
 }
+body .wrapper {
+  max-width: 90%;
+  margin: auto;
+}
+body .wrapper .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  color: white;
+  background-color: black;
+  padding: 16px;
+  margin-bottom: 16px;
+}
 
 @font-face {
   font-family: "Lato_bold";
