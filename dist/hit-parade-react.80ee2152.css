@@ -13,6 +13,9 @@ body ul {
 body ul li {
   list-style: none;
 }
+body h1, body h2, body h3, body h4, body h5, body h6, body p {
+  margin: 0;
+}
 body .wrapper {
   max-width: 90%;
   margin: auto;
@@ -29,7 +32,7 @@ body .wrapper .container {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   color: white;
   background-color: black;
   padding: 16px;
@@ -40,6 +43,59 @@ body .wrapper .container .arrow {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+body .wrapper .form_container {
+  max-width: 50%;
+  margin: auto;
+  border-radius: 16px;
+  padding: 32px;
+  background-color: white;
+  box-shadow: 2px 2px 10px black;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+}
+body .wrapper .form_container input, body .wrapper .form_container select {
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  outline: none;
+  cursor: pointer;
+}
+body .wrapper .form_container input:hover, body .wrapper .form_container select:hover {
+  box-shadow: 1px 1px 5px blue;
+}
+body .wrapper .form_container .form_lyrics {
+  height: 100px;
+}
+body .wrapper .form_container .form_button {
+  background-color: white;
+  color: black;
+  font-weight: 700;
+  border: 1px solid black;
+  box-shadow: 1px 1px 5px blue;
+  border-radius: 8px;
+  padding: 10px 30px;
+  font-size: 16px;
+  outline: none;
+  border: none;
+}
+body .wrapper .form_container .form_button:hover {
+  background-color: green;
+  color: yellow;
+}
+body .wrapper .styles {
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: 2px 2px 10px black;
+  max-width: 50%;
+}
+body .wrapper .styles li h2 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
 }
 
 @font-face {

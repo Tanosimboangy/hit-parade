@@ -33990,7 +33990,9 @@ var _headset = _interopRequireDefault(require("../img/headset.svg"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Styles() {
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement("img", {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("ul", {
+    className: "styles"
+  }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement("img", {
     src: _headset.default,
     alt: "headset"
   }), "Salegy")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement("img", {
@@ -34010,7 +34012,62 @@ function Styles() {
 
 var _default = Styles;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../img/headset.svg":"img/headset.svg"}],"App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../img/headset.svg":"img/headset.svg"}],"component/Add.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Add() {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("form", {
+    className: "form_container"
+  }, /*#__PURE__*/_react.default.createElement("h2", null, "Add a new song"), /*#__PURE__*/_react.default.createElement("input", {
+    className: "form_title",
+    type: "text",
+    placeholder: "Title",
+    required: true
+  }), /*#__PURE__*/_react.default.createElement("input", {
+    className: "form_artist",
+    type: "text",
+    placeholder: "Artist",
+    required: true
+  }), /*#__PURE__*/_react.default.createElement("input", {
+    className: "form_price",
+    type: "number",
+    placeholder: "price",
+    required: true
+  }), /*#__PURE__*/_react.default.createElement("select", {
+    className: "form_style",
+    required: true
+  }, /*#__PURE__*/_react.default.createElement("option", {
+    value: "Salegy"
+  }, "Salegy"), /*#__PURE__*/_react.default.createElement("option", {
+    value: "Reggae"
+  }, "Reggae"), /*#__PURE__*/_react.default.createElement("option", {
+    value: "Folk"
+  }, "Folk"), /*#__PURE__*/_react.default.createElement("option", {
+    value: "Rap"
+  }, "Rap"), /*#__PURE__*/_react.default.createElement("option", {
+    value: "Rock"
+  }, "Rock")), /*#__PURE__*/_react.default.createElement("input", {
+    type: "textarea",
+    className: "form_lyrics",
+    required: true
+  }), /*#__PURE__*/_react.default.createElement("button", {
+    className: "form_button",
+    type: "submit"
+  }, "Add")));
+}
+
+var _default = Add;
+exports.default = _default;
+},{"react":"node_modules/react/index.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34023,6 +34080,8 @@ var _react = _interopRequireDefault(require("react"));
 var _Popularsongs = _interopRequireDefault(require("./component/Popularsongs"));
 
 var _Styles = _interopRequireDefault(require("./component/Styles"));
+
+var _Add = _interopRequireDefault(require("./component/Add"));
 
 var _reactRouterDom = require("react-router-dom");
 
@@ -34047,15 +34106,15 @@ function App() {
   }, /*#__PURE__*/_react.default.createElement(_Popularsongs.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/style"
   }, /*#__PURE__*/_react.default.createElement(_Styles.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
-    path: "/addfire"
-  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/add"
+  }, /*#__PURE__*/_react.default.createElement(_Add.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/cart"
   })));
 }
 
 var _default = App;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./component/Popularsongs":"component/Popularsongs.js","./component/Styles":"component/Styles.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./component/Popularsongs":"component/Popularsongs.js","./component/Styles":"component/Styles.js","./component/Add":"component/Add.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -34097,7 +34156,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51228" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53581" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

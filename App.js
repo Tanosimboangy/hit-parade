@@ -1,10 +1,10 @@
 import React from 'react';
 import Popularsongs from './component/Popularsongs';
 import Styles from './component/Styles';
+import Add from './component/Add';
 import { Link, Route, Switch } from 'react-router-dom';
 
 function App() {
-
     return (
         <div className="wrapper">
             <h1>Hit Parade</h1>
@@ -17,7 +17,7 @@ function App() {
             <Switch>
                 <Route exact path="/"><Popularsongs /></Route>
                 <Route path="/style">< Styles/></Route>
-                <Route path="/addfire"></Route>
+                <Route path="/add"><Add /></Route>
                 <Route path="/cart"></Route>
             </Switch>
         </div>

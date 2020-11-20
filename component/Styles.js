@@ -4,7 +4,7 @@ import headset from "../img/headset.svg";
 function Styles() {
     return (
         <>
-            <ul>
+            <ul className="styles">
                 <li><h2><img src={headset} alt="headset"/>Salegy</h2></li>
                 <li><h2><img src={headset} alt="headset"/> Reaggae</h2></li>
                 <li><h2><img src={headset} alt="headset"/> Folk</h2></li>
