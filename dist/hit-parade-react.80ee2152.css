@@ -22,6 +22,8 @@ body .wrapper .list_headings {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  padding-bottom: 16px;
 }
 body .wrapper .container {
   display: flex;

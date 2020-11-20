@@ -1,25 +1,18 @@
 import React from "react";
+import headset from "../img/headset.svg";
 
-function Popularsongs() {
+function Styles() {
     return (
         <>
-            {songs.map(item => {
-                return (
-                    <ul className="container" key={item.id}>
-                        <li><img src={item.isFavorite === "true" ? favorite : favorite_border} alt="heart"/></li>
-                        <li>
-                            <h3>Title: {item.title}</h3>
-                            <small>Artist: {item.artist}</small>
-                        </li>
-                        <li className="arrow">{item.like} <img src={arrow_up} alt="arrow_up"/></li>
-                        <li className="arrow">{item.dislike} <img src={arrow_down} alt="arrow_down"/></li>
-                        <li><img src={shopping_cart} alt="shopping_cart"/></li>
-                        <li><img src={more_horiz} alt="more_horiz"/></li>
-                    </ul>
-                )
-            })}
+            <ul>
+                <li><h2><img src={headset} alt="headset"/>Salegy</h2></li>
+                <li><h2><img src={headset} alt="headset"/> Reaggae</h2></li>
+                <li><h2><img src={headset} alt="headset"/> Folk</h2></li>
+                <li><h2><img src={headset} alt="headset"/> Rap</h2></li>
+                <li><h2><img src={headset} alt="headset"/> Rock</h2></li>
+            </ul>
         </>
     )
 }
 
-export default Popularsongs;
+export default Styles;

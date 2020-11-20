@@ -33973,7 +33973,44 @@ function Popularsongs() {
 
 var _default = Popularsongs;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../img/shopping_cart.svg":"img/shopping_cart.svg","../img/arrow_up.svg":"img/arrow_up.svg","../img/arrow_down.svg":"img/arrow_down.svg","../img/more_horiz.svg":"img/more_horiz.svg","../img/favorite.svg":"img/favorite.svg","../img/favorite_border.svg":"img/favorite_border.svg","../songs.json":"songs.json"}],"App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../img/shopping_cart.svg":"img/shopping_cart.svg","../img/arrow_up.svg":"img/arrow_up.svg","../img/arrow_down.svg":"img/arrow_down.svg","../img/more_horiz.svg":"img/more_horiz.svg","../img/favorite.svg":"img/favorite.svg","../img/favorite_border.svg":"img/favorite_border.svg","../songs.json":"songs.json"}],"img/headset.svg":[function(require,module,exports) {
+module.exports = "/headset.a73dacc1.svg";
+},{}],"component/Styles.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _headset = _interopRequireDefault(require("../img/headset.svg"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Styles() {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("ul", null, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _headset.default,
+    alt: "headset"
+  }), "Salegy")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _headset.default,
+    alt: "headset"
+  }), " Reaggae")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _headset.default,
+    alt: "headset"
+  }), " Folk")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _headset.default,
+    alt: "headset"
+  }), " Rap")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _headset.default,
+    alt: "headset"
+  }), " Rock"))));
+}
+
+var _default = Styles;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","../img/headset.svg":"img/headset.svg"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33984,6 +34021,8 @@ exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
 
 var _Popularsongs = _interopRequireDefault(require("./component/Popularsongs"));
+
+var _Styles = _interopRequireDefault(require("./component/Styles"));
 
 var _reactRouterDom = require("react-router-dom");
 
@@ -33996,18 +34035,19 @@ function App() {
     className: "list_headings"
   }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/"
-  }, "Popular songs"))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/styles"
-  }, "Styles"))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  }, "\uD83D\uDD25Popular songs"))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/style"
+  }, "\uD83D\uDC9BStyles"))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/add"
-  }, "Add"))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  }, "\u2795Add"))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/cart"
-  }, "Cart")))), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+  }, "\uD83D\uDED2Cart")))), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    exact: true,
     path: "/"
   }, /*#__PURE__*/_react.default.createElement(_Popularsongs.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/style"
-  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
-    path: "/add"
+  }, /*#__PURE__*/_react.default.createElement(_Styles.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/addfire"
   }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/cart"
   })));
@@ -34015,7 +34055,7 @@ function App() {
 
 var _default = App;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./component/Popularsongs":"component/Popularsongs.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./component/Popularsongs":"component/Popularsongs.js","./component/Styles":"component/Styles.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
