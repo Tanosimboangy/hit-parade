@@ -30,8 +30,7 @@ function App() {
                 <Route exact path="/style">
                     < Styles/>
                 </Route>
-                <Route path="/style/:styleName">
-                    {/* < StylesName/> */}
+                <Route path="/style/:name">
                     <StyleContents/>
                 </Route>
             </Switch>

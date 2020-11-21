@@ -27,7 +27,7 @@ function ContextProvider(props) {
                 if (item.dislike > 0) {
                     return {
                         ...item,
-                        dislike: item.dislike - 1,
+                        dislike: item.dislike + 1,
                     }
                 }
             }

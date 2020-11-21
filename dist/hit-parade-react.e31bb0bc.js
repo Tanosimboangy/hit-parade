@@ -33865,7 +33865,7 @@ var songs = [{
   artist: "Media Right Productions",
   price: 68,
   isFavorite: false,
-  style: "Rock",
+  style: "Folk",
   lyrics: "I love you so much that I can not think of anyone else in the world apart from you.",
   like: 25,
   dislike: 7,
@@ -33880,6 +33880,16 @@ var songs = [{
   like: 12,
   dislike: 30,
   id: 1605844159908
+}, {
+  title: "Mba mangala vaiavy anao",
+  artist: "Jaojaoby",
+  price: 476,
+  isFavorite: false,
+  style: "Salegy",
+  lyrics: "I love you so much that I can not think of anyone else in the world apart from you.",
+  like: 10,
+  dislike: 5,
+  id: 1605844156908
 }, {
   title: "Talkies",
   artist: "Huma-Huma",
@@ -33905,7 +33915,7 @@ var songs = [{
   artist: "Jingle Punks",
   price: 387,
   isFavorite: false,
-  style: "Rap",
+  style: "Reaggae",
   lyrics: "I love you so much that I can not think of anyone else in the world apart from you.",
   like: 4,
   dislike: 5,
@@ -33982,7 +33992,7 @@ function ContextProvider(props) {
       if (item.id === itemId) {
         if (item.dislike > 0) {
           return _objectSpread(_objectSpread({}, item), {}, {
-            dislike: item.dislike - 1
+            dislike: item.dislike + 1
           });
         }
       }
@@ -34133,33 +34143,33 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function Styles() {
   var _useContext = (0, _react.useContext)(_Context.Context),
-      allSongs = _useContext.allSongs; // console.log(allSongs);
+      allSongs = _useContext.allSongs;
 
-
+  console.log(allSongs);
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("ul", {
     className: "styles"
   }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/style/salegy"
+    to: "/style/Salegy"
   }, /*#__PURE__*/_react.default.createElement("img", {
     src: _headset.default,
     alt: "headset"
   }), "Salegy"))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/style/reggae"
+    to: "/style/Reaggae"
   }, /*#__PURE__*/_react.default.createElement("img", {
     src: _headset.default,
     alt: "headset"
   }), "Reaggae"))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/style/folk"
+    to: "/style/Folk"
   }, /*#__PURE__*/_react.default.createElement("img", {
     src: _headset.default,
     alt: "headset"
   }), "Folk"))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/style/rap"
+    to: "/style/Rap"
   }, /*#__PURE__*/_react.default.createElement("img", {
     src: _headset.default,
     alt: "headset"
   }), "Rap"))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/style/rock"
+    to: "/style/Rock"
   }, /*#__PURE__*/_react.default.createElement("img", {
     src: _headset.default,
     alt: "headset"
@@ -34191,21 +34201,29 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function StyleContents() {
-  var name = (0, _reactRouterDom.useParams)();
+  var _useParams = (0, _reactRouterDom.useParams)(),
+      name = _useParams.name;
 
   var _useContext = (0, _react.useContext)(_Context.Context),
       allSongs = _useContext.allSongs;
 
   var newSongs = allSongs.filter(function (item) {
-    return item.style == name.styleName;
+    return item.style === name;
   });
-  console.log(newSongs);
+  var newSong = newSongs.map(function (items) {
+    return /*#__PURE__*/_react.default.createElement("ul", {
+      key: items.id,
+      className: "styles"
+    }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h3", null, items.title)), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("p", null, items.artist)));
+  });
   return /*#__PURE__*/_react.default.createElement("div", {
-    className: "styles"
-  }, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement("img", {
+    className: "style"
+  }, /*#__PURE__*/_react.default.createElement("h2", {
+    className: "styles_heading"
+  }, /*#__PURE__*/_react.default.createElement("img", {
     src: _headset.default,
     alt: "headset"
-  }), name.styleName));
+  }), name), newSong);
 }
 
 var _default = StyleContents;
@@ -34333,7 +34351,7 @@ function App() {
     exact: true,
     path: "/style"
   }, /*#__PURE__*/_react.default.createElement(_Styles.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
-    path: "/style/:styleName"
+    path: "/style/:name"
   }, /*#__PURE__*/_react.default.createElement(_StyleContents.default, null))));
 }
 
@@ -34383,7 +34401,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60885" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50332" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
