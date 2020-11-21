@@ -4,6 +4,7 @@ const Context = React.createContext();
 
 function ContextProvider(props) {
     const [allSongs, setAllSongs] = useState([]);
+    const [sortedSongs, setsortedSongs] = useState([]);
 
     useEffect(() => {
         setAllSongs(songs);
@@ -33,9 +34,23 @@ function ContextProvider(props) {
         });
         setAllSongs(newlist);
     }
+
+    useEffect(() => {
+        setsortedSongs(allSongs.sort((a, b) => {
+          const like = a.like - a.dislike
+          const dislike = b.like - b.dislike
+          return dislike - like
+        }))
+      }, [allSongs])
     
     return(
-        <Context.Provider value={{allSongs, setAllSongs, increments, decreaments}}>
+        <Context.Provider value={{
+            allSongs, 
+            setAllSongs, 
+            increments, 
+            decreaments,
+            sortedSongs
+        }}>
             {props.children}
         </Context.Provider>
     )

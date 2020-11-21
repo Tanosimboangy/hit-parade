@@ -33970,6 +33970,11 @@ function ContextProvider(props) {
       allSongs = _useState2[0],
       setAllSongs = _useState2[1];
 
+  var _useState3 = (0, _react.useState)([]),
+      _useState4 = _slicedToArray(_useState3, 2),
+      sortedSongs = _useState4[0],
+      setsortedSongs = _useState4[1];
+
   (0, _react.useEffect)(function () {
     setAllSongs(_songs.default);
   }, []);
@@ -34000,12 +34005,20 @@ function ContextProvider(props) {
     setAllSongs(newlist);
   }
 
+  (0, _react.useEffect)(function () {
+    setsortedSongs(allSongs.sort(function (a, b) {
+      var like = a.like - a.dislike;
+      var dislike = b.like - b.dislike;
+      return dislike - like;
+    }));
+  }, [allSongs]);
   return /*#__PURE__*/_react.default.createElement(Context.Provider, {
     value: {
       allSongs: allSongs,
       setAllSongs: setAllSongs,
       increments: increments,
-      decreaments: decreaments
+      decreaments: decreaments,
+      sortedSongs: sortedSongs
     }
   }, props.children);
 }
@@ -34061,6 +34074,7 @@ function Popularsongs() {
   var _useContext = (0, _react.useContext)(_Context.Context),
       allSongs = _useContext.allSongs,
       setAllSongs = _useContext.setAllSongs,
+      sortedSongs = _useContext.sortedSongs,
       increments = _useContext.increments,
       decreaments = _useContext.decreaments;
 
@@ -34077,7 +34091,7 @@ function Popularsongs() {
     setAllSongs(newArraySong);
   }
 
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, allSongs.map(function (item) {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, sortedSongs.map(function (item) {
     return /*#__PURE__*/_react.default.createElement("ul", {
       className: "container",
       key: item.id

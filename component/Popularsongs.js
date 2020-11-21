@@ -8,7 +8,7 @@ import favorite_border from "../img/favorite_border.svg";
 import { Context } from "../Context";
 
 function Popularsongs() {
-    const { allSongs, setAllSongs, increments, decreaments } = useContext(Context);
+    const { allSongs, setAllSongs, sortedSongs, increments, decreaments } = useContext(Context);
 
     function toggleFavorite(Id) {
         const newArraySong = allSongs.map(item => {
@@ -26,7 +26,7 @@ function Popularsongs() {
 
     return (
         <>
-            {allSongs.map((item) => {
+            {sortedSongs.map((item) => {
                 return (
                     <ul className="container" key={item.id}>
                         <li><img onClick={() => toggleFavorite(item.id)} src={item.isFavorite ? favorite : favorite_border} alt="heart"/></li>
