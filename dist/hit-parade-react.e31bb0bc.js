@@ -34117,58 +34117,98 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _react = _interopRequireDefault(require("react"));
-
-var _reactRouterDom = require("react-router-dom");
+var _react = _interopRequireWildcard(require("react"));
 
 var _headset = _interopRequireDefault(require("../img/headset.svg"));
 
+var _reactRouterDom = require("react-router-dom");
+
+var _Context = require("../Context");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
 function Styles() {
+  var _useContext = (0, _react.useContext)(_Context.Context),
+      allSongs = _useContext.allSongs;
+
+  console.log(allSongs);
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("ul", {
     className: "styles"
   }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/Styles/".concat(item.style)
+    to: "/style/salegy"
   }, /*#__PURE__*/_react.default.createElement("img", {
     src: _headset.default,
     alt: "headset"
   }), "Salegy"))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/Styles/".concat(item.style)
+    to: "/style/reggae"
   }, /*#__PURE__*/_react.default.createElement("img", {
     src: _headset.default,
     alt: "headset"
   }), "Reaggae"))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/Styles/".concat(item.style)
+    to: "/style/folk"
   }, /*#__PURE__*/_react.default.createElement("img", {
     src: _headset.default,
     alt: "headset"
   }), "Folk"))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/Styles/".concat(item.style)
+    to: "/style/rap"
   }, /*#__PURE__*/_react.default.createElement("img", {
     src: _headset.default,
     alt: "headset"
   }), "Rap"))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/Styles/".concat(item.style)
+    to: "/style/rock"
   }, /*#__PURE__*/_react.default.createElement("img", {
     src: _headset.default,
     alt: "headset"
-  }), "Rock")))), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
-    path: "/Styles/".concat(item.style)
-  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
-    path: "/Styles/".concat(item.style)
-  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
-    path: "/Styles/".concat(item.style)
-  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
-    path: "/Styles/".concat(item.style)
-  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
-    path: "/Styles/".concat(item.style)
-  })));
+  }), "Rock")))));
 }
 
 var _default = Styles;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../img/headset.svg":"img/headset.svg"}],"component/Add.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../img/headset.svg":"img/headset.svg","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../Context":"Context.js"}],"component/StyleContents.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _headset = _interopRequireDefault(require("../img/headset.svg"));
+
+var _reactRouterDom = require("react-router-dom");
+
+var _Context = require("../Context");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function StyleContents() {
+  var name = (0, _reactRouterDom.useParams)();
+
+  var _useContext = (0, _react.useContext)(_Context.Context),
+      allPhotos = _useContext.allPhotos;
+
+  console.log(allPhotos);
+  console.log(name);
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "styles"
+  }, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _headset.default,
+    alt: "headset"
+  }), name.styleName));
+}
+
+var _default = StyleContents;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","../img/headset.svg":"img/headset.svg","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../Context":"Context.js"}],"component/Add.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34256,6 +34296,8 @@ var _Popularsongs = _interopRequireDefault(require("./component/Popularsongs"));
 
 var _Styles = _interopRequireDefault(require("./component/Styles"));
 
+var _StyleContents = _interopRequireDefault(require("./component/StyleContents"));
+
 var _Add = _interopRequireDefault(require("./component/Add"));
 
 var _Carts = _interopRequireDefault(require("./component/Carts"));
@@ -34264,6 +34306,7 @@ var _reactRouterDom = require("react-router-dom");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// import StylesName from './component/StylesName';
 function App() {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "wrapper"
@@ -34281,17 +34324,20 @@ function App() {
     exact: true,
     path: "/"
   }, /*#__PURE__*/_react.default.createElement(_Popularsongs.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
-    path: "/style"
-  }, /*#__PURE__*/_react.default.createElement(_Styles.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/add"
   }, /*#__PURE__*/_react.default.createElement(_Add.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/cart"
-  }, /*#__PURE__*/_react.default.createElement(_Carts.default, null))));
+  }, /*#__PURE__*/_react.default.createElement(_Carts.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    exact: true,
+    path: "/style"
+  }, /*#__PURE__*/_react.default.createElement(_Styles.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/style/:styleName"
+  }, /*#__PURE__*/_react.default.createElement(_StyleContents.default, null))));
 }
 
 var _default = App;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./component/Popularsongs":"component/Popularsongs.js","./component/Styles":"component/Styles.js","./component/Add":"component/Add.js","./component/Carts":"component/Carts.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./component/Popularsongs":"component/Popularsongs.js","./component/Styles":"component/Styles.js","./component/StyleContents":"component/StyleContents.js","./component/Add":"component/Add.js","./component/Carts":"component/Carts.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -34335,7 +34381,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54805" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60885" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
