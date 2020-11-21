@@ -37,6 +37,13 @@ body .wrapper .list_headings {
   flex-wrap: wrap;
   padding-bottom: 16px;
 }
+body .wrapper .list_headings h2 {
+  font-size: 20px;
+  font-weight: 600;
+  padding: 8px;
+  border: 1px solid blue;
+  border-radius: 6px;
+}
 body .wrapper .container {
   display: flex;
   flex-direction: row;
@@ -132,7 +139,7 @@ body .wrapper .style .styles p {
 
 @media (min-width: 720px) {
   body .wrapper {
-    max-width: 60%;
+    max-width: 700px;
     margin: auto;
   }
 }

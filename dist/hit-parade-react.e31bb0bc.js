@@ -33987,19 +33987,17 @@ function ContextProvider(props) {
     setAllSongs(newList);
   }
 
-  function decreaments(itemId) {
-    var newList = allSongs.map(function (item) {
-      if (item.id === itemId) {
-        if (item.dislike > 0) {
-          return _objectSpread(_objectSpread({}, item), {}, {
-            dislike: item.dislike + 1
-          });
-        }
+  function decreaments(itemid) {
+    var newlist = allSongs.map(function (item) {
+      if (item.id === itemid) {
+        return _objectSpread(_objectSpread({}, item), {}, {
+          dislike: item.dislike + 1
+        });
       }
 
       return item;
     });
-    setAllSongs(newList);
+    setAllSongs(newlist);
   }
 
   return /*#__PURE__*/_react.default.createElement(Context.Provider, {
@@ -34236,29 +34234,79 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _Context = require("../Context");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 function Add() {
+  var _useContext = (0, _react.useContext)(_Context.Context),
+      allSongs = _useContext.allSongs,
+      setAllSongs = _useContext.setAllSongs;
+
+  function addNewSong(e) {
+    e.preventDefault();
+    var eventTarget = e.target;
+    var title = eventTarget.title.value;
+    var artist = eventTarget.artist.value;
+    var price = eventTarget.price.value;
+    var style = eventTarget.style.value;
+    var lyrics = eventTarget.lyrics.value;
+    if (!title, !artist, !price, !style) return;
+    var newSong = {
+      title: title,
+      artist: artist,
+      price: price,
+      isFavorite: false,
+      style: style,
+      lyrics: lyrics,
+      like: 0,
+      dislike: 0,
+      id: Date.now()
+    };
+    var newSongList = [].concat(_toConsumableArray(allSongs), [newSong]);
+    setAllSongs(newSongList);
+    e.target.reset();
+  }
+
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("form", {
-    className: "form_container"
+    className: "form_container",
+    onSubmit: addNewSong
   }, /*#__PURE__*/_react.default.createElement("h2", null, "Add a new song"), /*#__PURE__*/_react.default.createElement("input", {
+    name: "title",
     className: "form_title",
     type: "text",
     placeholder: "Title",
     required: true
   }), /*#__PURE__*/_react.default.createElement("input", {
+    name: "artist",
     className: "form_artist",
     type: "text",
     placeholder: "Artist",
     required: true
   }), /*#__PURE__*/_react.default.createElement("input", {
+    name: "price",
     className: "form_price",
     type: "number",
     placeholder: "price",
     required: true
   }), /*#__PURE__*/_react.default.createElement("select", {
+    name: "style",
     className: "form_style",
     required: true
   }, /*#__PURE__*/_react.default.createElement("option", {
@@ -34272,6 +34320,7 @@ function Add() {
   }, "Rap"), /*#__PURE__*/_react.default.createElement("option", {
     value: "Rock"
   }, "Rock")), /*#__PURE__*/_react.default.createElement("textarea", {
+    name: "lyrics",
     cols: "50",
     rows: "5",
     className: "form_lyrics",
@@ -34284,7 +34333,7 @@ function Add() {
 
 var _default = Add;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"component/Carts.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../Context":"Context.js"}],"component/Carts.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

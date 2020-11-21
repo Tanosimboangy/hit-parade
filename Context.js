@@ -21,19 +21,17 @@ function ContextProvider(props) {
         });
         setAllSongs(newList);
     }
-    function decreaments(itemId) {
-        const newList = allSongs.map(item => {
-            if (item.id === itemId) {
-                if (item.dislike > 0) {
-                    return {
-                        ...item,
-                        dislike: item.dislike + 1,
-                    }
+    function decreaments(itemid) {
+        const newlist = allSongs.map(item => {
+            if (item.id === itemid) {
+                return {
+                    ...item,
+                    dislike: item.dislike + 1,
                 }
             }
             return item;
         });
-        setAllSongs(newList);
+        setAllSongs(newlist);
     }
     
     return(
