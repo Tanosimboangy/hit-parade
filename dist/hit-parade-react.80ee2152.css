@@ -96,8 +96,6 @@ body .wrapper .form_container .form_button:hover {
 }
 body .wrapper .styles {
   padding: 16px;
-  border-radius: 16px;
-  box-shadow: 2px 2px 10px black;
   max-width: 50%;
   margin: auto;
 }

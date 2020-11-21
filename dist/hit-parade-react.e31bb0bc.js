@@ -34133,9 +34133,9 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function Styles() {
   var _useContext = (0, _react.useContext)(_Context.Context),
-      allSongs = _useContext.allSongs;
+      allSongs = _useContext.allSongs; // console.log(allSongs);
 
-  console.log(allSongs);
+
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("ul", {
     className: "styles"
   }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
@@ -34194,10 +34194,12 @@ function StyleContents() {
   var name = (0, _reactRouterDom.useParams)();
 
   var _useContext = (0, _react.useContext)(_Context.Context),
-      allPhotos = _useContext.allPhotos;
+      allSongs = _useContext.allSongs;
 
-  console.log(allPhotos);
-  console.log(name);
+  var newSongs = allSongs.filter(function (item) {
+    return item.style == name.styleName;
+  });
+  console.log(newSongs);
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "styles"
   }, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement("img", {

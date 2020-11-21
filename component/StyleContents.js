@@ -5,9 +5,9 @@ import { Context } from "../Context";
 
 function StyleContents() {
     const name = useParams();
-    const { allPhotos } = useContext(Context);
-    console.log(allPhotos);
-    console.log(name);
+    const { allSongs } = useContext(Context);
+    const newSongs = allSongs.filter(item => item.style == name.styleName);
+    console.log(newSongs);
 
     return (
         <div className="styles">
