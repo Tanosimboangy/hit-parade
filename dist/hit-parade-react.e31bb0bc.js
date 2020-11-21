@@ -34119,6 +34119,8 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _reactRouterDom = require("react-router-dom");
+
 var _headset = _interopRequireDefault(require("../img/headset.svg"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -34126,27 +34128,47 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function Styles() {
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("ul", {
     className: "styles"
-  }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement("img", {
+  }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/Styles/".concat(item.style)
+  }, /*#__PURE__*/_react.default.createElement("img", {
     src: _headset.default,
     alt: "headset"
-  }), "Salegy")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement("img", {
+  }), "Salegy"))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/Styles/".concat(item.style)
+  }, /*#__PURE__*/_react.default.createElement("img", {
     src: _headset.default,
     alt: "headset"
-  }), " Reaggae")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement("img", {
+  }), "Reaggae"))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/Styles/".concat(item.style)
+  }, /*#__PURE__*/_react.default.createElement("img", {
     src: _headset.default,
     alt: "headset"
-  }), " Folk")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement("img", {
+  }), "Folk"))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/Styles/".concat(item.style)
+  }, /*#__PURE__*/_react.default.createElement("img", {
     src: _headset.default,
     alt: "headset"
-  }), " Rap")), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement("img", {
+  }), "Rap"))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/Styles/".concat(item.style)
+  }, /*#__PURE__*/_react.default.createElement("img", {
     src: _headset.default,
     alt: "headset"
-  }), " Rock"))));
+  }), "Rock")))), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Switch, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/Styles/".concat(item.style)
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/Styles/".concat(item.style)
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/Styles/".concat(item.style)
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/Styles/".concat(item.style)
+  }), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/Styles/".concat(item.style)
+  })));
 }
 
 var _default = Styles;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../img/headset.svg":"img/headset.svg"}],"component/Add.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../img/headset.svg":"img/headset.svg"}],"component/Add.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
