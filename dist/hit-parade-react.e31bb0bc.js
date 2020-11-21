@@ -33864,7 +33864,7 @@ var songs = [{
   title: "Jazz in Paris",
   artist: "Media Right Productions",
   price: 68,
-  isFavorite: "False",
+  isFavorite: false,
   style: "Rock",
   lyrics: "I love you so much that I can not think of anyone else in the world apart from you.",
   like: 25,
@@ -33874,7 +33874,7 @@ var songs = [{
   title: "The Messenger",
   artist: "Silent Partner",
   price: 289,
-  isFavorite: "True",
+  isFavorite: true,
   style: "Salegy",
   lyrics: "I love you so much that I can not think of anyone else in the world apart from you.",
   like: 12,
@@ -33884,7 +33884,7 @@ var songs = [{
   title: "Talkies",
   artist: "Huma-Huma",
   price: 753,
-  isFavorite: "False",
+  isFavorite: false,
   style: "Rock",
   lyrics: "I love you so much that I can not think of anyone else in the world apart from you.",
   like: 3,
@@ -33894,7 +33894,7 @@ var songs = [{
   title: "On the Bach",
   artist: "Jingle Punks",
   price: 834,
-  isFavorite: "True",
+  isFavorite: true,
   style: "Rap",
   lyrics: "I love you so much that I can not think of anyone else in the world apart from you.",
   like: 10,
@@ -33904,7 +33904,7 @@ var songs = [{
   title: "The Story Unfolds",
   artist: "Jingle Punks",
   price: 387,
-  isFavorite: "False",
+  isFavorite: false,
   style: "Rap",
   lyrics: "I love you so much that I can not think of anyone else in the world apart from you.",
   like: 4,
@@ -33932,6 +33932,12 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -33957,10 +33963,41 @@ function ContextProvider(props) {
   (0, _react.useEffect)(function () {
     setAllSongs(_songs.default);
   }, []);
+
+  function increments(itemId) {
+    var newList = allSongs.map(function (item) {
+      if (item.id === itemId) {
+        return _objectSpread(_objectSpread({}, item), {}, {
+          like: item.like + 1
+        });
+      }
+
+      return item;
+    });
+    setAllSongs(newList);
+  }
+
+  function decreaments(itemId) {
+    var newList = allSongs.map(function (item) {
+      if (item.id === itemId) {
+        if (item.dislike > 0) {
+          return _objectSpread(_objectSpread({}, item), {}, {
+            dislike: item.dislike - 1
+          });
+        }
+      }
+
+      return item;
+    });
+    setAllSongs(newList);
+  }
+
   return /*#__PURE__*/_react.default.createElement(Context.Provider, {
     value: {
       allSongs: allSongs,
-      setAllSongs: setAllSongs
+      setAllSongs: setAllSongs,
+      increments: increments,
+      decreaments: decreaments
     }
   }, props.children);
 }
@@ -34015,46 +34052,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 function Popularsongs() {
   var _useContext = (0, _react.useContext)(_Context.Context),
       allSongs = _useContext.allSongs,
-      setAllSongs = _useContext.setAllSongs;
+      setAllSongs = _useContext.setAllSongs,
+      increments = _useContext.increments,
+      decreaments = _useContext.decreaments;
 
-  function increments(itemId) {
-    var newList = allSongs.map(function (item) {
-      if (item.id === itemId) {
-        return _objectSpread(_objectSpread({}, item), {}, {
-          like: item.like + 1
-        });
-      }
-
-      return item;
-    });
-    setAllSongs(newList);
-  }
-
-  function decreaments(itemId) {
-    var newList = allSongs.map(function (item) {
-      if (item.id === itemId) {
-        if (item.dislike > 0) {
-          return _objectSpread(_objectSpread({}, item), {}, {
-            dislike: item.dislike - 1
-          });
-        }
-      }
-
-      return item;
-    });
-    setAllSongs(newList);
-  }
-
-  function handleFavorite(Id) {
+  function toggleFavorite(Id) {
     var newArraySong = allSongs.map(function (item) {
       if (item.id === Id) {
-        console.log(item.id);
         return _objectSpread(_objectSpread({}, item), {}, {
           isFavorite: !item.isFavorite
         });
       }
 
-      return _objectSpread({}, item);
+      return item;
     });
     setAllSongs(newArraySong);
   }
@@ -34065,9 +34075,9 @@ function Popularsongs() {
       key: item.id
     }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
       onClick: function onClick() {
-        return handleFavorite(item.id);
+        return toggleFavorite(item.id);
       },
-      src: item.isFavorite === "True" ? _favorite.default : _favorite_border.default,
+      src: item.isFavorite ? _favorite.default : _favorite_border.default,
       alt: "heart"
     })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h3", null, "Title: ", item.title), /*#__PURE__*/_react.default.createElement("small", null, "Artist: ", item.artist)), /*#__PURE__*/_react.default.createElement("li", {
       className: "arrow"
@@ -34303,7 +34313,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53622" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54805" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

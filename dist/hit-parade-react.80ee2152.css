@@ -41,6 +41,7 @@ body .wrapper .container {
   background-color: black;
   padding: 16px;
   margin-bottom: 16px;
+  font-size: 20px;
 }
 body .wrapper .container .arrow {
   display: flex;

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import shopping_cart from "../img/shopping_cart.svg";
 import arrow_up from "../img/arrow_up.svg";
 import arrow_down from "../img/arrow_down.svg";
@@ -8,45 +8,18 @@ import favorite_border from "../img/favorite_border.svg";
 import { Context } from "../Context";
 
 function Popularsongs() {
-    const { allSongs, setAllSongs } = useContext(Context);
+    const { allSongs, setAllSongs, increments, decreaments } = useContext(Context);
 
-    function increments(itemId) {
-        const newList = allSongs.map(item => {
-            if (item.id === itemId) {
-                return {
-                    ...item,
-                    like: item.like + 1,
-                }
-            }
-            return item;
-        });
-        setAllSongs(newList);
-    }
-    function decreaments(itemId) {
-        const newList = allSongs.map(item => {
-            if (item.id === itemId) {
-                if (item.dislike > 0) {
-                    return {
-                        ...item,
-                        dislike: item.dislike - 1,
-                    }
-                }
-            }
-            return item;
-        });
-        setAllSongs(newList);
-    }
-
-    function handleFavorite(Id) {
+    function toggleFavorite(Id) {
         const newArraySong = allSongs.map(item => {
             if (item.id === Id) {
-                console.log(item.id)
                 return {
                     ...item,
+
                     isFavorite: !item.isFavorite,
                 }
             }
-            return {...item}
+            return item
         })
         setAllSongs(newArraySong);
     }
@@ -56,7 +29,7 @@ function Popularsongs() {
             {allSongs.map((item) => {
                 return (
                     <ul className="container" key={item.id}>
-                        <li><img onClick={() => handleFavorite(item.id)} src={item.isFavorite === "True" ? favorite : favorite_border} alt="heart"/></li>
+                        <li><img onClick={() => toggleFavorite(item.id)} src={item.isFavorite ? favorite : favorite_border} alt="heart"/></li>
                         <li>
                             <h3>Title: {item.title}</h3>
                             <small>Artist: {item.artist}</small>
