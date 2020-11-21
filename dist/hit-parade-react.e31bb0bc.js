@@ -34033,9 +34033,11 @@ function Popularsongs() {
   function decreaments(itemId) {
     var newList = allSongs.map(function (item) {
       if (item.id === itemId) {
-        return _objectSpread(_objectSpread({}, item), {}, {
-          dislike: item.dislike - 1
-        });
+        if (item.dislike > 0) {
+          return _objectSpread(_objectSpread({}, item), {}, {
+            dislike: item.dislike - 1
+          });
+        }
       }
 
       return item;
@@ -34301,7 +34303,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56120" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53622" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

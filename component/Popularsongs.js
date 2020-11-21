@@ -25,9 +25,11 @@ function Popularsongs() {
     function decreaments(itemId) {
         const newList = allSongs.map(item => {
             if (item.id === itemId) {
-                return {
-                    ...item,
-                    dislike: item.dislike - 1,
+                if (item.dislike > 0) {
+                    return {
+                        ...item,
+                        dislike: item.dislike - 1,
+                    }
                 }
             }
             return item;
