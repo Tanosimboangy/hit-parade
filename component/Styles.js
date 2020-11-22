@@ -6,7 +6,6 @@ import { Context } from "../Context";
 
 function Styles() {
     const { allSongs } = useContext(Context);
-    console.log(allSongs);
     return (
         <>
             <ul className="styles">

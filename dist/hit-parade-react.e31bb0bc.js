@@ -33942,6 +33942,14 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -33975,9 +33983,27 @@ function ContextProvider(props) {
       sortedSongs = _useState4[0],
       setsortedSongs = _useState4[1];
 
+  var _useState5 = (0, _react.useState)([]),
+      _useState6 = _slicedToArray(_useState5, 2),
+      cartSongs = _useState6[0],
+      setCartSongs = _useState6[1];
+
   (0, _react.useEffect)(function () {
     setAllSongs(_songs.default);
   }, []);
+
+  function toggleFavorite(Id) {
+    var newArraySong = allSongs.map(function (item) {
+      if (item.id === Id) {
+        return _objectSpread(_objectSpread({}, item), {}, {
+          isFavorite: !item.isFavorite
+        });
+      }
+
+      return item;
+    });
+    setAllSongs(newArraySong);
+  }
 
   function increments(itemId) {
     var newList = allSongs.map(function (item) {
@@ -34012,13 +34038,30 @@ function ContextProvider(props) {
       return dislike - like;
     }));
   }, [allSongs]);
+
+  function addToCart(song) {
+    console.log("I am here");
+    setCartSongs(function (prevCart) {
+      return [].concat(_toConsumableArray(prevCart), [song]);
+    });
+  }
+
+  function funcToLyrics() {
+    console.log("I am here");
+  }
+
+  if (!allSongs.length) return null;
   return /*#__PURE__*/_react.default.createElement(Context.Provider, {
     value: {
       allSongs: allSongs,
       setAllSongs: setAllSongs,
       increments: increments,
       decreaments: decreaments,
-      sortedSongs: sortedSongs
+      sortedSongs: sortedSongs,
+      addToCart: addToCart,
+      cartSongs: cartSongs,
+      toggleFavorite: toggleFavorite,
+      funcToLyrics: funcToLyrics
     }
   }, props.children);
 }
@@ -34064,32 +34107,16 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+function Popularsongs(_ref) {
+  var song = _ref.song;
 
-function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function Popularsongs() {
   var _useContext = (0, _react.useContext)(_Context.Context),
-      allSongs = _useContext.allSongs,
-      setAllSongs = _useContext.setAllSongs,
       sortedSongs = _useContext.sortedSongs,
       increments = _useContext.increments,
-      decreaments = _useContext.decreaments;
-
-  function toggleFavorite(Id) {
-    var newArraySong = allSongs.map(function (item) {
-      if (item.id === Id) {
-        return _objectSpread(_objectSpread({}, item), {}, {
-          isFavorite: !item.isFavorite
-        });
-      }
-
-      return item;
-    });
-    setAllSongs(newArraySong);
-  }
+      decreaments = _useContext.decreaments,
+      addToCart = _useContext.addToCart,
+      toggleFavorite = _useContext.toggleFavorite,
+      funcToLyrics = _useContext.funcToLyrics;
 
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, sortedSongs.map(function (item) {
     return /*#__PURE__*/_react.default.createElement("ul", {
@@ -34118,9 +34145,15 @@ function Popularsongs() {
       },
       alt: "arrow_down"
     })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+      onClick: function onClick() {
+        return addToCart(item.id);
+      },
       src: _shopping_cart.default,
       alt: "shopping_cart"
     })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+      onClick: function onClick() {
+        return funcToLyrics(item.id);
+      },
       src: _more_horiz.default,
       alt: "more_horiz"
     })));
@@ -34157,7 +34190,6 @@ function Styles() {
   var _useContext = (0, _react.useContext)(_Context.Context),
       allSongs = _useContext.allSongs;
 
-  console.log(allSongs);
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("ul", {
     className: "styles"
   }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
@@ -34355,17 +34387,34 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _Context = require("../Context");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function Carts() {
-  return /*#__PURE__*/_react.default.createElement("div", null, "hello");
+  var _useContext = (0, _react.useContext)(_Context.Context),
+      cartSongs = _useContext.cartSongs; // console.log(cartSongs);
+
+
+  var cartSongsItem = cartSongs.map(function (song, index) {
+    return /*#__PURE__*/_react.default.createElement("li", {
+      key: index
+    }, /*#__PURE__*/_react.default.createElement("img", {
+      src: trash,
+      alt: "trash",
+      className: "delete"
+    }), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h3", null, song.title), /*#__PURE__*/_react.default.createElement("h5", null, song.artist)), /*#__PURE__*/_react.default.createElement("p", null, "URO ", song.price));
+  });
+  return /*#__PURE__*/_react.default.createElement("div", null, cartSongsItem);
 }
 
 var _default = Carts;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../Context":"Context.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34464,7 +34513,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50332" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50011" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

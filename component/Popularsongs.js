@@ -7,22 +7,16 @@ import favorite from "../img/favorite.svg";
 import favorite_border from "../img/favorite_border.svg";
 import { Context } from "../Context";
 
-function Popularsongs() {
-    const { allSongs, setAllSongs, sortedSongs, increments, decreaments } = useContext(Context);
+function Popularsongs({song}) {
+    const { 
+        sortedSongs, 
+        increments, 
+        decreaments,
+        addToCart,
+        toggleFavorite,
+        funcToLyrics
+    } = useContext(Context);
 
-    function toggleFavorite(Id) {
-        const newArraySong = allSongs.map(item => {
-            if (item.id === Id) {
-                return {
-                    ...item,
-
-                    isFavorite: !item.isFavorite,
-                }
-            }
-            return item
-        })
-        setAllSongs(newArraySong);
-    }
 
     return (
         <>
@@ -36,8 +30,8 @@ function Popularsongs() {
                         </li>
                         <li className="arrow">{item.like} <img src={arrow_up} onClick={() => increments(item.id)} alt="arrow_up"/></li>
                         <li className="arrow">{item.dislike} <img src={arrow_down} onClick={() => decreaments(item.id)} alt="arrow_down"/></li>
-                        <li><img src={shopping_cart} alt="shopping_cart"/></li>
-                        <li><img src={more_horiz} alt="more_horiz"/></li>
+                        <li><img onClick={() => addToCart(item.id)} src={shopping_cart} alt="shopping_cart"/></li>
+                        <li><img onClick={() => funcToLyrics(item.id)} src={more_horiz} alt="more_horiz"/></li>
                     </ul>
                 )
             })}
