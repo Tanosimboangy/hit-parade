@@ -136,6 +136,27 @@ body .wrapper .style .styles p {
   font-size: 18px;
   line-height: 22px;
 }
+body .wrapper .cart_songs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px;
+  color: white;
+  background: #272343;
+  border-radius: 5px;
+  margin-bottom: 16px;
+}
+body .wrapper .cart_songs button.delete {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  outline: none;
+  text-transform: uppercase;
+}
+body .wrapper .cart_songs p {
+  color: #FFD803;
+}
 
 @media (min-width: 720px) {
   body .wrapper {

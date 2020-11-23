@@ -6,9 +6,12 @@ function ContextProvider(props) {
     const [allSongs, setAllSongs] = useState([]);
     const [sortedSongs, setsortedSongs] = useState([]);
     const [cartSongs, setCartSongs] = useState([]);
+    const [isCart, setIsCart] = useState(false);
 
     useEffect(() => {
         setAllSongs(songs);
+        setCartSongs(songs);
+        console.log(cartSongs);
     }, []);
 
     function toggleFavorite(Id) {
@@ -16,7 +19,6 @@ function ContextProvider(props) {
             if (item.id === Id) {
                 return {
                     ...item,
-
                     isFavorite: !item.isFavorite,
                 }
             }
@@ -37,6 +39,7 @@ function ContextProvider(props) {
         });
         setAllSongs(newList);
     }
+
     function decreaments(itemid) {
         const newlist = allSongs.map(item => {
             if (item.id === itemid) {
@@ -57,10 +60,19 @@ function ContextProvider(props) {
           return dislike - like
         }))
       }, [allSongs])
-    
-    function addToCart(song) {
-        console.log("I am here");
-        setCartSongs(prevCart => [...prevCart, song])
+
+    function addToCart(Id) {
+        console.log(Id);
+        const newCartSongs = cartSongs.map(itemForCart => {
+            if (itemForCart.id === Id) {
+                return {
+                    ...itemForCart,
+                    cart: !itemForCart.cart,
+                }
+            }
+            return itemForCart
+        })
+        setCartSongs(newCartSongs);
     }
 
     function funcToLyrics() {
@@ -68,6 +80,7 @@ function ContextProvider(props) {
     }
 
     if (!allSongs.length) return null;
+    if (!cartSongs.length) return null;
 
     return(
         <Context.Provider value={{

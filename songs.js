@@ -8,6 +8,7 @@ const songs = [
     lyrics: `I love you so much that I can not think of anyone else in the world apart from you.`,
     like: 25,
     dislike: 7,
+    cart: false,
     id: 1605844138557
   },
   {
@@ -19,6 +20,7 @@ const songs = [
       lyrics: `I love you so much that I can not think of anyone else in the world apart from you.`,
       like: 12,
       dislike: 30,
+      cart: false,
       id: 1605844159908
     },
   {
@@ -30,6 +32,7 @@ const songs = [
       lyrics: `I love you so much that I can not think of anyone else in the world apart from you.`,
       like: 10,
       dislike: 5,
+      cart: false,
       id: 1605844156908
     },
   {
@@ -41,6 +44,7 @@ const songs = [
     lyrics: `I love you so much that I can not think of anyone else in the world apart from you.`,
     like: 3,
     dislike: 7,
+    cart: false,
     id: 1605844177341
   },
   {
@@ -52,6 +56,7 @@ const songs = [
     lyrics: `I love you so much that I can not think of anyone else in the world apart from you.`,
     like: 10,
     dislike: 13,
+    cart: false,
     id: 1605844192562
   },
   {
@@ -63,6 +68,7 @@ const songs = [
     lyrics: `I love you so much that I can not think of anyone else in the world apart from you.`,
     like: 4,
     dislike: 5,
+    cart: false,
     id: 1605844202704
   }
 ]

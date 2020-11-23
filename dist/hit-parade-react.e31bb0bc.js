@@ -33869,6 +33869,7 @@ var songs = [{
   lyrics: "I love you so much that I can not think of anyone else in the world apart from you.",
   like: 25,
   dislike: 7,
+  cart: false,
   id: 1605844138557
 }, {
   title: "The Messenger",
@@ -33879,6 +33880,7 @@ var songs = [{
   lyrics: "I love you so much that I can not think of anyone else in the world apart from you.",
   like: 12,
   dislike: 30,
+  cart: false,
   id: 1605844159908
 }, {
   title: "Mba mangala vaiavy anao",
@@ -33889,6 +33891,7 @@ var songs = [{
   lyrics: "I love you so much that I can not think of anyone else in the world apart from you.",
   like: 10,
   dislike: 5,
+  cart: false,
   id: 1605844156908
 }, {
   title: "Talkies",
@@ -33899,6 +33902,7 @@ var songs = [{
   lyrics: "I love you so much that I can not think of anyone else in the world apart from you.",
   like: 3,
   dislike: 7,
+  cart: false,
   id: 1605844177341
 }, {
   title: "On the Bach",
@@ -33909,6 +33913,7 @@ var songs = [{
   lyrics: "I love you so much that I can not think of anyone else in the world apart from you.",
   like: 10,
   dislike: 13,
+  cart: false,
   id: 1605844192562
 }, {
   title: "The Story Unfolds",
@@ -33919,6 +33924,7 @@ var songs = [{
   lyrics: "I love you so much that I can not think of anyone else in the world apart from you.",
   like: 4,
   dislike: 5,
+  cart: false,
   id: 1605844202704
 }];
 var _default = songs;
@@ -33941,14 +33947,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
@@ -33988,8 +33986,15 @@ function ContextProvider(props) {
       cartSongs = _useState6[0],
       setCartSongs = _useState6[1];
 
+  var _useState7 = (0, _react.useState)(false),
+      _useState8 = _slicedToArray(_useState7, 2),
+      isCart = _useState8[0],
+      setIsCart = _useState8[1];
+
   (0, _react.useEffect)(function () {
     setAllSongs(_songs.default);
+    setCartSongs(_songs.default);
+    console.log(cartSongs);
   }, []);
 
   function toggleFavorite(Id) {
@@ -34039,11 +34044,18 @@ function ContextProvider(props) {
     }));
   }, [allSongs]);
 
-  function addToCart(song) {
-    console.log("I am here");
-    setCartSongs(function (prevCart) {
-      return [].concat(_toConsumableArray(prevCart), [song]);
+  function addToCart(Id) {
+    console.log(Id);
+    var newCartSongs = cartSongs.map(function (itemForCart) {
+      if (itemForCart.id === Id) {
+        return _objectSpread(_objectSpread({}, itemForCart), {}, {
+          cart: !itemForCart.cart
+        });
+      }
+
+      return itemForCart;
     });
+    setCartSongs(newCartSongs);
   }
 
   function funcToLyrics() {
@@ -34051,6 +34063,7 @@ function ContextProvider(props) {
   }
 
   if (!allSongs.length) return null;
+  if (!cartSongs.length) return null;
   return /*#__PURE__*/_react.default.createElement(Context.Provider, {
     value: {
       allSongs: allSongs,
@@ -34395,21 +34408,23 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function Carts() {
   var _useContext = (0, _react.useContext)(_Context.Context),
-      cartSongs = _useContext.cartSongs; // console.log(cartSongs);
+      cartSongs = _useContext.cartSongs;
 
-
-  var cartSongsItem = cartSongs.map(function (song, index) {
-    return /*#__PURE__*/_react.default.createElement("li", {
-      key: index
-    }, /*#__PURE__*/_react.default.createElement("img", {
-      src: trash,
-      alt: "trash",
-      className: "delete"
-    }), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h3", null, song.title), /*#__PURE__*/_react.default.createElement("h5", null, song.artist)), /*#__PURE__*/_react.default.createElement("p", null, "URO ", song.price));
+  var cartSongsItem = cartSongs.map(function (song) {
+    if (song.cart === true) {
+      return /*#__PURE__*/_react.default.createElement("div", {
+        key: song.id,
+        className: "cart_songs"
+      }, /*#__PURE__*/_react.default.createElement("button", _defineProperty({
+        className: "delete"
+      }, "className", "delete"), "delete"), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h3", null, song.title), /*#__PURE__*/_react.default.createElement("h5", null, song.artist)), /*#__PURE__*/_react.default.createElement("p", null, song.price, " Ar"));
+    }
   });
-  return /*#__PURE__*/_react.default.createElement("div", null, cartSongsItem);
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, cartSongsItem);
 }
 
 var _default = Carts;
@@ -34513,7 +34528,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50011" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52232" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
