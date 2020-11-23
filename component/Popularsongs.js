@@ -6,6 +6,7 @@ import more_horiz from "../img/more_horiz.svg";
 import favorite from "../img/favorite.svg";
 import favorite_border from "../img/favorite_border.svg";
 import { Context } from "../Context";
+import { Link } from "react-router-dom";
 
 function Popularsongs({song}) {
     const { 
@@ -16,7 +17,6 @@ function Popularsongs({song}) {
         toggleFavorite,
         funcToLyrics
     } = useContext(Context);
-
 
     return (
         <>
@@ -31,7 +31,7 @@ function Popularsongs({song}) {
                         <li className="arrow">{item.like} <img src={arrow_up} onClick={() => increments(item.id)} alt="arrow_up"/></li>
                         <li className="arrow">{item.dislike} <img src={arrow_down} onClick={() => decreaments(item.id)} alt="arrow_down"/></li>
                         <li><img onClick={() => addToCart(item.id)} src={shopping_cart} alt="shopping_cart"/></li>
-                        <li><img onClick={() => funcToLyrics(item.id)} src={more_horiz} alt="more_horiz"/></li>
+                        <li><Link to="/lyrics"><img src={more_horiz} alt="more_horiz"/></Link></li>
                     </ul>
                 )
             })}

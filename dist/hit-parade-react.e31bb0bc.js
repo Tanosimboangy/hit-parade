@@ -34056,11 +34056,21 @@ function ContextProvider(props) {
       return itemForCart;
     });
     setCartSongs(newCartSongs);
-  }
+  } // function funcToLyrics(Id) {
+  //     const lyricsLists = allSongs.map(item => {
+  //         if (item.id === Id) {
+  //             retur (
+  //                 <>
+  //                   <h3>Lyrics</h3>  
+  //                   <p>{item.lyrics}</p>
+  //                 </>
+  //             )
+  //         }
+  //         return lyricsLists;
+  //     })  
+  //     console.log(lyricsLists);
+  // }
 
-  function funcToLyrics() {
-    console.log("I am here");
-  }
 
   if (!allSongs.length) return null;
   if (!cartSongs.length) return null;
@@ -34073,8 +34083,7 @@ function ContextProvider(props) {
       sortedSongs: sortedSongs,
       addToCart: addToCart,
       cartSongs: cartSongs,
-      toggleFavorite: toggleFavorite,
-      funcToLyrics: funcToLyrics
+      toggleFavorite: toggleFavorite
     }
   }, props.children);
 }
@@ -34113,6 +34122,8 @@ var _favorite = _interopRequireDefault(require("../img/favorite.svg"));
 var _favorite_border = _interopRequireDefault(require("../img/favorite_border.svg"));
 
 var _Context = require("../Context");
+
+var _reactRouterDom = require("react-router-dom");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -34163,19 +34174,18 @@ function Popularsongs(_ref) {
       },
       src: _shopping_cart.default,
       alt: "shopping_cart"
-    })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
-      onClick: function onClick() {
-        return funcToLyrics(item.id);
-      },
+    })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+      to: "/lyrics"
+    }, /*#__PURE__*/_react.default.createElement("img", {
       src: _more_horiz.default,
       alt: "more_horiz"
-    })));
+    }))));
   }));
 }
 
 var _default = Popularsongs;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../img/shopping_cart.svg":"img/shopping_cart.svg","../img/arrow_up.svg":"img/arrow_up.svg","../img/arrow_down.svg":"img/arrow_down.svg","../img/more_horiz.svg":"img/more_horiz.svg","../img/favorite.svg":"img/favorite.svg","../img/favorite_border.svg":"img/favorite_border.svg","../Context":"Context.js"}],"img/headset.svg":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../img/shopping_cart.svg":"img/shopping_cart.svg","../img/arrow_up.svg":"img/arrow_up.svg","../img/arrow_down.svg":"img/arrow_down.svg","../img/more_horiz.svg":"img/more_horiz.svg","../img/favorite.svg":"img/favorite.svg","../img/favorite_border.svg":"img/favorite_border.svg","../Context":"Context.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"img/headset.svg":[function(require,module,exports) {
 module.exports = "/headset.a73dacc1.svg";
 },{}],"component/Styles.js":[function(require,module,exports) {
 "use strict";
@@ -34429,6 +34439,40 @@ function Carts() {
 
 var _default = Carts;
 exports.default = _default;
+},{"react":"node_modules/react/index.js","../Context":"Context.js"}],"component/AddToLyrics.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _Context = require("../Context");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function AddToLyrics() {
+  var _useContext = (0, _react.useContext)(_Context.Context),
+      allSongs = _useContext.allSongs;
+
+  function funcToLyrics(Id) {
+    var lyricsLists = allSongs.map(function (item) {
+      if (item.id === Id) {
+        retur( /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h3", null, "Lyrics"), /*#__PURE__*/_react.default.createElement("p", null, item.lyrics)));
+      }
+    });
+    return lyricsLists;
+  }
+
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, funcToLyrics(), /*#__PURE__*/_react.default.createElement("h2", null, "Hello jacquit"));
+}
+
+var _default = AddToLyrics;
+exports.default = _default;
 },{"react":"node_modules/react/index.js","../Context":"Context.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
@@ -34451,9 +34495,10 @@ var _Carts = _interopRequireDefault(require("./component/Carts"));
 
 var _reactRouterDom = require("react-router-dom");
 
+var _AddToLyrics = _interopRequireDefault(require("./component/AddToLyrics"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import StylesName from './component/StylesName';
 function App() {
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "wrapper"
@@ -34479,12 +34524,14 @@ function App() {
     path: "/style"
   }, /*#__PURE__*/_react.default.createElement(_Styles.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
     path: "/style/:name"
-  }, /*#__PURE__*/_react.default.createElement(_StyleContents.default, null))));
+  }, /*#__PURE__*/_react.default.createElement(_StyleContents.default, null)), /*#__PURE__*/_react.default.createElement(_reactRouterDom.Route, {
+    path: "/lyrics"
+  }, /*#__PURE__*/_react.default.createElement(_AddToLyrics.default, null))));
 }
 
 var _default = App;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./component/Popularsongs":"component/Popularsongs.js","./component/Styles":"component/Styles.js","./component/StyleContents":"component/StyleContents.js","./component/Add":"component/Add.js","./component/Carts":"component/Carts.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./component/Popularsongs":"component/Popularsongs.js","./component/Styles":"component/Styles.js","./component/StyleContents":"component/StyleContents.js","./component/Add":"component/Add.js","./component/Carts":"component/Carts.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./component/AddToLyrics":"component/AddToLyrics.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));

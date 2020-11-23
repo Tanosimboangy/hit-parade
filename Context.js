@@ -75,9 +75,20 @@ function ContextProvider(props) {
         setCartSongs(newCartSongs);
     }
 
-    function funcToLyrics() {
-        console.log("I am here");
-    }
+    // function funcToLyrics(Id) {
+    //     const lyricsLists = allSongs.map(item => {
+    //         if (item.id === Id) {
+    //             retur (
+    //                 <>
+    //                   <h3>Lyrics</h3>  
+    //                   <p>{item.lyrics}</p>
+    //                 </>
+    //             )
+    //         }
+    //         return lyricsLists;
+    //     })  
+    //     console.log(lyricsLists);
+    // }
 
     if (!allSongs.length) return null;
     if (!cartSongs.length) return null;
@@ -92,7 +103,6 @@ function ContextProvider(props) {
             addToCart,
             cartSongs,
             toggleFavorite,
-            funcToLyrics
         }}>
             {props.children}
         </Context.Provider>

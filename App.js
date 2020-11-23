@@ -1,11 +1,11 @@
 import React from 'react';
 import Popularsongs from './component/Popularsongs';
 import Styles from './component/Styles';
-// import StylesName from './component/StylesName';
 import StyleContents from './component/StyleContents';
 import Add from './component/Add';
 import Carts from './component/Carts';
 import { Link, Route, Switch } from 'react-router-dom';
+import AddToLyrics from './component/AddToLyrics';
 
 function App() {
     return (
@@ -32,6 +32,9 @@ function App() {
                 </Route>
                 <Route path="/style/:name">
                     <StyleContents/>
+                </Route>
+                <Route path="/lyrics">
+                    <AddToLyrics/>
                 </Route>
             </Switch>
         </div>
