@@ -34123,8 +34123,6 @@ var _favorite_border = _interopRequireDefault(require("../img/favorite_border.sv
 
 var _Context = require("../Context");
 
-var _reactRouterDom = require("react-router-dom");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
@@ -34152,7 +34150,7 @@ function Popularsongs(_ref) {
       },
       src: item.isFavorite ? _favorite.default : _favorite_border.default,
       alt: "heart"
-    })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h3", null, "Title: ", item.title), /*#__PURE__*/_react.default.createElement("small", null, "Artist: ", item.artist)), /*#__PURE__*/_react.default.createElement("li", {
+    })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h3", null, item.title), /*#__PURE__*/_react.default.createElement("small", null, item.artist)), /*#__PURE__*/_react.default.createElement("li", {
       className: "arrow"
     }, item.like, " ", /*#__PURE__*/_react.default.createElement("img", {
       src: _arrow_up.default,
@@ -34174,18 +34172,19 @@ function Popularsongs(_ref) {
       },
       src: _shopping_cart.default,
       alt: "shopping_cart"
-    })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-      to: "/lyrics"
-    }, /*#__PURE__*/_react.default.createElement("img", {
+    })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("img", {
+      onClick: function onClick() {
+        return funcToLyrics(item.id);
+      },
       src: _more_horiz.default,
       alt: "more_horiz"
-    }))));
+    })));
   }));
 }
 
 var _default = Popularsongs;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../img/shopping_cart.svg":"img/shopping_cart.svg","../img/arrow_up.svg":"img/arrow_up.svg","../img/arrow_down.svg":"img/arrow_down.svg","../img/more_horiz.svg":"img/more_horiz.svg","../img/favorite.svg":"img/favorite.svg","../img/favorite_border.svg":"img/favorite_border.svg","../Context":"Context.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"img/headset.svg":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../img/shopping_cart.svg":"img/shopping_cart.svg","../img/arrow_up.svg":"img/arrow_up.svg","../img/arrow_down.svg":"img/arrow_down.svg","../img/more_horiz.svg":"img/more_horiz.svg","../img/favorite.svg":"img/favorite.svg","../img/favorite_border.svg":"img/favorite_border.svg","../Context":"Context.js"}],"img/headset.svg":[function(require,module,exports) {
 module.exports = "/headset.a73dacc1.svg";
 },{}],"component/Styles.js":[function(require,module,exports) {
 "use strict";
@@ -34575,7 +34574,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52232" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59529" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

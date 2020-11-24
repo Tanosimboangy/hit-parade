@@ -1,17 +1,30 @@
 import React, { useEffect, useState } from 'react';
-import songs from "./songs";
+import songs from "./";
 const Context = React.createContext();
 
 function ContextProvider(props) {
     const [allSongs, setAllSongs] = useState([]);
-    const [sortedSongs, setsortedSongs] = useState([]);
     const [cartSongs, setCartSongs] = useState([]);
-    const [isCart, setIsCart] = useState(false);
+
+    // LOCAL STORAGE
+    useEffect(() => {
+		const lsSongs = JSON.parse(localStorage.getItem('allSongs'));
+		lsSongs ? setAllSongs(lsSongs) : setAllSongs(songs);
+
+		const lsCartItems = JSON.parse(localStorage.getItem('cartSongs'));
+		lsCartItems && setCartSongs(lsCartItems);
+	}, []);
+
+	useEffect(() => {
+		localStorage.setItem('allSongs', JSON.stringify(allSongs));
+	}, [songs]);
+
+	useEffect(() => {
+		localStorage.setItem('cartSongs', JSON.stringify(cartSongs));
+	}, [cartSongs]);
 
     useEffect(() => {
         setAllSongs(songs);
-        setCartSongs(songs);
-        console.log(cartSongs);
     }, []);
 
     function toggleFavorite(Id) {
@@ -53,42 +66,18 @@ function ContextProvider(props) {
         setAllSongs(newlist);
     }
 
-    useEffect(() => {
-        setsortedSongs(allSongs.sort((a, b) => {
-          const like = a.like - a.dislike
-          const dislike = b.like - b.dislike
-          return dislike - like
-        }))
-      }, [allSongs])
-
-    function addToCart(Id) {
-        console.log(Id);
-        const newCartSongs = cartSongs.map(itemForCart => {
-            if (itemForCart.id === Id) {
-                return {
-                    ...itemForCart,
-                    cart: !itemForCart.cart,
-                }
-            }
-            return itemForCart
-        })
-        setCartSongs(newCartSongs);
+    function addToCart(song) {
+        setCartSongs(prevItems => [...prevItems, song]);
     }
 
-    // function funcToLyrics(Id) {
-    //     const lyricsLists = allSongs.map(item => {
-    //         if (item.id === Id) {
-    //             retur (
-    //                 <>
-    //                   <h3>Lyrics</h3>  
-    //                   <p>{item.lyrics}</p>
-    //                 </>
-    //             )
-    //         }
-    //         return lyricsLists;
-    //     })  
-    //     console.log(lyricsLists);
-    // }
+    function removeCartSongs(songId) {
+		const filteredCartItems = cartItems.filter(cartItem => cartItem.id !== songId);
+		setCartItems(filteredCartItems);
+	}
+
+	function emptyCart() {
+		setCartItems([]);
+	}
 
     if (!allSongs.length) return null;
     if (!cartSongs.length) return null;
@@ -103,6 +92,8 @@ function ContextProvider(props) {
             addToCart,
             cartSongs,
             toggleFavorite,
+            removeCartSongs,
+            emptyCart
         }}>
             {props.children}
         </Context.Provider>

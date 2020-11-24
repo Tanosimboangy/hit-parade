@@ -14,7 +14,7 @@ function Add() {
         const lyrics = eventTarget.lyrics.value;
 
 		if (!title, !artist, !price, !style) return;
-		const newSong = {            
+		const newSong = {
             title: title,
             artist: artist,
             price: price,
