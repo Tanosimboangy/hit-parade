@@ -34028,7 +34028,7 @@ function ContextProvider(_ref) {
   }
 
   function emptyCart() {
-    setCartItems([]);
+    setCartSongs([]);
   }
 
   if (!allSongs.length) return null; // if (!cartSongs.length) return null;
@@ -34117,7 +34117,7 @@ function SongItem(_ref) {
         onClick: function onClick() {
           return removeCartItem(song.id);
         },
-        alt: "fullshopping_cart"
+        alt: "lineshopping_cart"
       });
     }
 
@@ -34126,7 +34126,7 @@ function SongItem(_ref) {
         return addToCart(song);
       },
       src: _lineshopping_cart.default,
-      alt: "lineshopping_cart"
+      alt: "fullshopping_cart"
     });
   }
 

@@ -22,9 +22,9 @@ function SongItem({ song }) {
     function showCartIcon() {
 		const songInCart = cartSongs.some(item => item.id === song.id);
 		if (songInCart) {
-            return <img src={fullshopping_cart} onClick={() => removeCartItem(song.id)} alt="fullshopping_cart" />;
+            return <img src={fullshopping_cart} onClick={() => removeCartItem(song.id)} alt="lineshopping_cart" />;
 		}
-        return <img onClick={() => addToCart(song)} src={lineshopping_cart} alt="lineshopping_cart"/>
+        return <img onClick={() => addToCart(song)} src={lineshopping_cart} alt="fullshopping_cart"/>
 	}
 
     return (

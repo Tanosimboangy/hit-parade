@@ -77,7 +77,7 @@ function ContextProvider({children}) {
 	}
 
 	function emptyCart() {
-		setCartItems([]);
+		setCartSongs([]);
 	}
 
     if (!allSongs.length) return null;
