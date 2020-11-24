@@ -3,16 +3,16 @@ import { Context } from '../Context';
 
 function Carts() {
 
-  const { cartItems, emptyCart } = useContext(Context);
+  const { cartSongs, emptyCart } = useContext(Context);
   const [total, setTotal] = useState(0);
   
   useEffect(() => {
-		const newTotal = cartItems.reduce((total, song) => {
+		const newTotal = cartSongs.reduce((total, song) => {
 			total += song.price;
 			return total;
 		}, 0);
 		setTotal(newTotal);
-	}, [cartItems]);
+	}, [cartSongs]);
 
 	function completeOrder() {
 		alert(`THANK YOU FOR YOUR ORDER. PLEASE PAY : ${total}`);
@@ -23,7 +23,7 @@ function Carts() {
 		<div>
 			<h1>Cart</h1>
 			<div>
-				{cartItems.map(song => (
+				{cartSongs.map(song => (
 					<div key={song.id}>
 						<button>Delete</button>
 						<div>
@@ -34,7 +34,7 @@ function Carts() {
 					</div>
 				))}
 			</div>
-			{cartItems.length !== 0 ? <p>Total: {total} Ar</p> : 'Empty Cart.'}
+			{cartSongs.length !== 0 ? <p>Total: {total} Ar</p> : 'Empty Cart.'}
 			{total !== 0 && <button onClick={completeOrder}>Buy</button>}
 		</div>
 	);

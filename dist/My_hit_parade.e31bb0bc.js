@@ -33944,7 +33944,9 @@ var Context = _react.default.createContext();
 
 exports.Context = Context;
 
-function ContextProvider(props) {
+function ContextProvider(_ref) {
+  var children = _ref.children;
+
   var _useState = (0, _react.useState)([]),
       _useState2 = _slicedToArray(_useState, 2),
       allSongs = _useState2[0],
@@ -34019,7 +34021,7 @@ function ContextProvider(props) {
   }
 
   function removeCartSongs(songId) {
-    var filteredCartItems = cartItems.filter(function (cartItem) {
+    var filteredCartItems = cartSongs.filter(function (cartItem) {
       return cartItem.id !== songId;
     });
     setCartItems(filteredCartItems);
@@ -34029,22 +34031,21 @@ function ContextProvider(props) {
     setCartItems([]);
   }
 
-  if (!allSongs.length) return null;
-  if (!cartSongs.length) return null;
+  if (!allSongs.length) return null; // if (!cartSongs.length) return null;
+
   return /*#__PURE__*/_react.default.createElement(Context.Provider, {
     value: {
       allSongs: allSongs,
       setAllSongs: setAllSongs,
       increments: increments,
       decreaments: decreaments,
-      sortedSongs: sortedSongs,
       addToCart: addToCart,
       cartSongs: cartSongs,
       toggleFavorite: toggleFavorite,
       removeCartSongs: removeCartSongs,
       emptyCart: emptyCart
     }
-  }, props.children);
+  }, children);
 }
 },{"react":"node_modules/react/index.js","./songData.json":"songData.json"}],"img/arrow_up.svg":[function(require,module,exports) {
 module.exports = "/arrow_up.4737aec9.svg";
@@ -34052,6 +34053,8 @@ module.exports = "/arrow_up.4737aec9.svg";
 module.exports = "/arrow_down.3d6b8982.svg";
 },{}],"img/more_horiz.svg":[function(require,module,exports) {
 module.exports = "/more_horiz.540c0812.svg";
+},{}],"img/favorite_border.svg":[function(require,module,exports) {
+module.exports = "/favorite_border.02c7f6ff.svg";
 },{}],"img/favorite.svg":[function(require,module,exports) {
 module.exports = "/favorite.4d127cd3.svg";
 },{}],"img/fullshopping_cart.svg":[function(require,module,exports) {
@@ -34077,6 +34080,8 @@ var _arrow_up = _interopRequireDefault(require("../img/arrow_up.svg"));
 var _arrow_down = _interopRequireDefault(require("../img/arrow_down.svg"));
 
 var _more_horiz = _interopRequireDefault(require("../img/more_horiz.svg"));
+
+var _favorite_border = _interopRequireDefault(require("../img/favorite_border.svg"));
 
 var _favorite = _interopRequireDefault(require("../img/favorite.svg"));
 
@@ -34125,7 +34130,7 @@ function SongItem(_ref) {
     });
   }
 
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, "return (", /*#__PURE__*/_react.default.createElement("ul", {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("ul", {
     className: "container",
     key: song.id
   }, /*#__PURE__*/_react.default.createElement("li", {
@@ -34134,7 +34139,7 @@ function SongItem(_ref) {
     onClick: function onClick() {
       return toggleFavorite(song.id);
     },
-    src: song.isFavorite ? _favorite.default : favorite_border,
+    src: song.isFavorite ? _favorite.default : _favorite_border.default,
     alt: "heart"
   })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h3", {
     className: "song_title"
@@ -34165,12 +34170,12 @@ function SongItem(_ref) {
   }, /*#__PURE__*/_react.default.createElement("img", {
     src: _more_horiz.default,
     alt: "more_horiz"
-  })))), ")");
+  })))));
 }
 
 var _default = SongItem;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../Context":"Context.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../img/arrow_up.svg":"img/arrow_up.svg","../img/arrow_down.svg":"img/arrow_down.svg","../img/more_horiz.svg":"img/more_horiz.svg","../img/favorite.svg":"img/favorite.svg","../img/fullshopping_cart.svg":"img/fullshopping_cart.svg","../img/lineshopping_cart.svg":"img/lineshopping_cart.svg"}],"component/Popularsongs.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../Context":"Context.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../img/arrow_up.svg":"img/arrow_up.svg","../img/arrow_down.svg":"img/arrow_down.svg","../img/more_horiz.svg":"img/more_horiz.svg","../img/favorite_border.svg":"img/favorite_border.svg","../img/favorite.svg":"img/favorite.svg","../img/fullshopping_cart.svg":"img/fullshopping_cart.svg","../img/lineshopping_cart.svg":"img/lineshopping_cart.svg"}],"component/Popularsongs.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34194,13 +34199,11 @@ function Popularsongs() {
   var _useContext = (0, _react.useContext)(_Context.Context),
       allSongs = _useContext.allSongs;
 
-  useEffect(function () {
-    setsortedSongs(allSongs.sort(function (a, b) {
-      var like = a.like - a.dislike;
-      var dislike = b.like - b.dislike;
-      return dislike - like;
-    }));
-  }, [allSongs]);
+  function setsortedSongs(songA, songB) {
+    var ratioA = songA.like - songA.dislike;
+    var ratioB = songB.like - songB.dislike;
+    return ratioB - ratioA;
+  }
 
   function displaySongsLists() {
     if (!allSongs) return;
@@ -34451,7 +34454,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 function Carts() {
   var _useContext = (0, _react.useContext)(_Context.Context),
-      cartItems = _useContext.cartItems,
+      cartSongs = _useContext.cartSongs,
       emptyCart = _useContext.emptyCart;
 
   var _useState = (0, _react.useState)(0),
@@ -34460,25 +34463,25 @@ function Carts() {
       setTotal = _useState2[1];
 
   (0, _react.useEffect)(function () {
-    var newTotal = cartItems.reduce(function (total, song) {
+    var newTotal = cartSongs.reduce(function (total, song) {
       total += song.price;
       return total;
     }, 0);
     setTotal(newTotal);
-  }, [cartItems]);
+  }, [cartSongs]);
 
   function completeOrder() {
     alert("THANK YOU FOR YOUR ORDER. PLEASE PAY : ".concat(total));
     emptyCart();
   }
 
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Cart"), /*#__PURE__*/_react.default.createElement("div", null, cartItems.map(function (song) {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Cart"), /*#__PURE__*/_react.default.createElement("div", null, cartSongs.map(function (song) {
     return /*#__PURE__*/_react.default.createElement("div", {
       key: song.id
     }, /*#__PURE__*/_react.default.createElement("button", null, "Delete"), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, song.title), /*#__PURE__*/_react.default.createElement("div", null, song.artist)), /*#__PURE__*/_react.default.createElement("div", {
       className: "price"
     }, song.price, " Ar"));
-  })), cartItems.length !== 0 ? /*#__PURE__*/_react.default.createElement("p", null, "Total: ", total, " Ar") : 'Empty Cart.', total !== 0 && /*#__PURE__*/_react.default.createElement("button", {
+  })), cartSongs.length !== 0 ? /*#__PURE__*/_react.default.createElement("p", null, "Total: ", total, " Ar") : 'Empty Cart.', total !== 0 && /*#__PURE__*/_react.default.createElement("button", {
     onClick: completeOrder
   }, "Buy"));
 }
@@ -34593,6 +34596,8 @@ var _App = _interopRequireDefault(require("./App.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+console.log(_Context.ContextProvider);
+
 _reactDom.default.render( /*#__PURE__*/_react.default.createElement(_Context.ContextProvider, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement(_App.default, null))), document.getElementById("root"));
 },{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./Context":"Context.js","./App.js":"App.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -34622,7 +34627,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65368" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50957" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

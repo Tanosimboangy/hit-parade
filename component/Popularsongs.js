@@ -5,13 +5,11 @@ import SongItem from "./SongItem";
 function Popularsongs() {
     const { allSongs } = useContext(Context);
     
-    useEffect(() => {
-        setsortedSongs(allSongs.sort((a, b) => {
-          const like = a.like - a.dislike
-          const dislike = b.like - b.dislike
-          return dislike - like
-        }))
-      }, [allSongs])
+    function setsortedSongs(songA, songB) {
+		const ratioA = songA.like - songA.dislike;
+		const ratioB = songB.like - songB.dislike;
+		return ratioB - ratioA;
+	}
 
       function displaySongsLists() {
 		if (!allSongs) return;

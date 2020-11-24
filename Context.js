@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import songs from "./songData.json";
 const Context = React.createContext();
 
-function ContextProvider(props) {
+function ContextProvider({children}) {
     const [allSongs, setAllSongs] = useState([]);
     const [cartSongs, setCartSongs] = useState([]);
-
+    
     // LOCAL STORAGE
     useEffect(() => {
 		const lsSongs = JSON.parse(localStorage.getItem('allSongs'));
@@ -72,7 +72,7 @@ function ContextProvider(props) {
     }
 
     function removeCartSongs(songId) {
-		const filteredCartItems = cartItems.filter(cartItem => cartItem.id !== songId);
+		const filteredCartItems = cartSongs.filter(cartItem => cartItem.id !== songId);
 		setCartItems(filteredCartItems);
 	}
 
@@ -81,7 +81,7 @@ function ContextProvider(props) {
 	}
 
     if (!allSongs.length) return null;
-    if (!cartSongs.length) return null;
+    // if (!cartSongs.length) return null;
 
     return(
         <Context.Provider value={{
@@ -89,14 +89,13 @@ function ContextProvider(props) {
             setAllSongs, 
             increments, 
             decreaments,
-            sortedSongs,
             addToCart,
             cartSongs,
             toggleFavorite,
             removeCartSongs,
             emptyCart
         }}>
-            {props.children}
+            {children}
         </Context.Provider>
     )
 }
