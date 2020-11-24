@@ -9,7 +9,8 @@ function ContextProvider(props) {
     // LOCAL STORAGE
     useEffect(() => {
 		const lsSongs = JSON.parse(localStorage.getItem('allSongs'));
-		lsSongs ? setAllSongs(lsSongs) : setAllSongs(songs);
+        lsSongs ? setAllSongs(lsSongs) : setAllSongs(songs);
+        console.log(lsSongs);
 
 		const lsCartItems = JSON.parse(localStorage.getItem('cartSongs'));
 		lsCartItems && setCartSongs(lsCartItems);
@@ -17,7 +18,7 @@ function ContextProvider(props) {
 
 	useEffect(() => {
 		localStorage.setItem('allSongs', JSON.stringify(allSongs));
-	}, [songs]);
+	}, [allSongs]);
 
 	useEffect(() => {
 		localStorage.setItem('cartSongs', JSON.stringify(cartSongs));

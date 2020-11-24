@@ -33959,12 +33959,13 @@ function ContextProvider(props) {
   (0, _react.useEffect)(function () {
     var lsSongs = JSON.parse(localStorage.getItem('allSongs'));
     lsSongs ? setAllSongs(lsSongs) : setAllSongs(_songData.default);
+    console.log(lsSongs);
     var lsCartItems = JSON.parse(localStorage.getItem('cartSongs'));
     lsCartItems && setCartSongs(lsCartItems);
   }, []);
   (0, _react.useEffect)(function () {
     localStorage.setItem('allSongs', JSON.stringify(allSongs));
-  }, [_songData.default]);
+  }, [allSongs]);
   (0, _react.useEffect)(function () {
     localStorage.setItem('cartSongs', JSON.stringify(cartSongs));
   }, [cartSongs]);
@@ -34621,7 +34622,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62890" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65368" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
