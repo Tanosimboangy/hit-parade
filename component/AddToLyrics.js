@@ -1,30 +1,24 @@
 import React, { useContext } from 'react';
-import { Context } from "../Context";
+import { useParams, useHistory } from 'react-router-dom';
+import { Context } from '../Context';
 
-function AddToLyrics() {
-    const { allSongs } = useContext(Context);
+export default function Song() {
+	const { songId } = useParams();
+	const { songs } = useContext(Context);
+	const history = useHistory();
 
-    function funcToLyrics(Id) {
-        const lyricsLists = allSongs.map(item => {
-            if (item.id === Id) {
-                retur (
-                    <>
-                      <h3>Lyrics</h3>  
-                      <p>{item.lyrics}</p>
-                    </>
-                )
-            }
-        })  
-        return lyricsLists
-    }
-    
+	const song = songs.find(song => song.id === songId);
 
-    return (
-            <>
-                {funcToLyrics()}
-                <h2>Hello jacquit</h2>
-            </>
-            )
+	return (
+		<div>
+			<h1>
+				<button onClick={() => history.goBack()}>back</button>
+				{song?.artist} - {song?.title}
+			</h1>
+			<div>
+				<h3>Lyrics</h3>
+				{song?.lyrics}
+			</div>
+		</div>
+	);
 }
-
-export default AddToLyrics

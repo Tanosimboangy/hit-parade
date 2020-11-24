@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import songs from "./";
+import songs from "./songData.json";
 const Context = React.createContext();
 
 function ContextProvider(props) {

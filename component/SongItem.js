@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { Context } from '../Context';
-// import { Link } from 'react-router-dom';
-// import shopping_cart from "../img/shopping_cart.svg";
+import { Link } from 'react-router-dom';
 import arrow_up from "../img/arrow_up.svg";
 import arrow_down from "../img/arrow_down.svg";
 import more_horiz from "../img/more_horiz.svg";
@@ -15,7 +14,6 @@ function SongItem({ song }) {
         decreaments,
         addToCart,
         toggleFavorite,
-        funcToLyrics,
         cartSongs,
 		removeCartItem,
     } = useContext(Context);

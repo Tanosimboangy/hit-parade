@@ -33853,7 +33853,49 @@ if ("development" !== "production") {
     style: _propTypes.default.object
   });
 }
-},{"react-router":"node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","history":"node_modules/history/esm/history.js","prop-types":"node_modules/prop-types/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"Context.js":[function(require,module,exports) {
+},{"react-router":"node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","history":"node_modules/history/esm/history.js","prop-types":"node_modules/prop-types/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"songData.json":[function(require,module,exports) {
+module.exports = [{
+  "id": "1605844138557",
+  "title": "Masoandro",
+  "artist": "Arion Joy",
+  "price": 2000,
+  "isFavorite": true,
+  "style": "Rnb",
+  "lyrics": "Arione joy\n    A la la la la la la la la la, aah aah\n    Tsy afa manoatra izy iny fa te ho any anie\n    Te hiara-dalana aminao iny, mmhh\n    Ianao no iriany ihany koa mba ho namany e\n    Nefa, toa tsisy sira tsy mba niasanao loha\n    Voapetrapetrakao foana, laingalainga sy ny fitaka retra mandeha\n    Dia tsy nampoiziny fa ianao ange tsy Love hatramin\u2019ny na indray mande\n    Aiza no alalany anzany zany, zany e tsy mba lazainao ny marina\n    Avelanao itsiriritra fotsiny eo izy e\n    Aii aii \xE9\n    Fa zava-mitranga anie zao ralahy\n    Matokisa koa fa mbola ho avy ilay anjara\n    Lanitra ho manga anie fa aza manahy\n    Fa samy olombelona mba manana amboara\n    Ka aza mba maika aloha fa ho avy ny fotoana anie\n    Reny vitany aza mety hoe anenenany e\n    Dia ra ny ditrany avelao aloha amelana e\n    Fa izi ai ai ai aiii\n    N\u2019inon\u2019inona ataonao\n    Izy anie natoky foana, ihany ianao hilaza fa ianao anie ny anjarany e\n    Kanefa ianao, tsy mba niova\n    Fa nozarinao ny lainga koa ny tenany a, ayee\n    Mety hoe mba marary ko ny fony anie\n    Fa reny masoandro lasanao reny\n    Mety anenenanao koa indray andro any\n    Izay revinao retraretra ary nekeny\n    Tsy ho valiny aminao fa mety avelany any\n    Tsy maintsy iafiny anie, na dia marary aza reny dia iafiany anie\n    (REFRAIN)\n    Fa zava-mitranga anie zao ralahy\n    Matokisa koa fa mbola ho avy ilay anjara\n    Lanitra ho manga anie fa aza manahy\n    Fa samy olombelona mba manana amboara\n    Ka aza mba maika aloha fa ho avy ny fotoana anie\n    Reny vitany aza mety hoe anenenany e\n    Dia ra ny ditrany avelao aloha amelana e\n    Fa izi ai ai ai aiii\n    Fa reny masoandro lasanao reny\n    Mety anenenanao koa indray andro any\n    Izay revinao retraretra ary nekeny\n    Tsy ho valiny aminaoooo\n    Fa zava-mitranga anie zao ralahy\n    Matokisa koa fa mbola ho avy ilay anjara\n    Lanitra ho manga anie fa aza manahy\n    Fa samy olombelona mba manana amboara\n    Ka aza mba maika aloha fa ho avy ny fotoana anie\n    Reny vitany aza mety hoe anenenany e\n    Dia ra ny ditrany avelao aloha amelana e\n    Fa izi ai ai ai aiii",
+  "like": 50,
+  "dislike": 7
+}, {
+  "id": "1605844138574",
+  "title": "Tif a Tif",
+  "artist": "Hiezaka Hanadino anao",
+  "price": 758,
+  "isFavorite": false,
+  "style": "Rock",
+  "lyrics": "Tif to Tif - \"Hiezaka hanadino anao\"\n    Nandinika ny lasa indray aho,\n    Nandinika ny tokony hatao\n    Fitiavana foana hatrizay,\n    Nodiako tsy jerena fa nandratra fo\n    Ampy izay ireo hadalana\n    Nandefitra aho taloha\n    Fa misy ny andro sarotra ial\xE0na\n    Ka tonga izao ilay ora itenenako\n    Ny adidy maro anefa miandry eny ihany\n    Mbola lavitra ny l\xE0lako izany\n    Hiezaka hanadino anao, hiezaka hanadino anao aho\n    Hiezaka hanadino anao na ho mafy na ho mora\n    Hiezaka hanadino anao aho, hiezaka hanadino anao\n    Hiezaka hanadino anao na dia vetivety monja\n    Fa mampaninona moa!\n    Ekeko fa l\xE0lana iray\n    Nodiavintsika teo aloha\n    Fa tojo ilay sampanana indray izao\n    Voatery ny olona iray hizara roa\n    Tapitra teo ny hadalana\n    Niarahana natao\n    Fa any andro hifankahitana\n    Mba samy ho olon-kendry izaho sy ianao\n    Ny adidy maro anefa miandry eny foana\n    Mety misy ny andro mbola hihaona\n    Hiezaka hanadino anao, hiezaka hanadino anao aho\n    Hiezaka hanadino anao na ho mafy na ho mora\n    Hiezaka hanadino anao aho, hiezaka hanadino anao\n    Hiezaka hanadino anao na dia vetivety monja\n    Fa mampaninona moa!\n    Hiezaka hanadino anao, hiezaka hanadino anao aho\n    Hiezaka hanadino anao na ho mafy na ho mora\n    Fa amin'izao fotoana izao, hiezaka hanadino anao aho\n    Hiezaka hanadino anao n'isan'andro n'isan'ora\n    Hatreo ny antsika roa",
+  "like": 300,
+  "dislike": 7
+}, {
+  "id": "1345834188574",
+  "title": "Tempo Gaigy",
+  "artist": "Sambatra indrindra",
+  "price": 234,
+  "isFavorite": false,
+  "style": "Slow",
+  "lyrics": "Sambatra indrindra aho Vao mandre anao lavitra any Tsapako ery fa tiako ianao Sasatra ery za miandry valiny hafatrao Tsy maninona fa miandriandry eny any Sambatra indrindra aho Vao mandre anao lavitra any Tsapako ery fa tiako ianao Sasatra ery za miandry valiny hafatrao Volana sy taona hiafiako eny ihany Na efa vizana iny aho Mbola nanoratra noho ianao Mba ilazako fa mbola tiako ianao Ka na dia ho lavinao Ny foko tia anao eny hatrany Avelao aloha mba hitampify eny ihany Satria tiako ianao Tia anao aho Tsy tsaroako akory izay fanaintainako Satria tiako ianao Tia anao aho Omeko anao izay sisa hasambarako Ny fofon'ainao reko mitsoka avy any lavitra any Noentiny rivotra mba sendra nandalo Dia izay no nahalalako fa Any andro iray mbola hiposaka eto ny hasambarako Na efa vizana iny aho Mbola nanoratra noho ianao Mba ilazako fa mbola tiako ianao Ka na dia ho lavinao Ny foko tia anao eny hatrany Avelao aloha mba hitampify eny ihany Tia anao aho Satria tiako ianao Tia anao aho Tsy tsaroako akory izay fanaintainako Tiako ianao , tianao aho Omeko anao izay sisa hasambarako",
+  "like": 368,
+  "dislike": 36
+}, {
+  "id": "1345834183574",
+  "title": "400 volt",
+  "artist": "Wawa",
+  "price": 376,
+  "isFavorite": false,
+  "style": "Salegy",
+  "lyrics": "Attention \xE7a c\u2019est salegy 400 Volt Instru \xC7a pass\xE9 x 4 vibrer les hanches En bas, Ambanibany   Remonte un peu Vas y kawitry, un ptit peu, un ptit peu Encore monte un ptit peu Ay ay ay, chacun \xE0 son tour Mamie et papi son l\xE0, alefa Danse mamie, danse mamie, Tsy manaiky papi, avy papi Tsy manaiky resy papi, any nikatraoka, Alefa misaute saut\xE9 mzay jiaby Tourn\xE9 la main comme \xE7a x2 Tsika jaby mihetsika e!  x 4 Encore (Instru) \xC7a passe x 4 \xC7a va chauffer, zay valy e (Instru) \xC7a passe x 4 Alefa, tana io, tana io bouger vas y maman dance maman, dans\xE9 x4 stop dance papa, dans\xE9 x 4 stop danse petit, dans\xE9 x 4 Tsika jaby mihetsika e!  x 4 Attention 400volt, \xE7a passe 2 x Izy koa fa latsaka ny ambiansy izay tsy mihetsika tsongoa Tsika jaby mihetsika e!  x 4 2 x Est-ce que les filles sexy sont l\xE0 Danse somary mi sexy x4 Izy koa anao magnagno bagara e! dehors (Instru) \xC7a passe x 4 ",
+  "like": 647,
+  "dislike": 476
+}];
+},{}],"Context.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -33864,7 +33906,7 @@ exports.Context = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _ = _interopRequireDefault(require("./"));
+var _songData = _interopRequireDefault(require("./songData.json"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -33916,18 +33958,18 @@ function ContextProvider(props) {
 
   (0, _react.useEffect)(function () {
     var lsSongs = JSON.parse(localStorage.getItem('allSongs'));
-    lsSongs ? setAllSongs(lsSongs) : setAllSongs(_.default);
+    lsSongs ? setAllSongs(lsSongs) : setAllSongs(_songData.default);
     var lsCartItems = JSON.parse(localStorage.getItem('cartSongs'));
     lsCartItems && setCartSongs(lsCartItems);
   }, []);
   (0, _react.useEffect)(function () {
     localStorage.setItem('allSongs', JSON.stringify(allSongs));
-  }, [_.default]);
+  }, [_songData.default]);
   (0, _react.useEffect)(function () {
     localStorage.setItem('cartSongs', JSON.stringify(cartSongs));
   }, [cartSongs]);
   (0, _react.useEffect)(function () {
-    setAllSongs(_.default);
+    setAllSongs(_songData.default);
   }, []);
 
   function toggleFavorite(Id) {
@@ -34003,7 +34045,19 @@ function ContextProvider(props) {
     }
   }, props.children);
 }
-},{"react":"node_modules/react/index.js","./":"index.js"}],"component/Popularsongs.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./songData.json":"songData.json"}],"img/arrow_up.svg":[function(require,module,exports) {
+module.exports = "/arrow_up.4737aec9.svg";
+},{}],"img/arrow_down.svg":[function(require,module,exports) {
+module.exports = "/arrow_down.3d6b8982.svg";
+},{}],"img/more_horiz.svg":[function(require,module,exports) {
+module.exports = "/more_horiz.540c0812.svg";
+},{}],"img/favorite.svg":[function(require,module,exports) {
+module.exports = "/favorite.4d127cd3.svg";
+},{}],"img/fullshopping_cart.svg":[function(require,module,exports) {
+module.exports = "/fullshopping_cart.3ef60fbc.svg";
+},{}],"img/lineshopping_cart.svg":[function(require,module,exports) {
+module.exports = "/lineshopping_cart.56d8cab2.svg";
+},{}],"component/SongItem.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34014,6 +34068,122 @@ exports.default = void 0;
 var _react = _interopRequireWildcard(require("react"));
 
 var _Context = require("../Context");
+
+var _reactRouterDom = require("react-router-dom");
+
+var _arrow_up = _interopRequireDefault(require("../img/arrow_up.svg"));
+
+var _arrow_down = _interopRequireDefault(require("../img/arrow_down.svg"));
+
+var _more_horiz = _interopRequireDefault(require("../img/more_horiz.svg"));
+
+var _favorite = _interopRequireDefault(require("../img/favorite.svg"));
+
+var _fullshopping_cart = _interopRequireDefault(require("../img/fullshopping_cart.svg"));
+
+var _lineshopping_cart = _interopRequireDefault(require("../img/lineshopping_cart.svg"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function SongItem(_ref) {
+  var song = _ref.song;
+
+  var _useContext = (0, _react.useContext)(_Context.Context),
+      increments = _useContext.increments,
+      decreaments = _useContext.decreaments,
+      addToCart = _useContext.addToCart,
+      toggleFavorite = _useContext.toggleFavorite,
+      cartSongs = _useContext.cartSongs,
+      removeCartItem = _useContext.removeCartItem;
+
+  function showCartIcon() {
+    var songInCart = cartSongs.some(function (item) {
+      return item.id === song.id;
+    });
+
+    if (songInCart) {
+      return /*#__PURE__*/_react.default.createElement("img", {
+        src: _fullshopping_cart.default,
+        onClick: function onClick() {
+          return removeCartItem(song.id);
+        },
+        alt: "fullshopping_cart"
+      });
+    }
+
+    return /*#__PURE__*/_react.default.createElement("img", {
+      onClick: function onClick() {
+        return addToCart(song);
+      },
+      src: _lineshopping_cart.default,
+      alt: "lineshopping_cart"
+    });
+  }
+
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, "return (", /*#__PURE__*/_react.default.createElement("ul", {
+    className: "container",
+    key: song.id
+  }, /*#__PURE__*/_react.default.createElement("li", {
+    className: "heart_icon"
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    onClick: function onClick() {
+      return toggleFavorite(song.id);
+    },
+    src: song.isFavorite ? _favorite.default : favorite_border,
+    alt: "heart"
+  })), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h3", {
+    className: "song_title"
+  }, song.title), /*#__PURE__*/_react.default.createElement("small", {
+    className: "song_artist"
+  }, song.artist)), /*#__PURE__*/_react.default.createElement("li", {
+    className: "song_like"
+  }, song.like, /*#__PURE__*/_react.default.createElement("img", {
+    src: _arrow_up.default,
+    onClick: function onClick() {
+      return increments(song.id);
+    },
+    alt: "arrow_up"
+  })), /*#__PURE__*/_react.default.createElement("li", {
+    className: "song_dislike"
+  }, song.dislike, /*#__PURE__*/_react.default.createElement("img", {
+    src: _arrow_down.default,
+    onClick: function onClick() {
+      return decreaments(song.id);
+    },
+    alt: "arrow_down"
+  })), /*#__PURE__*/_react.default.createElement("li", {
+    className: "shopping_cart"
+  }, showCartIcon()), /*#__PURE__*/_react.default.createElement("li", {
+    className: "more_horiz"
+  }, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/song/".concat(song.id)
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: _more_horiz.default,
+    alt: "more_horiz"
+  })))), ")");
+}
+
+var _default = SongItem;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","../Context":"Context.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../img/arrow_up.svg":"img/arrow_up.svg","../img/arrow_down.svg":"img/arrow_down.svg","../img/more_horiz.svg":"img/more_horiz.svg","../img/favorite.svg":"img/favorite.svg","../img/fullshopping_cart.svg":"img/fullshopping_cart.svg","../img/lineshopping_cart.svg":"img/lineshopping_cart.svg"}],"component/Popularsongs.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _Context = require("../Context");
+
+var _SongItem = _interopRequireDefault(require("./SongItem"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
@@ -34034,7 +34204,7 @@ function Popularsongs() {
   function displaySongsLists() {
     if (!allSongs) return;
     var songsList = allSongs.sort(setsortedSongs).map(function (song) {
-      return /*#__PURE__*/_react.default.createElement(SongItem, {
+      return /*#__PURE__*/_react.default.createElement(_SongItem.default, {
         key: song.id,
         song: song
       });
@@ -34047,7 +34217,7 @@ function Popularsongs() {
 
 var _default = Popularsongs;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../Context":"Context.js"}],"img/headset.svg":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../Context":"Context.js","./SongItem":"component/SongItem.js"}],"img/headset.svg":[function(require,module,exports) {
 module.exports = "/headset.a73dacc1.svg";
 },{}],"component/Styles.js":[function(require,module,exports) {
 "use strict";
@@ -34057,57 +34227,43 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _react = _interopRequireWildcard(require("react"));
+var _react = _interopRequireDefault(require("react"));
 
 var _headset = _interopRequireDefault(require("../img/headset.svg"));
 
 var _reactRouterDom = require("react-router-dom");
 
-var _Context = require("../Context");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
 function Styles() {
-  var _useContext = (0, _react.useContext)(_Context.Context),
-      allSongs = _useContext.allSongs;
-
   return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("ul", {
     className: "styles"
   }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/style/Salegy"
+    to: "/style/Rnb"
   }, /*#__PURE__*/_react.default.createElement("img", {
     src: _headset.default,
     alt: "headset"
-  }), "Salegy"))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/style/Reaggae"
-  }, /*#__PURE__*/_react.default.createElement("img", {
-    src: _headset.default,
-    alt: "headset"
-  }), "Reaggae"))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/style/Folk"
-  }, /*#__PURE__*/_react.default.createElement("img", {
-    src: _headset.default,
-    alt: "headset"
-  }), "Folk"))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/style/Rap"
-  }, /*#__PURE__*/_react.default.createElement("img", {
-    src: _headset.default,
-    alt: "headset"
-  }), "Rap"))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  }), "Rnb"))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/style/Rock"
   }, /*#__PURE__*/_react.default.createElement("img", {
     src: _headset.default,
     alt: "headset"
-  }), "Rock")))));
+  }), "Rock"))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/style/Slow"
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: _headset.default,
+    alt: "headset"
+  }), "Slow"))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/style/Salegy"
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: _headset.default,
+    alt: "headset"
+  }), "Salegy")))));
 }
 
 var _default = Styles;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../img/headset.svg":"img/headset.svg","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../Context":"Context.js"}],"component/StyleContents.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../img/headset.svg":"img/headset.svg","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"component/StyleContents.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34334,9 +34490,11 @@ exports.default = _default;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports.default = Song;
 
 var _react = _interopRequireWildcard(require("react"));
+
+var _reactRouterDom = require("react-router-dom");
 
 var _Context = require("../Context");
 
@@ -34344,25 +34502,24 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-function AddToLyrics() {
+function Song() {
+  var _useParams = (0, _reactRouterDom.useParams)(),
+      songId = _useParams.songId;
+
   var _useContext = (0, _react.useContext)(_Context.Context),
-      allSongs = _useContext.allSongs;
+      songs = _useContext.songs;
 
-  function funcToLyrics(Id) {
-    var lyricsLists = allSongs.map(function (item) {
-      if (item.id === Id) {
-        retur( /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h3", null, "Lyrics"), /*#__PURE__*/_react.default.createElement("p", null, item.lyrics)));
-      }
-    });
-    return lyricsLists;
-  }
-
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, funcToLyrics(), /*#__PURE__*/_react.default.createElement("h2", null, "Hello jacquit"));
+  var history = (0, _reactRouterDom.useHistory)();
+  var song = songs.find(function (song) {
+    return song.id === songId;
+  });
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, /*#__PURE__*/_react.default.createElement("button", {
+    onClick: function onClick() {
+      return history.goBack();
+    }
+  }, "back"), song === null || song === void 0 ? void 0 : song.artist, " - ", song === null || song === void 0 ? void 0 : song.title), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h3", null, "Lyrics"), song === null || song === void 0 ? void 0 : song.lyrics));
 }
-
-var _default = AddToLyrics;
-exports.default = _default;
-},{"react":"node_modules/react/index.js","../Context":"Context.js"}],"App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../Context":"Context.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34464,7 +34621,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62821" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62890" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
