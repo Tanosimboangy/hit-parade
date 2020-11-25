@@ -33961,7 +33961,6 @@ function ContextProvider(_ref) {
   (0, _react.useEffect)(function () {
     var lsSongs = JSON.parse(localStorage.getItem('allSongs'));
     lsSongs ? setAllSongs(lsSongs) : setAllSongs(_songData.default);
-    console.log(lsSongs);
     var lsCartItems = JSON.parse(localStorage.getItem('cartSongs'));
     lsCartItems && setCartSongs(lsCartItems);
   }, []);
@@ -33971,9 +33970,6 @@ function ContextProvider(_ref) {
   (0, _react.useEffect)(function () {
     localStorage.setItem('cartSongs', JSON.stringify(cartSongs));
   }, [cartSongs]);
-  (0, _react.useEffect)(function () {
-    setAllSongs(_songData.default);
-  }, []);
 
   function toggleFavorite(Id) {
     var newArraySong = allSongs.map(function (item) {
@@ -34024,7 +34020,7 @@ function ContextProvider(_ref) {
     var filteredCartItems = cartSongs.filter(function (cartItem) {
       return cartItem.id !== songId;
     });
-    setCartItems(filteredCartItems);
+    setCartSongs(filteredCartItems);
   }
 
   function emptyCart() {
@@ -34113,7 +34109,7 @@ function SongItem(_ref) {
 
     if (songInCart) {
       return /*#__PURE__*/_react.default.createElement("img", {
-        src: _fullshopping_cart.default,
+        src: _lineshopping_cart.default,
         onClick: function onClick() {
           return removeCartItem(song.id);
         },
@@ -34125,7 +34121,7 @@ function SongItem(_ref) {
       onClick: function onClick() {
         return addToCart(song);
       },
-      src: _lineshopping_cart.default,
+      src: _fullshopping_cart.default,
       alt: "fullshopping_cart"
     });
   }
@@ -34216,7 +34212,7 @@ function Popularsongs() {
     return songsList;
   }
 
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Popular Songs"), /*#__PURE__*/_react.default.createElement("div", null, displaySongsLists()));
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, displaySongsLists());
 }
 
 var _default = Popularsongs;
@@ -34424,7 +34420,9 @@ function Add() {
 
 var _default = Add;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../Context":"Context.js"}],"component/Carts.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../Context":"Context.js"}],"img/delete_icon.svg":[function(require,module,exports) {
+module.exports = "/delete_icon.684f9cef.svg";
+},{}],"component/Carts.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34435,6 +34433,10 @@ exports.default = void 0;
 var _react = _interopRequireWildcard(require("react"));
 
 var _Context = require("../Context");
+
+var _delete_icon = _interopRequireDefault(require("../img/delete_icon.svg"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
@@ -34455,7 +34457,8 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function Carts() {
   var _useContext = (0, _react.useContext)(_Context.Context),
       cartSongs = _useContext.cartSongs,
-      emptyCart = _useContext.emptyCart;
+      emptyCart = _useContext.emptyCart,
+      removeCartSongs = _useContext.removeCartSongs;
 
   var _useState = (0, _react.useState)(0),
       _useState2 = _slicedToArray(_useState, 2),
@@ -34475,12 +34478,17 @@ function Carts() {
     emptyCart();
   }
 
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Cart"), /*#__PURE__*/_react.default.createElement("div", {
-    className: "container"
-  }, cartSongs.map(function (song) {
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", null, cartSongs.map(function (song) {
     return /*#__PURE__*/_react.default.createElement("div", {
-      key: song.id
-    }, /*#__PURE__*/_react.default.createElement("button", null, "Delete"), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, song.title), /*#__PURE__*/_react.default.createElement("div", null, song.artist)), /*#__PURE__*/_react.default.createElement("div", {
+      key: song.id,
+      className: "cart_container"
+    }, /*#__PURE__*/_react.default.createElement("img", {
+      onClick: function onClick() {
+        return removeCartSongs(song.id);
+      },
+      src: _delete_icon.default,
+      alt: "delete_icon"
+    }), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h4", null, song.title), /*#__PURE__*/_react.default.createElement("p", null, song.artist)), /*#__PURE__*/_react.default.createElement("div", {
       className: "price"
     }, song.price, " Ar"));
   })), cartSongs.length !== 0 ? /*#__PURE__*/_react.default.createElement("p", null, "Total: ", total, " Ar") : 'Empty Cart.', total !== 0 && /*#__PURE__*/_react.default.createElement("button", {
@@ -34490,7 +34498,7 @@ function Carts() {
 
 var _default = Carts;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../Context":"Context.js"}],"component/AddToLyrics.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../Context":"Context.js","../img/delete_icon.svg":"img/delete_icon.svg"}],"component/AddToLyrics.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -34513,17 +34521,23 @@ function Song() {
       songId = _useParams.songId;
 
   var _useContext = (0, _react.useContext)(_Context.Context),
-      songs = _useContext.songs;
+      allSongs = _useContext.allSongs;
 
   var history = (0, _reactRouterDom.useHistory)();
-  var song = songs.find(function (song) {
+  var song = allSongs.find(function (song) {
     return song.id === songId;
   });
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, /*#__PURE__*/_react.default.createElement("button", {
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "lyrics_container"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "lyrics_subcontainer"
+  }, /*#__PURE__*/_react.default.createElement("h2", null, song === null || song === void 0 ? void 0 : song.title, " : ", song === null || song === void 0 ? void 0 : song.artist), /*#__PURE__*/_react.default.createElement("div", {
+    className: "lyrics"
+  }, /*#__PURE__*/_react.default.createElement("h3", null, "Lyrics"), song === null || song === void 0 ? void 0 : song.lyrics)), /*#__PURE__*/_react.default.createElement("button", {
     onClick: function onClick() {
       return history.goBack();
     }
-  }, "back"), song === null || song === void 0 ? void 0 : song.artist, " - ", song === null || song === void 0 ? void 0 : song.title), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h3", null, "Lyrics"), song === null || song === void 0 ? void 0 : song.lyrics));
+  }, "back"));
 }
 },{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../Context":"Context.js"}],"App.js":[function(require,module,exports) {
 "use strict";
@@ -34598,8 +34612,6 @@ var _App = _interopRequireDefault(require("./App.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-console.log(_Context.ContextProvider);
-
 _reactDom.default.render( /*#__PURE__*/_react.default.createElement(_Context.ContextProvider, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.BrowserRouter, null, /*#__PURE__*/_react.default.createElement(_App.default, null))), document.getElementById("root"));
 },{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./Context":"Context.js","./App.js":"App.js"}],"../../AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -34629,7 +34641,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54156" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50868" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

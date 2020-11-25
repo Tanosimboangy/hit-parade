@@ -10,7 +10,6 @@ function ContextProvider({children}) {
     useEffect(() => {
 		const lsSongs = JSON.parse(localStorage.getItem('allSongs'));
         lsSongs ? setAllSongs(lsSongs) : setAllSongs(songs);
-        console.log(lsSongs);
 
 		const lsCartItems = JSON.parse(localStorage.getItem('cartSongs'));
 		lsCartItems && setCartSongs(lsCartItems);
@@ -23,10 +22,6 @@ function ContextProvider({children}) {
 	useEffect(() => {
 		localStorage.setItem('cartSongs', JSON.stringify(cartSongs));
 	}, [cartSongs]);
-
-    useEffect(() => {
-        setAllSongs(songs);
-    }, []);
 
     function toggleFavorite(Id) {
         const newArraySong = allSongs.map(item => {
@@ -73,7 +68,7 @@ function ContextProvider({children}) {
 
     function removeCartSongs(songId) {
 		const filteredCartItems = cartSongs.filter(cartItem => cartItem.id !== songId);
-		setCartItems(filteredCartItems);
+		setCartSongs(filteredCartItems);
 	}
 
 	function emptyCart() {

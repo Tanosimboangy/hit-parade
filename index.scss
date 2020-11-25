@@ -33,7 +33,6 @@ body {
     }
     h1 {
         padding-bottom: 20px;
-        padding-top: 20px;
         font-size: 45px;
         line-height: 40px;
         color: #272343;
@@ -52,8 +51,6 @@ body {
                 font-size: 20px;
                 font-weight: 600;
                 padding: 8px;
-                border: 1px solid blue;
-                border-radius: 6px;
             }
         }
         .container {
@@ -63,10 +60,11 @@ body {
             align-items: center;
             color: white;
             background-color: black;
-            padding: 30px 10px;
+            padding: 30px 30px;
             margin-bottom: 16px;
             font-size: 20px;
-            .arrow {
+            border-radius: 10px;
+            .song_like, .song_dislike {
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
@@ -74,7 +72,7 @@ body {
             }
         }
         .form_container {
-            max-width: 50%;
+            max-width: 60%;
             margin: auto;
             border-radius: 16px;
             padding: 20px 30px;
@@ -150,25 +148,68 @@ body {
                 }
             }
         }
-        .cart_songs {
+        .cart_container {
+            padding: 16px;
             display: flex;
-            justify-content: space-between;
+            flex-direction: row;
             align-items: center;
-            padding: 32px;
-            color: white;
+            justify-content: space-between;
+            margin-bottom: 10px;
             background: #272343;
             border-radius: 5px;
-            margin-bottom: 16px;
-            button.delete {
-                border: none;
-                padding: 10px 20px;
-                border-radius: 4px;
-                font-size: 16px;
-                outline: none;
-                text-transform: uppercase;
+            color: white;
+            img {
+                width: 35px;
             }
-            p {
+            div {
+                h4 {
+                    font-size: 25px;
+                    line-height: 25px;
+                }
+                p {
+                    font-size: 18px;
+                    line-height: 22px;
+                }
+            }
+            .price {
+                font-size: 25px;
+                line-height: 25px;
                 color: #FFD803;
+            }
+        }
+        .lyrics_container {
+            button {
+                border: none;
+                outline: none;
+                cursor: pointer;
+                padding: 10px 16px;
+                background-color: white;
+                color: blue;
+                box-shadow: 1px 1px 10px blue;
+                border-radius: 6px;
+                font-size: 20px;
+            }
+            .lyrics_subcontainer {
+
+                h2 {
+                    font-size: 30px;
+                    color: #000000;
+                    padding-bottom: 20px;
+                }
+                .lyrics {
+                    color: #FFFFFE;
+                    font-size: 18px;
+                    line-height: 22px;
+                    background: #272343;
+                    border-radius: 5px;
+                    padding: 16px;
+                    h3 {
+                        font-size: 36px;
+                        line-height: 44px;
+                        padding-bottom: 16px;
+                    }
+                }
+                padding-bottom: 20px;
             }
         }
     }
@@ -177,8 +218,9 @@ body {
 @media(min-width: 720px) {
     body {
         .wrapper {
-            max-width: 700px;
+            max-width: 60%;
             margin: auto;
+            padding: 10px;
         }
     }
 }

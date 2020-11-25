@@ -1,9 +1,10 @@
 import React, { useContext, useState, useEffect } from 'react';
 import { Context } from '../Context';
+import delete_icon from "../img/delete_icon.svg";
 
 function Carts() {
 
-  const { cartSongs, emptyCart } = useContext(Context);
+  const { cartSongs, emptyCart, removeCartSongs } = useContext(Context);
   const [total, setTotal] = useState(0);
   
   useEffect(() => {
@@ -20,23 +21,22 @@ function Carts() {
 	}
 
   return (
+	  <>
 		<div>
-			<h1>Cart</h1>
-			<div className="container">
-				{cartSongs.map(song => (
-					<div key={song.id}>
-						<button>Delete</button>
-						<div>
-							<div>{song.title}</div>
-							<div>{song.artist}</div>
-						</div>
-						<div className="price">{song.price} Ar</div>
+			{cartSongs.map(song => (
+				<div key={song.id} className="cart_container">
+					<img onClick={() => removeCartSongs(song.id)} src={delete_icon} alt="delete_icon"/>
+					<div>
+						<h4>{song.title}</h4>
+						<p>{song.artist}</p>
 					</div>
-				))}
-			</div>
-			{cartSongs.length !== 0 ? <p>Total: {total} Ar</p> : 'Empty Cart.'}
-			{total !== 0 && <button onClick={completeOrder}>Buy</button>}
+					<div className="price">{song.price} Ar</div>
+				</div>
+			))}
 		</div>
+		{cartSongs.length !== 0 ? <p>Total: {total} Ar</p> : 'Empty Cart.'}
+		{total !== 0 && <button onClick={completeOrder}>Buy</button>}
+		</>
 	);
 }
 

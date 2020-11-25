@@ -4,21 +4,23 @@ import { Context } from '../Context';
 
 export default function Song() {
 	const { songId } = useParams();
-	const { songs } = useContext(Context);
+	const { allSongs } = useContext(Context);
 	const history = useHistory();
 
-	const song = songs.find(song => song.id === songId);
+	const song = allSongs.find(song => song.id === songId);
 
 	return (
-		<div>
-			<h1>
-				<button onClick={() => history.goBack()}>back</button>
-				{song?.artist} - {song?.title}
-			</h1>
-			<div>
-				<h3>Lyrics</h3>
-				{song?.lyrics}
+		<div className="lyrics_container">
+			<div className="lyrics_subcontainer">
+				<h2>
+					{song?.title} : {song?.artist}
+				</h2>
+				<div className="lyrics">
+					<h3>Lyrics</h3>
+					{song?.lyrics}
+				</div>
 			</div>
+			<button onClick={() => history.goBack()}>back</button>
 		</div>
 	);
 }

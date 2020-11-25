@@ -4,8 +4,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { ContextProvider } from './Context';
 import App from "./App.js";
 
-console.log(ContextProvider);
-
 ReactDOM.render(
     <ContextProvider>
         <Router>

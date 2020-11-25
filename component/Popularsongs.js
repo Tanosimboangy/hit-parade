@@ -20,12 +20,7 @@ function Popularsongs() {
 	}
 
 
-    return (
-		<div>
-			<h1>Popular Songs</h1>
-			<div>{displaySongsLists()}</div>
-		</div>
-	);
+    return (<>{displaySongsLists()}</>);
 }
 
 export default Popularsongs;
