@@ -34475,7 +34475,9 @@ function Carts() {
     emptyCart();
   }
 
-  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Cart"), /*#__PURE__*/_react.default.createElement("div", null, cartSongs.map(function (song) {
+  return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h1", null, "Cart"), /*#__PURE__*/_react.default.createElement("div", {
+    className: "container"
+  }, cartSongs.map(function (song) {
     return /*#__PURE__*/_react.default.createElement("div", {
       key: song.id
     }, /*#__PURE__*/_react.default.createElement("button", null, "Delete"), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, song.title), /*#__PURE__*/_react.default.createElement("div", null, song.artist)), /*#__PURE__*/_react.default.createElement("div", {
@@ -34627,7 +34629,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50957" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54156" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -22,7 +22,7 @@ function Carts() {
   return (
 		<div>
 			<h1>Cart</h1>
-			<div>
+			<div className="container">
 				{cartSongs.map(song => (
 					<div key={song.id}>
 						<button>Delete</button>
