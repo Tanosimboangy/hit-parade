@@ -16,13 +16,13 @@ function SongItem({ song }) {
         addToCart,
         toggleFavorite,
         cartSongs,
-		removeCartItem,
+		removeCartSongs,
     } = useContext(Context);
 
     function showCartIcon() {
 		const songInCart = cartSongs.some(item => item.id === song.id);
 		if (songInCart) {
-            return <img src={lineshopping_cart} onClick={() => removeCartItem(song.id)} alt="lineshopping_cart" />;
+            return <img src={lineshopping_cart} onClick={() => removeCartSongs(song.id)} alt="lineshopping_cart" />;
 		}
         return <img onClick={() => addToCart(song)} src={fullshopping_cart} alt="fullshopping_cart"/>
 	}

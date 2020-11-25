@@ -34100,7 +34100,7 @@ function SongItem(_ref) {
       addToCart = _useContext.addToCart,
       toggleFavorite = _useContext.toggleFavorite,
       cartSongs = _useContext.cartSongs,
-      removeCartItem = _useContext.removeCartItem;
+      removeCartSongs = _useContext.removeCartSongs;
 
   function showCartIcon() {
     var songInCart = cartSongs.some(function (item) {
@@ -34111,7 +34111,7 @@ function SongItem(_ref) {
       return /*#__PURE__*/_react.default.createElement("img", {
         src: _lineshopping_cart.default,
         onClick: function onClick() {
-          return removeCartItem(song.id);
+          return removeCartSongs(song.id);
         },
         alt: "lineshopping_cart"
       });
