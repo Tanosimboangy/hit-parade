@@ -33855,7 +33855,7 @@ if ("development" !== "production") {
 }
 },{"react-router":"node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","history":"node_modules/history/esm/history.js","prop-types":"node_modules/prop-types/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"songData.json":[function(require,module,exports) {
 module.exports = [{
-  "id": "1605844138557",
+  "id": 1605844138557,
   "title": "Masoandro",
   "artist": "Arion Joy",
   "price": 2000,
@@ -33865,7 +33865,7 @@ module.exports = [{
   "like": 50,
   "dislike": 7
 }, {
-  "id": "1605844138574",
+  "id": 1605844138574,
   "title": "Tif a Tif",
   "artist": "Hiezaka Hanadino anao",
   "price": 758,
@@ -33875,20 +33875,20 @@ module.exports = [{
   "like": 300,
   "dislike": 7
 }, {
-  "id": "1345834188574",
+  "id": 1345834188574,
   "title": "Tempo Gaigy",
   "artist": "Sambatra indrindra",
-  "price": 234,
+  "price": 127,
   "isFavorite": false,
   "style": "Slow",
   "lyrics": "Sambatra indrindra aho Vao mandre anao lavitra any Tsapako ery fa tiako ianao Sasatra ery za miandry valiny hafatrao Tsy maninona fa miandriandry eny any Sambatra indrindra aho Vao mandre anao lavitra any Tsapako ery fa tiako ianao Sasatra ery za miandry valiny hafatrao Volana sy taona hiafiako eny ihany Na efa vizana iny aho Mbola nanoratra noho ianao Mba ilazako fa mbola tiako ianao Ka na dia ho lavinao Ny foko tia anao eny hatrany Avelao aloha mba hitampify eny ihany Satria tiako ianao Tia anao aho Tsy tsaroako akory izay fanaintainako Satria tiako ianao Tia anao aho Omeko anao izay sisa hasambarako Ny fofon'ainao reko mitsoka avy any lavitra any Noentiny rivotra mba sendra nandalo Dia izay no nahalalako fa Any andro iray mbola hiposaka eto ny hasambarako Na efa vizana iny aho Mbola nanoratra noho ianao Mba ilazako fa mbola tiako ianao Ka na dia ho lavinao Ny foko tia anao eny hatrany Avelao aloha mba hitampify eny ihany Tia anao aho Satria tiako ianao Tia anao aho Tsy tsaroako akory izay fanaintainako Tiako ianao , tianao aho Omeko anao izay sisa hasambarako",
   "like": 368,
   "dislike": 36
 }, {
-  "id": "1345834183574",
+  "id": 1345834183574,
   "title": "400 volt",
   "artist": "Wawa",
-  "price": 376,
+  "price": 130,
   "isFavorite": false,
   "style": "Salegy",
   "lyrics": "Attention \xE7a c\u2019est salegy 400 Volt Instru \xC7a pass\xE9 x 4 vibrer les hanches En bas, Ambanibany   Remonte un peu Vas y kawitry, un ptit peu, un ptit peu Encore monte un ptit peu Ay ay ay, chacun \xE0 son tour Mamie et papi son l\xE0, alefa Danse mamie, danse mamie, Tsy manaiky papi, avy papi Tsy manaiky resy papi, any nikatraoka, Alefa misaute saut\xE9 mzay jiaby Tourn\xE9 la main comme \xE7a x2 Tsika jaby mihetsika e!  x 4 Encore (Instru) \xC7a passe x 4 \xC7a va chauffer, zay valy e (Instru) \xC7a passe x 4 Alefa, tana io, tana io bouger vas y maman dance maman, dans\xE9 x4 stop dance papa, dans\xE9 x 4 stop danse petit, dans\xE9 x 4 Tsika jaby mihetsika e!  x 4 Attention 400volt, \xE7a passe 2 x Izy koa fa latsaka ny ambiansy izay tsy mihetsika tsongoa Tsika jaby mihetsika e!  x 4 2 x Est-ce que les filles sexy sont l\xE0 Danse somary mi sexy x4 Izy koa anao magnagno bagara e! dehors (Instru) \xC7a passe x 4 ",
@@ -34027,8 +34027,7 @@ function ContextProvider(_ref) {
     setCartSongs([]);
   }
 
-  if (!allSongs.length) return null; // if (!cartSongs.length) return null;
-
+  if (!allSongs.length) return null;
   return /*#__PURE__*/_react.default.createElement(Context.Provider, {
     value: {
       allSongs: allSongs,
@@ -34296,10 +34295,12 @@ function StyleContents() {
     return item.style === name;
   });
   var newSong = newSongs.map(function (items) {
-    return /*#__PURE__*/_react.default.createElement("ul", {
+    return /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+      to: "/song/".concat(items.id)
+    }, /*#__PURE__*/_react.default.createElement("ul", {
       key: items.id,
       className: "styles"
-    }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h3", null, items.title)), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("p", null, items.artist)));
+    }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h3", null, items.title)), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("p", null, items.artist))));
   });
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "style"
@@ -34356,6 +34357,7 @@ function Add() {
     var lyrics = eventTarget.lyrics.value;
     if (!title, !artist, !price, !style) return;
     var newSong = {
+      id: Date.now(),
       title: title,
       artist: artist,
       price: price,
@@ -34363,8 +34365,7 @@ function Add() {
       style: style,
       lyrics: lyrics,
       like: 0,
-      dislike: 0,
-      id: Date.now()
+      dislike: 0
     };
     var newSongList = [].concat(_toConsumableArray(allSongs), [newSong]);
     setAllSongs(newSongList);
@@ -34397,16 +34398,14 @@ function Add() {
     className: "form_style",
     required: true
   }, /*#__PURE__*/_react.default.createElement("option", {
-    value: "Salegy"
-  }, "Salegy"), /*#__PURE__*/_react.default.createElement("option", {
-    value: "Reggae"
-  }, "Reggae"), /*#__PURE__*/_react.default.createElement("option", {
-    value: "Folk"
-  }, "Folk"), /*#__PURE__*/_react.default.createElement("option", {
-    value: "Rap"
-  }, "Rap"), /*#__PURE__*/_react.default.createElement("option", {
     value: "Rock"
-  }, "Rock")), /*#__PURE__*/_react.default.createElement("textarea", {
+  }, "Rock"), /*#__PURE__*/_react.default.createElement("option", {
+    value: "Rnb"
+  }, "Rnb"), /*#__PURE__*/_react.default.createElement("option", {
+    value: "Slow"
+  }, "Slow"), /*#__PURE__*/_react.default.createElement("option", {
+    value: "Salegy"
+  }, "Salegy")), /*#__PURE__*/_react.default.createElement("textarea", {
     name: "lyrics",
     cols: "50",
     rows: "5",
@@ -34525,7 +34524,7 @@ function Song() {
 
   var history = (0, _reactRouterDom.useHistory)();
   var song = allSongs.find(function (song) {
-    return song.id === songId;
+    return song.id == songId;
   });
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "lyrics_container"
@@ -34641,7 +34640,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50868" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49614" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

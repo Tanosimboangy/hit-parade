@@ -7,7 +7,7 @@ export default function Song() {
 	const { allSongs } = useContext(Context);
 	const history = useHistory();
 
-	const song = allSongs.find(song => song.id === songId);
+	const song = allSongs.find(song => song.id == songId);
 
 	return (
 		<div className="lyrics_container">

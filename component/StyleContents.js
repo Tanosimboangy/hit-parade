@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import headset from "../img/headset.svg";
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { Context } from "../Context";
 
 function StyleContents() {
@@ -9,10 +9,12 @@ function StyleContents() {
     const newSongs = allSongs.filter(item => item.style === name);
     const newSong = newSongs.map(items => {
         return (
-            <ul key={items.id} className="styles">
-                <li><h3>{items.title}</h3></li>
-                <li><p>{items.artist}</p></li>
-            </ul>
+                <Link to={`/song/${items.id}`}>
+                    <ul key={items.id} className="styles">
+                        <li><h3>{items.title}</h3></li>
+                        <li><p>{items.artist}</p></li>
+                    </ul>
+                </Link>
         )
     } )
 

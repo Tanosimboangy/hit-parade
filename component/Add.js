@@ -15,6 +15,7 @@ function Add() {
 
 		if (!title, !artist, !price, !style) return;
 		const newSong = {
+            id: Date.now(),
             title: title,
             artist: artist,
             price: price,
@@ -23,7 +24,6 @@ function Add() {
             lyrics: lyrics,
             like: 0,
             dislike: 0,
-            id: Date.now(),
 		};
 		const newSongList = [...allSongs, newSong];
 		setAllSongs(newSongList);
@@ -38,11 +38,10 @@ function Add() {
                 <input name="artist" className="form_artist" type="text" placeholder="Artist" required/>
                 <input name="price" className="form_price" type="number" placeholder="price" required/>
                 <select name="style" className="form_style" required>
-                    <option value="Salegy">Salegy</option>
-                    <option value="Reggae">Reggae</option>
-                    <option value="Folk">Folk</option>
-                    <option value="Rap">Rap</option>
                     <option value="Rock">Rock</option>
+                    <option value="Rnb">Rnb</option>
+                    <option value="Slow">Slow</option>
+                    <option value="Salegy">Salegy</option>
                 </select>
                 <textarea name="lyrics" cols="50" rows="5" className="form_lyrics" required />
                 <button className="form_button" type="submit">Add</button>

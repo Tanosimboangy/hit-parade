@@ -76,7 +76,6 @@ function ContextProvider({children}) {
 	}
 
     if (!allSongs.length) return null;
-    // if (!cartSongs.length) return null;
 
     return(
         <Context.Provider value={{
