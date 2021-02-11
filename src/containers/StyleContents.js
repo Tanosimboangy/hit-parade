@@ -1,29 +1,25 @@
 import React from "react";
-// import headset from "../img/headset.svg";
-// import { useParams, Link } from 'react-router-dom';
-// import { Context } from "../Context";
+import headset from "../../img/headset.svg";
+import { useParams, Link } from 'react-router-dom';
+import state from '../state';
+import Container  from "../components/StyleContents";
 
 function StyleContents() {
-    // const { name } = useParams();
-    // const { allSongs } = useContext(Context);
-    // const newSongs = allSongs.filter(item => item.style === name);
-    // const newSong = newSongs.map(items => {
-    //     return (
-    //             <Link to={`/song/${items.id}`}>
-    //                 <ul key={items.id} className="styles">
-    //                     <li><h3>{items.title}</h3></li>
-    //                     <li><p>{items.artist}</p></li>
-    //                 </ul>
-    //             </Link>
-    //     )
-    // } )
+    const { name } = useParams();
+    const newSongs = state.filter(item => item.style === name);
 
     return (
-        <h1>Style contents</h1>
-        // <div className="style">
-        //     <h2 className="styles_heading"><img src={headset} alt="headset"/>{name}</h2>
-        //     {newSong}
-        // </div>
+        <Container>
+            <Container.Style><img src={headset} alt="headset"/>{name}</Container.Style>
+            {newSongs.map(items => 
+                <Link to={`/song/${items.id}`} key={items.id}>
+                    <Container.Base>
+                        <Container.Title>{items.title}</Container.Title>
+                        <Container.Artist>{items.artist}</Container.Artist>
+                    </Container.Base>
+                </Link>
+                )}
+        </Container>
     )
 }
 

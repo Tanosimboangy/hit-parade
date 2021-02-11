@@ -1,17 +1,16 @@
 import React from "react";
 import headset from "../../img/headset.svg";
+import List from "../components/Styles";
 import { Link } from 'react-router-dom';
 
 function Styles() {
     return (
-        <>
-            <ul className="styles">
-                <li><h2><Link to="/style/Rnb"><img src={headset} alt="headset"/>Rnb</Link></h2></li>
-                <li><h2><Link to="/style/Rock"><img src={headset} alt="headset"/>Rock</Link></h2></li>
-                <li><h2><Link to="/style/Slow"><img src={headset} alt="headset"/>Slow</Link></h2></li>
-                <li><h2><Link to="/style/Salegy"><img src={headset} alt="headset"/>Salegy</Link></h2></li>
-            </ul>
-        </>
+        <List className="styles">
+            <List.Item><Link to="/style/Rnb"><img src={headset} alt="headset"/>Rnb</Link></List.Item>
+            <List.Item><Link to="/style/Rock"><img src={headset} alt="headset"/>Rock</Link></List.Item>
+            <List.Item><Link to="/style/Slow"><img src={headset} alt="headset"/>Slow</Link></List.Item>
+            <List.Item><Link to="/style/Salegy"><img src={headset} alt="headset"/>Salegy</Link></List.Item>
+        </List>
     )
 }
 

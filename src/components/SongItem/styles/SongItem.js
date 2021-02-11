@@ -6,11 +6,11 @@ export const Container = styled.ul`
     justify-content: space-between;
     align-items: center;
     color: white;
-    background-color: black;
+    background: #272343;
+    border-radius: 5px;
     padding: 35px;
     margin-bottom: 16px;
     font-size: 20px;
-    border-radius: 6px;
 
     @media(max-width: 320px) {
         flex-wrap: wrap;

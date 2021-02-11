@@ -35956,7 +35956,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    color: white;\n    background-color: black;\n    padding: 35px;\n    margin-bottom: 16px;\n    font-size: 20px;\n    border-radius: 6px;\n\n    @media(max-width: 320px) {\n        flex-wrap: wrap;\n        padding: 30px;\n    }\n\n    li {\n        margin-bottom: 10px; \n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    color: white;\n    background: #272343;\n    border-radius: 5px;\n    padding: 35px;\n    margin-bottom: 16px;\n    font-size: 20px;\n\n    @media(max-width: 320px) {\n        flex-wrap: wrap;\n        padding: 30px;\n    }\n\n    li {\n        margin-bottom: 10px; \n    }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -36176,7 +36176,260 @@ var _default = Popularsongs;
 exports.default = _default;
 },{"react":"node_modules/react/index.js","../state":"src/state.js","./SongItem":"src/containers/SongItem.js"}],"img/headset.svg":[function(require,module,exports) {
 module.exports = "/headset.a73dacc1.svg";
-},{}],"src/containers/Styles.js":[function(require,module,exports) {
+},{}],"src/components/Styles/styles/Styles.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Item = exports.List = void 0;
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n    \n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    \n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var List = _styledComponents.default.div(_templateObject());
+
+exports.List = List;
+
+var Item = _styledComponents.default.div(_templateObject2());
+
+exports.Item = Item;
+},{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/components/Styles/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Container;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _Styles = require("./styles/Styles");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function Container(_ref) {
+  var children = _ref.children,
+      restProps = _objectWithoutProperties(_ref, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_Styles.List, restProps, children);
+}
+
+Container.Item = function ContainerItem(_ref2) {
+  var children = _ref2.children,
+      restProps = _objectWithoutProperties(_ref2, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_Styles.Item, restProps, children);
+};
+},{"react":"node_modules/react/index.js","./styles/Styles":"src/components/Styles/styles/Styles.js"}],"src/containers/Styles.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _headset = _interopRequireDefault(require("../../img/headset.svg"));
+
+var _Styles = _interopRequireDefault(require("../components/Styles"));
+
+var _reactRouterDom = require("react-router-dom");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Styles() {
+  return /*#__PURE__*/_react.default.createElement(_Styles.default, {
+    className: "styles"
+  }, /*#__PURE__*/_react.default.createElement(_Styles.default.Item, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/style/Rnb"
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: _headset.default,
+    alt: "headset"
+  }), "Rnb")), /*#__PURE__*/_react.default.createElement(_Styles.default.Item, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/style/Rock"
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: _headset.default,
+    alt: "headset"
+  }), "Rock")), /*#__PURE__*/_react.default.createElement(_Styles.default.Item, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/style/Slow"
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: _headset.default,
+    alt: "headset"
+  }), "Slow")), /*#__PURE__*/_react.default.createElement(_Styles.default.Item, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+    to: "/style/Salegy"
+  }, /*#__PURE__*/_react.default.createElement("img", {
+    src: _headset.default,
+    alt: "headset"
+  }), "Salegy")));
+}
+
+var _default = Styles;
+exports.default = _default;
+},{"react":"node_modules/react/index.js","../../img/headset.svg":"img/headset.svg","../components/Styles":"src/components/Styles/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"src/components/StyleContents/styles/StyleContents.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Artist = exports.Title = exports.Base = exports.Style = exports.Wrapper = void 0;
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject5() {
+  var data = _taggedTemplateLiteral(["\n    font-size: 18px;\n    line-height: 22px;\n"]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\n    font-size: 30px;\n    line-height: 44px;\n    margin-bottom: 4px;\n"]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n    padding: 20px;\n    background: #272343;\n    border-radius: 5px;\n    color: #FFFFFE;\n    margin-bottom: 16px;\n    max-width: 50%;\n    margin-right: auto;\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n    font-size: 40px;\n    line-height: 35px;\n    color: #000000;\n    padding-bottom: 20px;\n    img {\n        width: 40px;\n    }\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral(["\n    \n"]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var Wrapper = _styledComponents.default.div(_templateObject());
+
+exports.Wrapper = Wrapper;
+
+var Style = _styledComponents.default.h2(_templateObject2());
+
+exports.Style = Style;
+
+var Base = _styledComponents.default.div(_templateObject3());
+
+exports.Base = Base;
+
+var Title = _styledComponents.default.h3(_templateObject4());
+
+exports.Title = Title;
+
+var Artist = _styledComponents.default.p(_templateObject5());
+
+exports.Artist = Artist;
+},{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/components/StyleContents/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Container;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _StyleContents = require("./styles/StyleContents");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function Container(_ref) {
+  var children = _ref.children,
+      restProps = _objectWithoutProperties(_ref, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_StyleContents.Wrapper, restProps, children);
+}
+
+Container.Style = function ContainerStyle(_ref2) {
+  var children = _ref2.children,
+      restProps = _objectWithoutProperties(_ref2, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_StyleContents.Style, restProps, children);
+};
+
+Container.Base = function ContainerBase(_ref3) {
+  var children = _ref3.children,
+      restProps = _objectWithoutProperties(_ref3, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_StyleContents.Base, restProps, children);
+};
+
+Container.Title = function ContainerTitle(_ref4) {
+  var children = _ref4.children,
+      restProps = _objectWithoutProperties(_ref4, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_StyleContents.Title, restProps, children);
+};
+
+Container.Artist = function ContainerArtist(_ref5) {
+  var children = _ref5.children,
+      restProps = _objectWithoutProperties(_ref5, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_StyleContents.Artist, restProps, children);
+};
+},{"react":"node_modules/react/index.js","./styles/StyleContents":"src/components/StyleContents/styles/StyleContents.js"}],"src/containers/StyleContents.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36190,75 +36443,34 @@ var _headset = _interopRequireDefault(require("../../img/headset.svg"));
 
 var _reactRouterDom = require("react-router-dom");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _state = _interopRequireDefault(require("../state"));
 
-function Styles() {
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("ul", {
-    className: "styles"
-  }, /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/style/Rnb"
-  }, /*#__PURE__*/_react.default.createElement("img", {
-    src: _headset.default,
-    alt: "headset"
-  }), "Rnb"))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/style/Rock"
-  }, /*#__PURE__*/_react.default.createElement("img", {
-    src: _headset.default,
-    alt: "headset"
-  }), "Rock"))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/style/Slow"
-  }, /*#__PURE__*/_react.default.createElement("img", {
-    src: _headset.default,
-    alt: "headset"
-  }), "Slow"))), /*#__PURE__*/_react.default.createElement("li", null, /*#__PURE__*/_react.default.createElement("h2", null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
-    to: "/style/Salegy"
-  }, /*#__PURE__*/_react.default.createElement("img", {
-    src: _headset.default,
-    alt: "headset"
-  }), "Salegy")))));
-}
-
-var _default = Styles;
-exports.default = _default;
-},{"react":"node_modules/react/index.js","../../img/headset.svg":"img/headset.svg","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js"}],"src/containers/StyleContents.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireDefault(require("react"));
+var _StyleContents = _interopRequireDefault(require("../components/StyleContents"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import headset from "../img/headset.svg";
-// import { useParams, Link } from 'react-router-dom';
-// import { Context } from "../Context";
 function StyleContents() {
-  // const { name } = useParams();
-  // const { allSongs } = useContext(Context);
-  // const newSongs = allSongs.filter(item => item.style === name);
-  // const newSong = newSongs.map(items => {
-  //     return (
-  //             <Link to={`/song/${items.id}`}>
-  //                 <ul key={items.id} className="styles">
-  //                     <li><h3>{items.title}</h3></li>
-  //                     <li><p>{items.artist}</p></li>
-  //                 </ul>
-  //             </Link>
-  //     )
-  // } )
-  return /*#__PURE__*/_react.default.createElement("h1", null, "Style contents") // <div className="style">
-  //     <h2 className="styles_heading"><img src={headset} alt="headset"/>{name}</h2>
-  //     {newSong}
-  // </div>
-  ;
+  var _useParams = (0, _reactRouterDom.useParams)(),
+      name = _useParams.name;
+
+  var newSongs = _state.default.filter(function (item) {
+    return item.style === name;
+  });
+
+  return /*#__PURE__*/_react.default.createElement(_StyleContents.default, null, /*#__PURE__*/_react.default.createElement(_StyleContents.default.Style, null, /*#__PURE__*/_react.default.createElement("img", {
+    src: _headset.default,
+    alt: "headset"
+  }), name), newSongs.map(function (items) {
+    return /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+      to: "/song/".concat(items.id),
+      key: items.id
+    }, /*#__PURE__*/_react.default.createElement(_StyleContents.default.Base, null, /*#__PURE__*/_react.default.createElement(_StyleContents.default.Title, null, items.title), /*#__PURE__*/_react.default.createElement(_StyleContents.default.Artist, null, items.artist)));
+  }));
 }
 
 var _default = StyleContents;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"src/components/Form/styles/form.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../../img/headset.svg":"img/headset.svg","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../state":"src/state.js","../components/StyleContents":"src/components/StyleContents/index.js"}],"src/components/Form/styles/form.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36502,33 +36714,38 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
+var _reactRouterDom = require("react-router-dom");
+
+var _state = _interopRequireDefault(require("../state"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import { useParams, useHistory } from 'react-router-dom';
-// import { Context } from '../Context';
 function Song() {
-  // const { songId } = useParams();
-  // const { allSongs } = useContext(Context);
-  // const history = useHistory();
-  // const song = allSongs.find(song => song.id == songId);
-  return /*#__PURE__*/_react.default.createElement("h1", null, "Add to Lyrics") // <div className="lyrics_container">
-  // 	<div className="lyrics_subcontainer">
-  // 		<h2>
-  // 			{song?.title} : {song?.artist}
-  // 		</h2>
-  // 		<div className="lyrics">
-  // 			<h3>Lyrics</h3>
-  // 			{song?.lyrics}
-  // 		</div>
-  // 	</div>
-  // 	<button onClick={() => history.goBack()}>back</button>
-  // </div>
-  ;
+  var _useParams = (0, _reactRouterDom.useParams)(),
+      songId = _useParams.songId;
+
+  var history = (0, _reactRouterDom.useHistory)();
+
+  var song = _state.default.find(function (song) {
+    return song.id == songId;
+  });
+
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "lyrics_container"
+  }, /*#__PURE__*/_react.default.createElement("div", {
+    className: "lyrics_subcontainer"
+  }, /*#__PURE__*/_react.default.createElement("h2", null, song === null || song === void 0 ? void 0 : song.title, " : ", song === null || song === void 0 ? void 0 : song.artist), /*#__PURE__*/_react.default.createElement("div", {
+    className: "lyrics"
+  }, /*#__PURE__*/_react.default.createElement("h3", null, "Lyrics"), song === null || song === void 0 ? void 0 : song.lyrics)), /*#__PURE__*/_react.default.createElement("button", {
+    onClick: function onClick() {
+      return history.goBack();
+    }
+  }, "back"));
 }
 
 var _default = Song;
 exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"src/containers/Carts.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../state":"src/state.js"}],"src/containers/Carts.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36744,7 +36961,7 @@ exports.GlobalStyles = void 0;
 var _styledComponents = require("styled-components");
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    html, body {\n        font-family: \"Arial, Helvetica, sans-serif\";\n        -webkit-font-smoothing: antialiased;\n        -moz-osx-font-smoothing: antialiased;\n        background: #f3f3fa5c;\n        color: #333333;\n        font-size: 16px;\n        margin: 0;\n        h1, h2, h3, h4, h5, h6, p {\n            margin: 0;\n        }\n        ul {\n            padding: 0;\n            margin: 0;\n            li {\n                list-style: none;\n            }\n        }\n        a {\n            text-decoration: none;\n        }\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n    @font-face {\n        font-family: \"Lato_bold\";\n        src: local(Lato), \n        url(/fonts/Lato-Bold.woff2) format(\"woff2\"), \n        url(/fonts/Lato-Bold.woff) format(\"woff\"), \n    }\n    @font-face {\n        font-family: \"Lato\";\n        src: local(Lato), \n        url(/fonts/Lato-Regular.woff2) format(\"woff2\"), \n        url(/fonts/Lato-Regular.woff) format(\"woff\"), \n    }\n\n    html, body {\n        font-family: \"Arial\";\n        -webkit-font-smoothing: antialiased;\n        -moz-osx-font-smoothing: antialiased;\n        background: #f3f3fa5c;\n        color: #333333;\n        font-size: 16px;\n        margin: 0;\n        h1, h2, h3, h4, h5, h6, p {\n            margin: 0;\n        }\n        ul {\n            padding: 0;\n            margin: 0;\n            li {\n                list-style: none;\n            }\n        }\n        a {\n            text-decoration: none;\n        }\n    }\n"]);
 
   _templateObject = function _templateObject() {
     return data;
