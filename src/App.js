@@ -1,22 +1,25 @@
 import React from 'react';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
-import Popularsongs from '../src/components/Popularsongs';
-import Styles from '../src/components/Styles';
-import StyleContents from '../src/components/StyleContents';
-import AddNewSongs from '../src/components/AddNewSongs';
-import AddToLyrics from '../src/components/AddToLyrics';
-import Carts from '../src/components/Carts';
+import Popularsongs from '../src/containers/PopularSongs';
+import Styles from '../src/containers/Styles';
+import StyleContents from '../src/containers/StyleContents';
+import AddNewSongs from '../src/containers/AddNewSongs';
+import AddToLyrics from '../src/containers/AddToLyrics';
+import Carts from '../src/containers/Carts';
+
+import Container from './components/Container';
+
 function App() {
     return (
-        <div className="wrapper">
+        <Container>
             <Router>
-                <h1>Hit Parade</h1>
-                <ul className="list_headings">
-                    <li><h2><Link to="/">Popular songs</Link></h2></li>
-                    <li><h2><Link to="/style">Styles</Link></h2></li>
-                    <li><h2><Link to="/add">Add</Link></h2></li>
-                    <li><h2><Link to="/cart">Cart</Link></h2></li>
-                </ul>
+                <Container.Header>Hit Parade</Container.Header>
+                <Container.List>
+                    <Container.Item><Link to="/">Popular songs</Link></Container.Item>
+                    <Container.Item><Link to="/style">Styles</Link></Container.Item>
+                    <Container.Item><Link to="/add">Add</Link></Container.Item>
+                    <Container.Item><Link to="/cart">Cart</Link></Container.Item>
+                </Container.List>
                 <Switch>
                     <Route exact path="/"><Popularsongs /></Route>
                     <Route exact path="/style">< Styles/></Route>
@@ -26,7 +29,7 @@ function App() {
                     <Route path="/song/:songId"><AddToLyrics/></Route>
                 </Switch>
             </Router>
-        </div>
+        </Container>
     )
 }
 export default App;

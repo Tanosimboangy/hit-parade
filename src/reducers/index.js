@@ -1,24 +1,24 @@
 import { combineReducers } from 'redux';
 
-function addNewSongs(state = 0, action) {
+function addNewSongs(state = "") {
 	return state;
 }
-function addToLyrics(state = 0, action) {
+function addToLyrics(state = "") {
 	return state;
 }
-function carts(state = 0, action) {
+function carts(state = "") {
 	return state;
 }
-function popularSongs(state = 0, action) {
+function popularSongs(state = "") {
 	return state;
 }
-function SongItem(state = 0, action) {
+function SongItem(state = "") {
 	return state;
 }
-function StyleContents(state = 0, action) {
+function StyleContents(state = "") {
 	return state;
 }
-function Styles(state = 0, action) {
+function Styles(state = "") {
 	return state;
 }
 

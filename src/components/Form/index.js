@@ -2,13 +2,11 @@ import React from 'react';
 import {
     Container,
     Header,
-    InputTitle,
-    InputArtist,
-    InputPrice,
+    Input,
     Select,
     Textarea,
     Button
-} from './styles/AddNewSongs';
+} from './styles/form';
 
 export default function Form({children, ...restProps }) {
 	return <Container {...restProps}>{children}</Container>;
@@ -18,16 +16,8 @@ Form.Header = function FormHeader({ children, ...restProps }) {
     return <Header {...restProps}>{children}</Header>;
 };
 
-Form.InputTitle = function FormInputTitle({...restProps }) {
-    return <InputTitle {...restProps}/>;
-};
-
-Form.InputArtist = function FormInputArtist({...restProps }) {
-    return <InputArtist {...restProps}/>;
-};
-
-Form.InputPrice = function FormInputPrice({...restProps }) {
-    return <InputPrice {...restProps}/>;
+Form.Input = function FormInput({...restProps }) {
+    return <Input {...restProps}/>;
 };
 
 Form.Select = function FormSelect({children, ...restProps }) {
