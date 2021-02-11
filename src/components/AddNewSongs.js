@@ -1,4 +1,5 @@
 import React from "react";
+import {Form} from "../style_components/AddNewSongs";
 // import { Context } from "../../Context";
 
 function Add() {
@@ -33,20 +34,20 @@ function Add() {
     return (
         <>  
             <h1>Add favorite songs</h1>
-            {/* <form className="form_container" onSubmit={addNewSong}>
-                <h2>Add a new song</h2>
-                <input name="title" className="form_title" type="text" placeholder="Title" required/>
-                <input name="artist" className="form_artist" type="text" placeholder="Artist" required/>
-                <input name="price" className="form_price" type="number" placeholder="price" required/>
-                <select name="style" className="form_style" required>
+            {/* <Form>
+                <Form.Header>Add a new song</Form.Header>
+                <Form.InputTitle name="title" type="text" placeholder="Title" required/>
+                <Form.InputArtist name="artist" type="text" placeholder="Artist" required/>
+                <Form.InputPrice name="price" type="number" placeholder="price" required/>
+                <Form.Select name="style" required>
                     <option value="Rock">Rock</option>
                     <option value="Rnb">Rnb</option>
                     <option value="Slow">Slow</option>
                     <option value="Salegy">Salegy</option>
-                </select>
-                <textarea name="lyrics" cols="50" rows="5" className="form_lyrics" required />
-                <button className="form_button" type="submit">Add</button>
-            </form>   */}
+                </Form.Select>
+                <Form.Textarea name="lyrics" cols="50" rows="5" required />
+                <Form.Button type="submit">Add</Form.Button>
+            </Form>   */}
         </>
     )
 }
