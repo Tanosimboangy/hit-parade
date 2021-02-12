@@ -6,10 +6,12 @@ export const Container = styled.form`
     border-radius: 16px;
     padding: 20px 30px;
     background-color: white;
-    box-shadow: 1px 1px 5px black;
     display: flex;
     flex-direction: column;
     font-size: 20px;
+    -moz-box-shadow:    inset 0 0 10px #000000;
+    -webkit-box-shadow: inset 0 0 10px #000000;
+    box-shadow:         inset 0 0 10px #000000;
 `; 
 export const Header = styled.h2`
     padding-bottom: 10px;
@@ -57,13 +59,11 @@ export const Button = styled.button`
     background-color: white;
     color: black;
     font-weight: 700;
-    border: 1px solid black;
-    box-shadow: 1px 1px 5px blue;
+    border: 1px solid #636262;
     border-radius: 8px;
     padding: 10px 30px;
     font-size: 16px;
     outline: none;
-    border: none;
     
     :hover {
         background-color: green;

@@ -1,10 +1,12 @@
-export default [
+export default {
+  cartItems: [],
+  songs: [
     {
       "id": 1605844138557,
       "title": "Masoandro",
       "artist": "Arion Joy",
       "price": 2000,
-      "isFavorite": true,
+      "isFavorited": true,
       "style": "Rnb",
       "lyrics": `Arione joy
       A la la la la la la la la la, aah aah
@@ -64,7 +66,7 @@ export default [
       "title": "Tif a Tif",
       "artist": "Hiezaka Hanadino anao",
       "price": 758,
-      "isFavorite": false,
+      "isFavorited": false,
       "style": "Rock",
       "lyrics": `Tif to Tif - "Hiezaka hanadino anao"
       Nandinika ny lasa indray aho,
@@ -110,7 +112,7 @@ export default [
       "title": "Tempo Gaigy",
       "artist": "Sambatra indrindra",
       "price": 127,
-      "isFavorite": false,
+      "isFavorited": false,
       "style": "Slow",
       "lyrics": `Sambatra indrindra aho Vao mandre anao lavitra any Tsapako ery fa tiako ianao Sasatra ery za miandry valiny hafatrao Tsy maninona fa miandriandry eny any Sambatra indrindra aho Vao mandre anao lavitra any Tsapako ery fa tiako ianao Sasatra ery za miandry valiny hafatrao Volana sy taona hiafiako eny ihany Na efa vizana iny aho Mbola nanoratra noho ianao Mba ilazako fa mbola tiako ianao Ka na dia ho lavinao Ny foko tia anao eny hatrany Avelao aloha mba hitampify eny ihany Satria tiako ianao Tia anao aho Tsy tsaroako akory izay fanaintainako Satria tiako ianao Tia anao aho Omeko anao izay sisa hasambarako Ny fofon'ainao reko mitsoka avy any lavitra any Noentiny rivotra mba sendra nandalo Dia izay no nahalalako fa Any andro iray mbola hiposaka eto ny hasambarako Na efa vizana iny aho Mbola nanoratra noho ianao Mba ilazako fa mbola tiako ianao Ka na dia ho lavinao Ny foko tia anao eny hatrany Avelao aloha mba hitampify eny ihany Tia anao aho Satria tiako ianao Tia anao aho Tsy tsaroako akory izay fanaintainako Tiako ianao , tianao aho Omeko anao izay sisa hasambarako`,
       "like": 368,
@@ -121,11 +123,11 @@ export default [
       "title": "400 volt",
       "artist": "Wawa",
       "price": 130,
-      "isFavorite": false,
+      "isFavorited": false,
       "style": "Salegy",
       "lyrics": `Attention ça c’est salegy 400 Volt Instru Ça passé x 4 vibrer les hanches En bas, Ambanibany   Remonte un peu Vas y kawitry, un ptit peu, un ptit peu Encore monte un ptit peu Ay ay ay, chacun à son tour Mamie et papi son là, alefa Danse mamie, danse mamie, Tsy manaiky papi, avy papi Tsy manaiky resy papi, any nikatraoka, Alefa misaute sauté mzay jiaby Tourné la main comme ça x2 Tsika jaby mihetsika e!  x 4 Encore (Instru) Ça passe x 4 Ça va chauffer, zay valy e (Instru) Ça passe x 4 Alefa, tana io, tana io bouger vas y maman dance maman, dansé x4 stop dance papa, dansé x 4 stop danse petit, dansé x 4 Tsika jaby mihetsika e!  x 4 Attention 400volt, ça passe 2 x Izy koa fa latsaka ny ambiansy izay tsy mihetsika tsongoa Tsika jaby mihetsika e!  x 4 2 x Est-ce que les filles sexy sont là Danse somary mi sexy x4 Izy koa anao magnagno bagara e! dehors (Instru) Ça passe x 4 `,
       "like": 647,
       "dislike": 476 
     }
   ]
-   
+} 

@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
-import Popularsongs from '../src/containers/PopularSongs';
-import Styles from '../src/containers/Styles';
-import StyleContents from '../src/containers/StyleContents';
-import AddNewSongs from '../src/containers/AddNewSongs';
-import AddToLyrics from '../src/containers/AddToLyrics';
-import Carts from '../src/containers/Carts';
+import Songs from './containers/Songs';
+import Styles from './containers/Styles';
+import StyleContents from './containers/StyleContents';
+import AddNewSongs from './containers/AddNewSongs';
+import AddToLyrics from './containers/AddToLyrics';
+import Carts from './containers/Carts';
 
 import Container from './components/Container';
 
@@ -21,7 +21,7 @@ function App() {
                     <Container.Item><Link to="/cart">Cart</Link></Container.Item>
                 </Container.List>
                 <Switch>
-                    <Route exact path="/"><Popularsongs /></Route>
+                    <Route exact path="/"><Songs /></Route>
                     <Route exact path="/style">< Styles/></Route>
                     <Route path="/style/:name"><StyleContents/></Route>
                     <Route path="/add"><AddNewSongs /></Route>

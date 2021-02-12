@@ -6,18 +6,17 @@ import more_horiz from "../../img/more_horiz.svg";
 import favorite_border from "../../img/favorite_border.svg";
 import favorite from "../../img/favorite.svg";
 import List from "../components/SongItem";
-// import fullshopping_cart from "../img/fullshopping_cart.svg";
-// import lineshopping_cart from "../img/lineshopping_cart.svg";
+import { favoriteSong, like, dislike } from "../actions";
+import {useDispatch} from "react-redux"
+import fullshopping_cart from "../../img/fullshopping_cart.svg";
+import lineshopping_cart from "../../img/lineshopping_cart.svg";
 
 function SongItem({ song }) {
-    // const {
-    //     increments, 
-    //     decreaments,
-    //     addToCart,
-    //     toggleFavorite,
-    //     cartSongs,
-	// 	removeCartSongs,
-    // } = useContext(Context);
+    const dispatch = useDispatch();
+    
+    // addToCart,
+    // cartSongs,
+	// removeCartSongs,
 
     // function showCartIcon() {
 	// 	const songInCart = cartSongs.some(item => item.id === song.id);
@@ -31,8 +30,8 @@ function SongItem({ song }) {
         <List key={song.id}>
             <List.Heart>
                 <img 
-                    // onClick={() => toggleFavorite(song.id)} 
-                    src={song.isFavorite ? favorite : favorite_border} 
+                    onClick={() => dispatch(favoriteSong(song.id))} 
+                    src={song.isFavorited ? favorite : favorite_border} 
                     alt="heart"/>
             </List.Heart>
             <List.Details>
@@ -43,14 +42,14 @@ function SongItem({ song }) {
                 {song.like} 
                 <img 
                     src={arrow_up} 
-                    // onClick={() => increments(song.id)} 
+                    onClick={() => dispatch(like(song.id))} 
                     alt="arrow_up"/>
             </List.Like>
             <List.Dislike>
                 {song.dislike} 
                 <img 
                     src={arrow_down} 
-                    // onClick={() => decreaments(song.id)} 
+                    onClick={() => dispatch(dislike(song.id))} 
                     alt="arrow_down"/>
             </List.Dislike>
             <List.ShoppingCart>

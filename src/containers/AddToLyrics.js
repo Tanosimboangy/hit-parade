@@ -1,12 +1,12 @@
 import React from 'react';
 import { useParams, useHistory } from 'react-router-dom';
-import state from '../state';
+import {useSelector} from "react-redux";
 
 function Song() {
 	const { songId } = useParams();
 	const history = useHistory();
-
-	const song = state.find(song => song.id == songId);
+	const songs = useSelector(state => state.songs);
+	const song = songs.find(song => song.id == songId);
 
 	return (
 		<div className="lyrics_container">
@@ -16,10 +16,10 @@ function Song() {
 				</h2>
 				<div className="lyrics">
 					<h3>Lyrics</h3>
-					{song?.lyrics}
+					<p>{song?.lyrics}</p>
 				</div>
+				<button onClick={() => history.goBack()}>back</button>
 			</div>
-			<button onClick={() => history.goBack()}>back</button>
 		</div>
 	);
 }
