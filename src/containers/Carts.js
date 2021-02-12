@@ -1,33 +1,32 @@
-import React from 'react';
-import state from '../state';
-// import { Context } from '../Context';
-// import delete_icon from "../../img/delete_icon.svg";
+import React, {useState, useEffect} from 'react';
+import delete_icon from "../../img/delete_icon.svg";
+import {useDispatch, useSelector} from "react-redux";
+import { removeCartItem, emptyCart} from "../actions";
 
 function Carts() {
-
-//   const { cartSongs, emptyCart, removeCartSongs } = useContext(Context);
-//   const [total, setTotal] = useState(0);
+	const [total, setTotal] = useState(0);
+	const cartItems = useSelector(state => state.cartItems);
+	const dispatch = useDispatch();
   
-//   useEffect(() => {
-// 		const newTotal = cartSongs.reduce((total, song) => {
-// 			total += song.price;
-// 			return total;
-// 		}, 0);
-// 		setTotal(newTotal);
-// 	}, [cartSongs]);
+  	useEffect(() => {
+		const newTotal = cartItems.reduce((total, song) => {
+			total += song.price;
+			return total;
+		}, 0);
+		setTotal(newTotal);
+	}, [cartItems]);
 
-// 	function completeOrder() {
-// 		alert(`THANK YOU FOR YOUR ORDER. PLEASE PAY : ${total}`);
-// 		emptyCart();
-// 	}
+	function completeOrder() {
+		alert(`THANK YOU FOR YOUR ORDER. PLEASE PAY : ${total}`);
+		dispatch(emptyCart());
+	}
 
   return (
 		<>
-			<h1>carts</h1>
-			{/* <div>
+			<div>
 				{state.map(song => (
 					<div key={song.id} className="cart_container">
-						<img onClick={() => removeCartSongs(song.id)} src={delete_icon} alt="delete_icon"/>
+						<img onClick={() => dispatch(removeCartItem(song.id))} src={delete_icon} alt="delete_icon"/>
 						<div>
 							<h4>{song.title}</h4>
 							<p>{song.artist}</p>
@@ -36,8 +35,10 @@ function Carts() {
 					</div>
 				))}
 			</div>
-			{cartSongs.length !== 0 ? <p>Total: {total} Ar</p> : 'Empty Cart.'}
-			{total !== 0 && <button onClick={completeOrder}>Buy</button>} */}
+			<div>
+				{cartSongs.length !== 0 ? <p>Total: {total} Ar</p> : 'Empty Cart.'}
+				{total !== 0 && <button onClick={completeOrder}>Buy</button>}
+			</div>
 		</>
 	);
 }

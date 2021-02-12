@@ -33855,14 +33855,18 @@ if ("development" !== "production") {
 }
 },{"react-router":"node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"node_modules/react/index.js","history":"node_modules/history/esm/history.js","prop-types":"node_modules/prop-types/index.js","tiny-warning":"node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"img/arrow_up.svg":[function(require,module,exports) {
 module.exports = "/arrow_up.4737aec9.svg";
+},{}],"img/favorite.svg":[function(require,module,exports) {
+module.exports = "/favorite.4d127cd3.svg";
 },{}],"img/arrow_down.svg":[function(require,module,exports) {
 module.exports = "/arrow_down.3d6b8982.svg";
 },{}],"img/more_horiz.svg":[function(require,module,exports) {
 module.exports = "/more_horiz.540c0812.svg";
 },{}],"img/favorite_border.svg":[function(require,module,exports) {
 module.exports = "/favorite_border.02c7f6ff.svg";
-},{}],"img/favorite.svg":[function(require,module,exports) {
-module.exports = "/favorite.4d127cd3.svg";
+},{}],"img/fullshopping_cart.svg":[function(require,module,exports) {
+module.exports = "/fullshopping_cart.3ef60fbc.svg";
+},{}],"img/lineshopping_cart.svg":[function(require,module,exports) {
+module.exports = "/lineshopping_cart.56d8cab2.svg";
 },{}],"node_modules/shallowequal/index.js":[function(require,module,exports) {
 //
 
@@ -38427,13 +38431,17 @@ var _reactRouterDom = require("react-router-dom");
 
 var _arrow_up = _interopRequireDefault(require("../../img/arrow_up.svg"));
 
+var _favorite = _interopRequireDefault(require("../../img/favorite.svg"));
+
 var _arrow_down = _interopRequireDefault(require("../../img/arrow_down.svg"));
 
 var _more_horiz = _interopRequireDefault(require("../../img/more_horiz.svg"));
 
 var _favorite_border = _interopRequireDefault(require("../../img/favorite_border.svg"));
 
-var _favorite = _interopRequireDefault(require("../../img/favorite.svg"));
+var _fullshopping_cart = _interopRequireDefault(require("../../img/fullshopping_cart.svg"));
+
+var _lineshopping_cart = _interopRequireDefault(require("../../img/lineshopping_cart.svg"));
 
 var _SongItem = _interopRequireDefault(require("../components/SongItem"));
 
@@ -38443,20 +38451,37 @@ var _reactRedux = require("react-redux");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import fullshopping_cart from "../../img/fullshopping_cart.svg";
-// import lineshopping_cart from "../../img/lineshopping_cart.svg";
 function SongItem(_ref) {
   var song = _ref.song;
-  var dispatch = (0, _reactRedux.useDispatch)(); // addToCart,
-  // cartSongs,
-  // removeCartSongs,
-  // function showCartIcon() {
-  // 	const songInCart = cartSongs.some(item => item.id === song.id);
-  // 	if (songInCart) {
-  //         return <img src={lineshopping_cart} onClick={() => removeCartSongs(song.id)} alt="lineshopping_cart" />;
-  // 	}
-  //     return <img onClick={() => addToCart(song)} src={fullshopping_cart} alt="fullshopping_cart"/>
-  // }
+  var dispatch = (0, _reactRedux.useDispatch)();
+  var cartItems = (0, _reactRedux.useSelector)(function (state) {
+    return state.cartItems;
+  });
+  console.log(cartItems);
+
+  function showCartIcon() {
+    var songInCart = cartItems.some(function (item) {
+      return item.id === song.id;
+    });
+
+    if (songInCart) {
+      return /*#__PURE__*/_react.default.createElement("img", {
+        src: _lineshopping_cart.default,
+        onClick: function onClick() {
+          return dispatch(removeCartSongs(song.id));
+        },
+        alt: "lineshopping_cart"
+      });
+    }
+
+    return /*#__PURE__*/_react.default.createElement("img", {
+      onClick: function onClick() {
+        return dispatch((0, _actions.addToCart)(song));
+      },
+      src: _fullshopping_cart.default,
+      alt: "fullshopping_cart"
+    });
+  }
 
   return /*#__PURE__*/_react.default.createElement(_SongItem.default, {
     key: song.id
@@ -38482,7 +38507,7 @@ function SongItem(_ref) {
       return dispatch((0, _actions.dislike)(song.id));
     },
     alt: "arrow_down"
-  })), /*#__PURE__*/_react.default.createElement(_SongItem.default.ShoppingCart, null), /*#__PURE__*/_react.default.createElement(_SongItem.default.Lyrics, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  })), /*#__PURE__*/_react.default.createElement(_SongItem.default.ShoppingCart, null, showCartIcon()), /*#__PURE__*/_react.default.createElement(_SongItem.default.Lyrics, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/song/".concat(song.id)
   }, /*#__PURE__*/_react.default.createElement("img", {
     src: _more_horiz.default,
@@ -38492,7 +38517,7 @@ function SongItem(_ref) {
 
 var _default = SongItem;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../../img/arrow_up.svg":"img/arrow_up.svg","../../img/arrow_down.svg":"img/arrow_down.svg","../../img/more_horiz.svg":"img/more_horiz.svg","../../img/favorite_border.svg":"img/favorite_border.svg","../../img/favorite.svg":"img/favorite.svg","../components/SongItem":"src/components/SongItem/index.js","../actions":"src/actions/index.js","react-redux":"node_modules/react-redux/es/index.js"}],"src/containers/Songs.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../../img/arrow_up.svg":"img/arrow_up.svg","../../img/favorite.svg":"img/favorite.svg","../../img/arrow_down.svg":"img/arrow_down.svg","../../img/more_horiz.svg":"img/more_horiz.svg","../../img/favorite_border.svg":"img/favorite_border.svg","../../img/fullshopping_cart.svg":"img/fullshopping_cart.svg","../../img/lineshopping_cart.svg":"img/lineshopping_cart.svg","../components/SongItem":"src/components/SongItem/index.js","../actions":"src/actions/index.js","react-redux":"node_modules/react-redux/es/index.js"}],"src/containers/Songs.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38628,9 +38653,7 @@ var _reactRouterDom = require("react-router-dom");
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function Styles() {
-  return /*#__PURE__*/_react.default.createElement(_Styles.default, {
-    className: "styles"
-  }, /*#__PURE__*/_react.default.createElement(_Styles.default.Item, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
+  return /*#__PURE__*/_react.default.createElement(_Styles.default, null, /*#__PURE__*/_react.default.createElement(_Styles.default.Item, null, /*#__PURE__*/_react.default.createElement(_reactRouterDom.Link, {
     to: "/style/Rnb"
   }, /*#__PURE__*/_react.default.createElement("img", {
     src: _headset.default,
@@ -38668,7 +38691,7 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n    font-size: 18px;\n    line-height: 22px;\n"]);
+  var data = _taggedTemplateLiteral(["\n    font-size: 18px;\n    line-height: 22px;\n    background: #272343;\n    border-radius: 5px;\n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -39070,7 +39093,163 @@ function Add() {
 
 var _default = Add;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../components/Form":"src/components/Form/index.js","react-redux":"node_modules/react-redux/es/index.js","../actions":"src/actions/index.js"}],"src/containers/AddToLyrics.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../components/Form":"src/components/Form/index.js","react-redux":"node_modules/react-redux/es/index.js","../actions":"src/actions/index.js"}],"src/components/AddToLyrics/styles/AddToLyrics.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Button = exports.Text = exports.Header = exports.Lyrics = exports.Artist = exports.Wrapper = void 0;
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _templateObject6() {
+  var data = _taggedTemplateLiteral(["\n    display: block;\n    text-align: center;\n    font-weight: bold;\n    color:#fff;\n    text-decoration: none;\n    background-color: #429000;\n    padding:10px 5px;\n    -webkit-border-radius: 10px;\n    -moz-border-radius: 10px;\n    border-radius: 10px;\n    -webkit-box-sizing: border-box;\n    -moz-box-sizing: border-box;\n    box-sizing: border-box;\n    border: 5px solid #429000;\n    box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.15);\n\n    :active{\n        position: relative;\n        top:3px;\n        left:2px;\n        box-shadow: 0px 0px;\n    }\n\n    :hover{\n        background-color: #fff;\n        color:#429000;\n        font-weight: bold;\n    }\n"]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject5() {
+  var data = _taggedTemplateLiteral(["\n    font-size: 18px;\n"]);
+
+  _templateObject5 = function _templateObject5() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject4() {
+  var data = _taggedTemplateLiteral(["\n    margin-bottom: 20px;\n    font-size: 30px;\n"]);
+
+  _templateObject4 = function _templateObject4() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject3() {
+  var data = _taggedTemplateLiteral(["\n    max-width: 400px;\n    margin-right: auto;\n    padding: 2% 4% 6% 4%;\n    background: #272343;\n    border-radius: 5px;\n    margin-bottom: 20px;\n    color: #FFFFFE;\n"]);
+
+  _templateObject3 = function _templateObject3() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject2() {
+  var data = _taggedTemplateLiteral(["\n    /* font-family: Montserrat; */\n    font-style: normal;\n    font-weight: normal;\n    font-size: 34px;\n    color: #000000;\n    margin-bottom: 41px;\n"]);
+
+  _templateObject2 = function _templateObject2() {
+    return data;
+  };
+
+  return data;
+}
+
+function _templateObject() {
+  var data = _taggedTemplateLiteral([""]);
+
+  _templateObject = function _templateObject() {
+    return data;
+  };
+
+  return data;
+}
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var Wrapper = _styledComponents.default.div(_templateObject());
+
+exports.Wrapper = Wrapper;
+
+var Artist = _styledComponents.default.h2(_templateObject2());
+
+exports.Artist = Artist;
+
+var Lyrics = _styledComponents.default.div(_templateObject3());
+
+exports.Lyrics = Lyrics;
+
+var Header = _styledComponents.default.h3(_templateObject4());
+
+exports.Header = Header;
+
+var Text = _styledComponents.default.p(_templateObject5());
+
+exports.Text = Text;
+
+var Button = _styledComponents.default.button(_templateObject6());
+
+exports.Button = Button;
+},{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/components/AddToLyrics/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Container;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _AddToLyrics = require("./styles/AddToLyrics");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function Container(_ref) {
+  var children = _ref.children,
+      restProps = _objectWithoutProperties(_ref, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_AddToLyrics.Wrapper, restProps, children);
+}
+
+Container.Artist = function ContainerArtist(_ref2) {
+  var children = _ref2.children,
+      restProps = _objectWithoutProperties(_ref2, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_AddToLyrics.Artist, restProps, children);
+};
+
+Container.Lyrics = function ContainerLyrics(_ref3) {
+  var children = _ref3.children,
+      restProps = _objectWithoutProperties(_ref3, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_AddToLyrics.Lyrics, restProps, children);
+};
+
+Container.Header = function ContainerHeader(_ref4) {
+  var children = _ref4.children,
+      restProps = _objectWithoutProperties(_ref4, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_AddToLyrics.Header, restProps, children);
+};
+
+Container.Text = function ContainerText(_ref5) {
+  var children = _ref5.children,
+      restProps = _objectWithoutProperties(_ref5, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_AddToLyrics.Text, restProps, children);
+};
+
+Container.Button = function ContainerButton(_ref6) {
+  var children = _ref6.children,
+      restProps = _objectWithoutProperties(_ref6, ["children"]);
+
+  return /*#__PURE__*/_react.default.createElement(_AddToLyrics.Button, restProps, children);
+};
+},{"react":"node_modules/react/index.js","./styles/AddToLyrics":"src/components/AddToLyrics/styles/AddToLyrics.js"}],"src/containers/AddToLyrics.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39083,6 +39262,8 @@ var _react = _interopRequireDefault(require("react"));
 var _reactRouterDom = require("react-router-dom");
 
 var _reactRedux = require("react-redux");
+
+var _AddToLyrics = _interopRequireDefault(require("../components/AddToLyrics"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -39097,73 +39278,17 @@ function Song() {
   var song = songs.find(function (song) {
     return song.id == songId;
   });
-  return /*#__PURE__*/_react.default.createElement("div", {
-    className: "lyrics_container"
-  }, /*#__PURE__*/_react.default.createElement("div", {
-    className: "lyrics_subcontainer"
-  }, /*#__PURE__*/_react.default.createElement("h2", null, song === null || song === void 0 ? void 0 : song.title, " : ", song === null || song === void 0 ? void 0 : song.artist), /*#__PURE__*/_react.default.createElement("div", {
-    className: "lyrics"
-  }, /*#__PURE__*/_react.default.createElement("h3", null, "Lyrics"), /*#__PURE__*/_react.default.createElement("p", null, song === null || song === void 0 ? void 0 : song.lyrics)), /*#__PURE__*/_react.default.createElement("button", {
+  return /*#__PURE__*/_react.default.createElement(_AddToLyrics.default, null, /*#__PURE__*/_react.default.createElement(_AddToLyrics.default.Artist, null, song === null || song === void 0 ? void 0 : song.title, " : ", song === null || song === void 0 ? void 0 : song.artist), /*#__PURE__*/_react.default.createElement(_AddToLyrics.default.Lyrics, null, /*#__PURE__*/_react.default.createElement(_AddToLyrics.default.Header, null, "Lyrics"), /*#__PURE__*/_react.default.createElement(_AddToLyrics.default.Text, null, song === null || song === void 0 ? void 0 : song.lyrics)), /*#__PURE__*/_react.default.createElement(_AddToLyrics.default.Button, {
     onClick: function onClick() {
       return history.goBack();
     }
-  }, "back")));
+  }, "Back to styles"));
 }
 
 var _default = Song;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","react-redux":"node_modules/react-redux/es/index.js"}],"src/state.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-var _default = {
-  cartItems: [],
-  songs: [{
-    "id": 1605844138557,
-    "title": "Masoandro",
-    "artist": "Arion Joy",
-    "price": 2000,
-    "isFavorited": true,
-    "style": "Rnb",
-    "lyrics": "Arione joy\n      A la la la la la la la la la, aah aah\n      Tsy afa manoatra izy iny fa te ho any anie\n      Te hiara-dalana aminao iny, mmhh\n      Ianao no iriany ihany koa mba ho namany e\n      Nefa, toa tsisy sira tsy mba niasanao loha\n      Voapetrapetrakao foana, laingalainga sy ny fitaka retra mandeha\n      Dia tsy nampoiziny fa ianao ange tsy Love hatramin\u2019ny na indray mande\n      Aiza no alalany anzany zany, zany e tsy mba lazainao ny marina\n      Avelanao itsiriritra fotsiny eo izy e\n      Aii aii \xE9\n      Fa zava-mitranga anie zao ralahy\n      Matokisa koa fa mbola ho avy ilay anjara\n      Lanitra ho manga anie fa aza manahy\n      Fa samy olombelona mba manana amboara\n      Ka aza mba maika aloha fa ho avy ny fotoana anie\n      Reny vitany aza mety hoe anenenany e\n      Dia ra ny ditrany avelao aloha amelana e\n      Fa izi ai ai ai aiii\n      N\u2019inon\u2019inona ataonao\n      Izy anie natoky foana, ihany ianao hilaza fa ianao anie ny anjarany e\n      Kanefa ianao, tsy mba niova\n      Fa nozarinao ny lainga koa ny tenany a, ayee\n      Mety hoe mba marary ko ny fony anie\n      Fa reny masoandro lasanao reny\n      Mety anenenanao koa indray andro any\n      Izay revinao retraretra ary nekeny\n      Tsy ho valiny aminao fa mety avelany any\n      Tsy maintsy iafiny anie, na dia marary aza reny dia iafiany anie\n      (REFRAIN)\n      Fa zava-mitranga anie zao ralahy\n      Matokisa koa fa mbola ho avy ilay anjara\n      Lanitra ho manga anie fa aza manahy\n      Fa samy olombelona mba manana amboara\n      Ka aza mba maika aloha fa ho avy ny fotoana anie\n      Reny vitany aza mety hoe anenenany e\n      Dia ra ny ditrany avelao aloha amelana e\n      Fa izi ai ai ai aiii\n      Fa reny masoandro lasanao reny\n      Mety anenenanao koa indray andro any\n      Izay revinao retraretra ary nekeny\n      Tsy ho valiny aminaoooo\n      Fa zava-mitranga anie zao ralahy\n      Matokisa koa fa mbola ho avy ilay anjara\n      Lanitra ho manga anie fa aza manahy\n      Fa samy olombelona mba manana amboara\n      Ka aza mba maika aloha fa ho avy ny fotoana anie\n      Reny vitany aza mety hoe anenenany e\n      Dia ra ny ditrany avelao aloha amelana e\n      Fa izi ai ai ai aiii",
-    "like": 50,
-    "dislike": 7
-  }, {
-    "id": 1605844138574,
-    "title": "Tif a Tif",
-    "artist": "Hiezaka Hanadino anao",
-    "price": 758,
-    "isFavorited": false,
-    "style": "Rock",
-    "lyrics": "Tif to Tif - \"Hiezaka hanadino anao\"\n      Nandinika ny lasa indray aho,\n      Nandinika ny tokony hatao\n      Fitiavana foana hatrizay,\n      Nodiako tsy jerena fa nandratra fo\n      Ampy izay ireo hadalana\n      Nandefitra aho taloha\n      Fa misy ny andro sarotra ial\xE0na\n      Ka tonga izao ilay ora itenenako\n      Ny adidy maro anefa miandry eny ihany\n      Mbola lavitra ny l\xE0lako izany\n      Hiezaka hanadino anao, hiezaka hanadino anao aho\n      Hiezaka hanadino anao na ho mafy na ho mora\n      Hiezaka hanadino anao aho, hiezaka hanadino anao\n      Hiezaka hanadino anao na dia vetivety monja\n      Fa mampaninona moa!\n      Ekeko fa l\xE0lana iray\n      Nodiavintsika teo aloha\n      Fa tojo ilay sampanana indray izao\n      Voatery ny olona iray hizara roa\n      Tapitra teo ny hadalana\n      Niarahana natao\n      Fa any andro hifankahitana\n      Mba samy ho olon-kendry izaho sy ianao\n      Ny adidy maro anefa miandry eny foana\n      Mety misy ny andro mbola hihaona\n      Hiezaka hanadino anao, hiezaka hanadino anao aho\n      Hiezaka hanadino anao na ho mafy na ho mora\n      Hiezaka hanadino anao aho, hiezaka hanadino anao\n      Hiezaka hanadino anao na dia vetivety monja\n      Fa mampaninona moa!\n      Hiezaka hanadino anao, hiezaka hanadino anao aho\n      Hiezaka hanadino anao na ho mafy na ho mora\n      Fa amin'izao fotoana izao, hiezaka hanadino anao aho\n      Hiezaka hanadino anao n'isan'andro n'isan'ora\n      Hatreo ny antsika roa",
-    "like": 300,
-    "dislike": 7
-  }, {
-    "id": 1345834188574,
-    "title": "Tempo Gaigy",
-    "artist": "Sambatra indrindra",
-    "price": 127,
-    "isFavorited": false,
-    "style": "Slow",
-    "lyrics": "Sambatra indrindra aho Vao mandre anao lavitra any Tsapako ery fa tiako ianao Sasatra ery za miandry valiny hafatrao Tsy maninona fa miandriandry eny any Sambatra indrindra aho Vao mandre anao lavitra any Tsapako ery fa tiako ianao Sasatra ery za miandry valiny hafatrao Volana sy taona hiafiako eny ihany Na efa vizana iny aho Mbola nanoratra noho ianao Mba ilazako fa mbola tiako ianao Ka na dia ho lavinao Ny foko tia anao eny hatrany Avelao aloha mba hitampify eny ihany Satria tiako ianao Tia anao aho Tsy tsaroako akory izay fanaintainako Satria tiako ianao Tia anao aho Omeko anao izay sisa hasambarako Ny fofon'ainao reko mitsoka avy any lavitra any Noentiny rivotra mba sendra nandalo Dia izay no nahalalako fa Any andro iray mbola hiposaka eto ny hasambarako Na efa vizana iny aho Mbola nanoratra noho ianao Mba ilazako fa mbola tiako ianao Ka na dia ho lavinao Ny foko tia anao eny hatrany Avelao aloha mba hitampify eny ihany Tia anao aho Satria tiako ianao Tia anao aho Tsy tsaroako akory izay fanaintainako Tiako ianao , tianao aho Omeko anao izay sisa hasambarako",
-    "like": 368,
-    "dislike": 36
-  }, {
-    "id": 1345834183574,
-    "title": "400 volt",
-    "artist": "Wawa",
-    "price": 130,
-    "isFavorited": false,
-    "style": "Salegy",
-    "lyrics": "Attention \xE7a c\u2019est salegy 400 Volt Instru \xC7a pass\xE9 x 4 vibrer les hanches En bas, Ambanibany   Remonte un peu Vas y kawitry, un ptit peu, un ptit peu Encore monte un ptit peu Ay ay ay, chacun \xE0 son tour Mamie et papi son l\xE0, alefa Danse mamie, danse mamie, Tsy manaiky papi, avy papi Tsy manaiky resy papi, any nikatraoka, Alefa misaute saut\xE9 mzay jiaby Tourn\xE9 la main comme \xE7a x2 Tsika jaby mihetsika e!  x 4 Encore (Instru) \xC7a passe x 4 \xC7a va chauffer, zay valy e (Instru) \xC7a passe x 4 Alefa, tana io, tana io bouger vas y maman dance maman, dans\xE9 x4 stop dance papa, dans\xE9 x 4 stop danse petit, dans\xE9 x 4 Tsika jaby mihetsika e!  x 4 Attention 400volt, \xE7a passe 2 x Izy koa fa latsaka ny ambiansy izay tsy mihetsika tsongoa Tsika jaby mihetsika e!  x 4 2 x Est-ce que les filles sexy sont l\xE0 Danse somary mi sexy x4 Izy koa anao magnagno bagara e! dehors (Instru) \xC7a passe x 4 ",
-    "like": 647,
-    "dislike": 476
-  }]
-};
-exports.default = _default;
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","react-redux":"node_modules/react-redux/es/index.js","../components/AddToLyrics":"src/components/AddToLyrics/index.js"}],"img/delete_icon.svg":[function(require,module,exports) {
+module.exports = "/delete_icon.684f9cef.svg";
 },{}],"src/containers/Carts.js":[function(require,module,exports) {
 "use strict";
 
@@ -39172,34 +39297,76 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 
-var _state = _interopRequireDefault(require("../state"));
+var _delete_icon = _interopRequireDefault(require("../../img/delete_icon.svg"));
+
+var _reactRedux = require("react-redux");
+
+var _actions = require("../actions");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import { Context } from '../Context';
-// import delete_icon from "../../img/delete_icon.svg";
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 function Carts() {
-  //   const { cartSongs, emptyCart, removeCartSongs } = useContext(Context);
-  //   const [total, setTotal] = useState(0);
-  //   useEffect(() => {
-  // 		const newTotal = cartSongs.reduce((total, song) => {
-  // 			total += song.price;
-  // 			return total;
-  // 		}, 0);
-  // 		setTotal(newTotal);
-  // 	}, [cartSongs]);
-  // 	function completeOrder() {
-  // 		alert(`THANK YOU FOR YOUR ORDER. PLEASE PAY : ${total}`);
-  // 		emptyCart();
-  // 	}
-  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("h1", null, "carts"));
+  var _useState = (0, _react.useState)(0),
+      _useState2 = _slicedToArray(_useState, 2),
+      total = _useState2[0],
+      setTotal = _useState2[1];
+
+  var cartItems = (0, _reactRedux.useSelector)(function (state) {
+    return state.cartItems;
+  });
+  var dispatch = (0, _reactRedux.useDispatch)();
+  (0, _react.useEffect)(function () {
+    var newTotal = cartItems.reduce(function (total, song) {
+      total += song.price;
+      return total;
+    }, 0);
+    setTotal(newTotal);
+  }, [cartItems]);
+
+  function completeOrder() {
+    alert("THANK YOU FOR YOUR ORDER. PLEASE PAY : ".concat(total));
+    dispatch((0, _actions.emptyCart)());
+  }
+
+  return /*#__PURE__*/_react.default.createElement(_react.default.Fragment, null, /*#__PURE__*/_react.default.createElement("div", null, state.map(function (song) {
+    return /*#__PURE__*/_react.default.createElement("div", {
+      key: song.id,
+      className: "cart_container"
+    }, /*#__PURE__*/_react.default.createElement("img", {
+      onClick: function onClick() {
+        return dispatch((0, _actions.removeCartItem)(song.id));
+      },
+      src: _delete_icon.default,
+      alt: "delete_icon"
+    }), /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h4", null, song.title), /*#__PURE__*/_react.default.createElement("p", null, song.artist)), /*#__PURE__*/_react.default.createElement("div", {
+      className: "price"
+    }, song.price, " Ar"));
+  })), /*#__PURE__*/_react.default.createElement("div", null, cartSongs.length !== 0 ? /*#__PURE__*/_react.default.createElement("p", null, "Total: ", total, " Ar") : 'Empty Cart.', total !== 0 && /*#__PURE__*/_react.default.createElement("button", {
+    onClick: completeOrder
+  }, "Buy")));
 }
 
 var _default = Carts;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../state":"src/state.js"}],"src/components/Container/styles/containers.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../../img/delete_icon.svg":"img/delete_icon.svg","react-redux":"node_modules/react-redux/es/index.js","../actions":"src/actions/index.js"}],"src/components/Container/styles/containers.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39482,19 +39649,19 @@ function cartItems() {
   var action = arguments.length > 1 ? arguments[1] : undefined;
 
   switch (action.type) {
-    case "DISLIKE":
+    case 'ADD_TO_CART':
       {
-        var newSong = state.map(function (song) {
-          if (song.id === action.payload) {
-            return _objectSpread(_objectSpread({}, song), {}, {
-              dislike: song.dislike
-            });
-          }
-
-          return song;
-        });
-        return newSong;
+        return [].concat(_toConsumableArray(state), [action.payload]);
       }
+
+    case 'REMOVE_CART_ITEM':
+      var newCartWithoutSpecificItem = state.filter(function (item) {
+        return item.id !== action.payload;
+      });
+      return _toConsumableArray(newCartWithoutSpecificItem);
+
+    case 'EMPTY_CART':
+      return [];
 
     default:
       return state;
@@ -39507,7 +39674,59 @@ var _default = (0, _redux.combineReducers)({
 });
 
 exports.default = _default;
-},{"redux":"node_modules/redux/es/redux.js"}],"src/store.js":[function(require,module,exports) {
+},{"redux":"node_modules/redux/es/redux.js"}],"src/state.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = {
+  cartItems: [],
+  songs: [{
+    "id": 1605844138557,
+    "title": "Masoandro",
+    "artist": "Arion Joy",
+    "price": 2000,
+    "isFavorited": true,
+    "style": "Rnb",
+    "lyrics": "Arione joy\n      A la la la la la la la la la, aah aah\n      Tsy afa manoatra izy iny fa te ho any anie\n      Te hiara-dalana aminao iny, mmhh\n      Ianao no iriany ihany koa mba ho namany e\n      Nefa, toa tsisy sira tsy mba niasanao loha\n      Voapetrapetrakao foana, laingalainga sy ny fitaka retra mandeha\n      Dia tsy nampoiziny fa ianao ange tsy Love hatramin\u2019ny na indray mande\n      Aiza no alalany anzany zany, zany e tsy mba lazainao ny marina\n      Avelanao itsiriritra fotsiny eo izy e\n      Aii aii \xE9\n      Fa zava-mitranga anie zao ralahy\n      Matokisa koa fa mbola ho avy ilay anjara\n      Lanitra ho manga anie fa aza manahy\n      Fa samy olombelona mba manana amboara\n      Ka aza mba maika aloha fa ho avy ny fotoana anie\n      Reny vitany aza mety hoe anenenany e\n      Dia ra ny ditrany avelao aloha amelana e\n      Fa izi ai ai ai aiii\n      N\u2019inon\u2019inona ataonao\n      Izy anie natoky foana, ihany ianao hilaza fa ianao anie ny anjarany e\n      Kanefa ianao, tsy mba niova\n      Fa nozarinao ny lainga koa ny tenany a, ayee\n      Mety hoe mba marary ko ny fony anie\n      Fa reny masoandro lasanao reny\n      Mety anenenanao koa indray andro any\n      Izay revinao retraretra ary nekeny\n      Tsy ho valiny aminao fa mety avelany any\n      Tsy maintsy iafiny anie, na dia marary aza reny dia iafiany anie\n      (REFRAIN)\n      Fa zava-mitranga anie zao ralahy\n      Matokisa koa fa mbola ho avy ilay anjara\n      Lanitra ho manga anie fa aza manahy\n      Fa samy olombelona mba manana amboara\n      Ka aza mba maika aloha fa ho avy ny fotoana anie\n      Reny vitany aza mety hoe anenenany e\n      Dia ra ny ditrany avelao aloha amelana e\n      Fa izi ai ai ai aiii\n      Fa reny masoandro lasanao reny\n      Mety anenenanao koa indray andro any\n      Izay revinao retraretra ary nekeny\n      Tsy ho valiny aminaoooo\n      Fa zava-mitranga anie zao ralahy\n      Matokisa koa fa mbola ho avy ilay anjara\n      Lanitra ho manga anie fa aza manahy\n      Fa samy olombelona mba manana amboara\n      Ka aza mba maika aloha fa ho avy ny fotoana anie\n      Reny vitany aza mety hoe anenenany e\n      Dia ra ny ditrany avelao aloha amelana e\n      Fa izi ai ai ai aiii",
+    "like": 50,
+    "dislike": 7
+  }, {
+    "id": 1605844138574,
+    "title": "Tif a Tif",
+    "artist": "Hiezaka Hanadino anao",
+    "price": 758,
+    "isFavorited": false,
+    "style": "Rock",
+    "lyrics": "Tif to Tif - \"Hiezaka hanadino anao\"\n      Nandinika ny lasa indray aho,\n      Nandinika ny tokony hatao\n      Fitiavana foana hatrizay,\n      Nodiako tsy jerena fa nandratra fo\n      Ampy izay ireo hadalana\n      Nandefitra aho taloha\n      Fa misy ny andro sarotra ial\xE0na\n      Ka tonga izao ilay ora itenenako\n      Ny adidy maro anefa miandry eny ihany\n      Mbola lavitra ny l\xE0lako izany\n      Hiezaka hanadino anao, hiezaka hanadino anao aho\n      Hiezaka hanadino anao na ho mafy na ho mora\n      Hiezaka hanadino anao aho, hiezaka hanadino anao\n      Hiezaka hanadino anao na dia vetivety monja\n      Fa mampaninona moa!\n      Ekeko fa l\xE0lana iray\n      Nodiavintsika teo aloha\n      Fa tojo ilay sampanana indray izao\n      Voatery ny olona iray hizara roa\n      Tapitra teo ny hadalana\n      Niarahana natao\n      Fa any andro hifankahitana\n      Mba samy ho olon-kendry izaho sy ianao\n      Ny adidy maro anefa miandry eny foana\n      Mety misy ny andro mbola hihaona\n      Hiezaka hanadino anao, hiezaka hanadino anao aho\n      Hiezaka hanadino anao na ho mafy na ho mora\n      Hiezaka hanadino anao aho, hiezaka hanadino anao\n      Hiezaka hanadino anao na dia vetivety monja\n      Fa mampaninona moa!\n      Hiezaka hanadino anao, hiezaka hanadino anao aho\n      Hiezaka hanadino anao na ho mafy na ho mora\n      Fa amin'izao fotoana izao, hiezaka hanadino anao aho\n      Hiezaka hanadino anao n'isan'andro n'isan'ora\n      Hatreo ny antsika roa",
+    "like": 300,
+    "dislike": 7
+  }, {
+    "id": 1345834188574,
+    "title": "Tempo Gaigy",
+    "artist": "Sambatra indrindra",
+    "price": 127,
+    "isFavorited": false,
+    "style": "Slow",
+    "lyrics": "Sambatra indrindra aho Vao mandre anao lavitra any Tsapako ery fa tiako ianao Sasatra ery za miandry valiny hafatrao Tsy maninona fa miandriandry eny any Sambatra indrindra aho Vao mandre anao lavitra any Tsapako ery fa tiako ianao Sasatra ery za miandry valiny hafatrao Volana sy taona hiafiako eny ihany Na efa vizana iny aho Mbola nanoratra noho ianao Mba ilazako fa mbola tiako ianao Ka na dia ho lavinao Ny foko tia anao eny hatrany Avelao aloha mba hitampify eny ihany Satria tiako ianao Tia anao aho Tsy tsaroako akory izay fanaintainako Satria tiako ianao Tia anao aho Omeko anao izay sisa hasambarako Ny fofon'ainao reko mitsoka avy any lavitra any Noentiny rivotra mba sendra nandalo Dia izay no nahalalako fa Any andro iray mbola hiposaka eto ny hasambarako Na efa vizana iny aho Mbola nanoratra noho ianao Mba ilazako fa mbola tiako ianao Ka na dia ho lavinao Ny foko tia anao eny hatrany Avelao aloha mba hitampify eny ihany Tia anao aho Satria tiako ianao Tia anao aho Tsy tsaroako akory izay fanaintainako Tiako ianao , tianao aho Omeko anao izay sisa hasambarako",
+    "like": 368,
+    "dislike": 36
+  }, {
+    "id": 1345834183574,
+    "title": "400 volt",
+    "artist": "Wawa",
+    "price": 130,
+    "isFavorited": false,
+    "style": "Salegy",
+    "lyrics": "Attention \xE7a c\u2019est salegy 400 Volt Instru \xC7a pass\xE9 x 4 vibrer les hanches En bas, Ambanibany   Remonte un peu Vas y kawitry, un ptit peu, un ptit peu Encore monte un ptit peu Ay ay ay, chacun \xE0 son tour Mamie et papi son l\xE0, alefa Danse mamie, danse mamie, Tsy manaiky papi, avy papi Tsy manaiky resy papi, any nikatraoka, Alefa misaute saut\xE9 mzay jiaby Tourn\xE9 la main comme \xE7a x2 Tsika jaby mihetsika e!  x 4 Encore (Instru) \xC7a passe x 4 \xC7a va chauffer, zay valy e (Instru) \xC7a passe x 4 Alefa, tana io, tana io bouger vas y maman dance maman, dans\xE9 x4 stop dance papa, dans\xE9 x 4 stop danse petit, dans\xE9 x 4 Tsika jaby mihetsika e!  x 4 Attention 400volt, \xE7a passe 2 x Izy koa fa latsaka ny ambiansy izay tsy mihetsika tsongoa Tsika jaby mihetsika e!  x 4 2 x Est-ce que les filles sexy sont l\xE0 Danse somary mi sexy x4 Izy koa anao magnagno bagara e! dehors (Instru) \xC7a passe x 4 ",
+    "like": 647,
+    "dislike": 476
+  }]
+};
+exports.default = _default;
+},{}],"src/store.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {

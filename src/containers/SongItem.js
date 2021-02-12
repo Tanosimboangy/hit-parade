@@ -1,30 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import arrow_up from "../../img/arrow_up.svg";
+import favorite from "../../img/favorite.svg";
 import arrow_down from "../../img/arrow_down.svg";
 import more_horiz from "../../img/more_horiz.svg";
 import favorite_border from "../../img/favorite_border.svg";
-import favorite from "../../img/favorite.svg";
+import fullshopping_cart from "../../img/fullshopping_cart.svg";
+import lineshopping_cart from "../../img/lineshopping_cart.svg";
 import List from "../components/SongItem";
-import { favoriteSong, like, dislike } from "../actions";
-import {useDispatch} from "react-redux"
-// import fullshopping_cart from "../../img/fullshopping_cart.svg";
-// import lineshopping_cart from "../../img/lineshopping_cart.svg";
+import { favoriteSong, like, dislike, addToCart } from "../actions";
+import { useDispatch, useSelector} from "react-redux"
 
 function SongItem({ song }) {
     const dispatch = useDispatch();
-    
-    // addToCart,
-    // cartSongs,
-	// removeCartSongs,
+    const cartItems = useSelector(state => state.cartItems);
+    console.log(cartItems);
 
-    // function showCartIcon() {
-	// 	const songInCart = cartSongs.some(item => item.id === song.id);
-	// 	if (songInCart) {
-    //         return <img src={lineshopping_cart} onClick={() => removeCartSongs(song.id)} alt="lineshopping_cart" />;
-	// 	}
-    //     return <img onClick={() => addToCart(song)} src={fullshopping_cart} alt="fullshopping_cart"/>
-	// }
+    function showCartIcon() {
+		const songInCart = cartItems.some(item => item.id === song.id);
+		if (songInCart) {
+            return <img src={lineshopping_cart} onClick={() => dispatch(removeCartSongs(song.id))} alt="lineshopping_cart" />;
+		}
+        return <img onClick={() => dispatch(addToCart(song))} src={fullshopping_cart} alt="fullshopping_cart"/>
+	}
 
     return (
         <List key={song.id}>
@@ -53,7 +51,7 @@ function SongItem({ song }) {
                     alt="arrow_down"/>
             </List.Dislike>
             <List.ShoppingCart>
-                {/* {showCartIcon()} */}
+                {showCartIcon()}
             </List.ShoppingCart>
             <List.Lyrics>
                 <Link to={`/song/${song.id}`}>

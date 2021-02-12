@@ -31,4 +31,6 @@ export const Title = styled.h3`
 export const Artist = styled.p`
     font-size: 18px;
     line-height: 22px;
+    background: #272343;
+    border-radius: 5px;
 `; 

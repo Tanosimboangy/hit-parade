@@ -45,20 +45,19 @@ function songs(state = [], action) {
 	}
 }
 
+
 function cartItems(state = [], action) {
 	switch (action.type) {
-		case "DISLIKE": {
-			const newSong = state.map((song) => {
-				if(song.id === action.payload) {
-					return {
-						...song,
-						dislike: song.dislike,
-					}
-				}
-				return song;
-			})
-			return newSong;
+		case 'ADD_TO_CART': {
+			return [...state, action.payload];
 		}
+		case 'REMOVE_CART_ITEM':
+			const newCartWithoutSpecificItem = state.filter(
+				(item) => item.id !== action.payload
+			);
+			return [...newCartWithoutSpecificItem];
+		case 'EMPTY_CART':
+			return [];
 		default:
 			return state;
 	}
