@@ -38413,11 +38413,7 @@ var _shallowEqual = _interopRequireDefault(require("./utils/shallowEqual"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 (0, _batch.setBatch)(_reactBatchedUpdates.unstable_batchedUpdates);
-},{"./components/Provider":"node_modules/react-redux/es/components/Provider.js","./components/connectAdvanced":"node_modules/react-redux/es/components/connectAdvanced.js","./components/Context":"node_modules/react-redux/es/components/Context.js","./connect/connect":"node_modules/react-redux/es/connect/connect.js","./hooks/useDispatch":"node_modules/react-redux/es/hooks/useDispatch.js","./hooks/useSelector":"node_modules/react-redux/es/hooks/useSelector.js","./hooks/useStore":"node_modules/react-redux/es/hooks/useStore.js","./utils/batch":"node_modules/react-redux/es/utils/batch.js","./utils/reactBatchedUpdates":"node_modules/react-redux/es/utils/reactBatchedUpdates.js","./utils/shallowEqual":"node_modules/react-redux/es/utils/shallowEqual.js"}],"img/fullshopping_cart.svg":[function(require,module,exports) {
-module.exports = "/fullshopping_cart.3ef60fbc.svg";
-},{}],"img/lineshopping_cart.svg":[function(require,module,exports) {
-module.exports = "/lineshopping_cart.56d8cab2.svg";
-},{}],"src/containers/SongItem.js":[function(require,module,exports) {
+},{"./components/Provider":"node_modules/react-redux/es/components/Provider.js","./components/connectAdvanced":"node_modules/react-redux/es/components/connectAdvanced.js","./components/Context":"node_modules/react-redux/es/components/Context.js","./connect/connect":"node_modules/react-redux/es/connect/connect.js","./hooks/useDispatch":"node_modules/react-redux/es/hooks/useDispatch.js","./hooks/useSelector":"node_modules/react-redux/es/hooks/useSelector.js","./hooks/useStore":"node_modules/react-redux/es/hooks/useStore.js","./utils/batch":"node_modules/react-redux/es/utils/batch.js","./utils/reactBatchedUpdates":"node_modules/react-redux/es/utils/reactBatchedUpdates.js","./utils/shallowEqual":"node_modules/react-redux/es/utils/shallowEqual.js"}],"src/containers/SongItem.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38445,12 +38441,10 @@ var _actions = require("../actions");
 
 var _reactRedux = require("react-redux");
 
-var _fullshopping_cart = _interopRequireDefault(require("../../img/fullshopping_cart.svg"));
-
-var _lineshopping_cart = _interopRequireDefault(require("../../img/lineshopping_cart.svg"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// import fullshopping_cart from "../../img/fullshopping_cart.svg";
+// import lineshopping_cart from "../../img/lineshopping_cart.svg";
 function SongItem(_ref) {
   var song = _ref.song;
   var dispatch = (0, _reactRedux.useDispatch)(); // addToCart,
@@ -38498,7 +38492,7 @@ function SongItem(_ref) {
 
 var _default = SongItem;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../../img/arrow_up.svg":"img/arrow_up.svg","../../img/arrow_down.svg":"img/arrow_down.svg","../../img/more_horiz.svg":"img/more_horiz.svg","../../img/favorite_border.svg":"img/favorite_border.svg","../../img/favorite.svg":"img/favorite.svg","../components/SongItem":"src/components/SongItem/index.js","../actions":"src/actions/index.js","react-redux":"node_modules/react-redux/es/index.js","../../img/fullshopping_cart.svg":"img/fullshopping_cart.svg","../../img/lineshopping_cart.svg":"img/lineshopping_cart.svg"}],"src/containers/Songs.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../../img/arrow_up.svg":"img/arrow_up.svg","../../img/arrow_down.svg":"img/arrow_down.svg","../../img/more_horiz.svg":"img/more_horiz.svg","../../img/favorite_border.svg":"img/favorite_border.svg","../../img/favorite.svg":"img/favorite.svg","../components/SongItem":"src/components/SongItem/index.js","../actions":"src/actions/index.js","react-redux":"node_modules/react-redux/es/index.js"}],"src/containers/Songs.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38852,7 +38846,7 @@ var _styledComponents = _interopRequireDefault(require("styled-components"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\n    background-color: white;\n    color: black;\n    font-weight: 700;\n    border: 1px solid #636262;\n    border-radius: 8px;\n    padding: 10px 30px;\n    font-size: 16px;\n    outline: none;\n    \n    :hover {\n        background-color: green;\n        color: yellow;\n    }\n"]);
+  var data = _taggedTemplateLiteral(["\n    font-weight: 700;\n    padding: 10px 30px;\n    font-size: 16px;\n    outline: none;\n    display: block;\n    outline: none;\n    color: white;\n    cursor: pointer;\n    font-size: 14px;\n    color: #294779;\n    text-align: center;\n    text-shadow: 0 1px rgba(255, 255, 255, 0.3);\n    background: #adcbfa;\n    background-clip: padding-box;\n    border: 1px solid #284473;\n    border-bottom-color: #223b66;\n    border-radius: 4px;\n    background-image: -webkit-linear-gradient(top, #d0e1fe, #96b8ed);\n    background-image: -moz-linear-gradient(top, #d0e1fe, #96b8ed);\n    background-image: -o-linear-gradient(top, #d0e1fe, #96b8ed);\n    background-image: linear-gradient(to bottom, #d0e1fe, #96b8ed);\n    -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), inset 0 0 7px rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.15);\n    box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), inset 0 0 7px rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.15);\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
@@ -38862,7 +38856,7 @@ function _templateObject6() {
 }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n    border: 1px solid gray;\n    border-radius: 4px;\n    padding: 10px 20px;\n    font-size: 16px;\n    margin-bottom: 10px;\n    outline: none;\n    cursor: pointer;\n\n    :hover {\n        box-shadow: 1px 1px 5px blue;\n    } \n"]);
+  var data = _taggedTemplateLiteral(["\n    border: 1px solid gray;\n    border-radius: 4px;\n    padding: 10px;\n    font-size: 16px;\n    margin-bottom: 10px;\n    color: white;\n    outline: none;\n    cursor: pointer;\n    display: block;\n    background: #2b3e5d;\n    border: 1px solid #15243b;\n    border-top-color: #0d1827;\n    border-radius: 4px;\n    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0));\n    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0));\n    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0));\n    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0));\n    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.2);\n    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.2); \n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -38872,7 +38866,7 @@ function _templateObject5() {
 }
 
 function _templateObject4() {
-  var data = _taggedTemplateLiteral(["\n    border: 1px solid gray;\n    border-radius: 4px;\n    padding: 10px 20px;\n    font-size: 16px;\n    margin-bottom: 10px;\n    outline: none;\n    cursor: pointer;\n\n    :hover {\n        box-shadow: 1px 1px 5px blue;\n    } \n"]);
+  var data = _taggedTemplateLiteral(["\n    border: 1px solid gray;\n    border-radius: 4px;\n    padding: 10px 20px;\n    margin-bottom: 10px;\n    font-size: 16px;\n    color: white;\n    outline: none;\n    cursor: pointer;\n    background: #2b3e5d;\n    border: 1px solid #15243b;\n    border-top-color: #0d1827;\n    border-radius: 4px;\n    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0));\n    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0));\n    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0));\n    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0));\n    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.2);\n    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.2); \n    "]);
 
   _templateObject4 = function _templateObject4() {
     return data;
@@ -38882,7 +38876,7 @@ function _templateObject4() {
 }
 
 function _templateObject3() {
-  var data = _taggedTemplateLiteral(["\n    border: 1px solid gray;\n    border-radius: 4px;\n    padding: 10px 20px;\n    font-size: 16px;\n    margin-bottom: 10px;\n    outline: none;\n    cursor: pointer;\n\n    :hover {\n        box-shadow: 1px 1px 5px blue;\n    } \n"]);
+  var data = _taggedTemplateLiteral(["\n    border: 1px solid gray;\n    border-radius: 4px;\n    padding: 10px 20px;\n    margin-bottom: 10px;\n    outline: none;\n    cursor: pointer;\n    color: white;\n    font-size: 16px;\n    background: #2b3e5d;\n    border: 1px solid #15243b;\n    border-top-color: #0d1827;\n    border-radius: 4px;\n    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0));\n    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0));\n    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0));\n    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0));\n    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.2);\n    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.2); \n    "]);
 
   _templateObject3 = function _templateObject3() {
     return data;
@@ -38892,7 +38886,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n    padding-bottom: 10px;\n"]);
+  var data = _taggedTemplateLiteral(["\n    margin-bottom: 20px;\n    font-weight: bold;\n    text-align: center;\n    text-shadow: 0 -1px rgba(0, 0, 0, 0.4);\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -38902,7 +38896,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\n    max-width: 60%;\n    margin: auto;\n    border-radius: 16px;\n    padding: 20px 30px;\n    background-color: white;\n    display: flex;\n    flex-direction: column;\n    font-size: 20px;\n    -moz-box-shadow:    inset 0 0 10px #000000;\n    -webkit-box-shadow: inset 0 0 10px #000000;\n    box-shadow:         inset 0 0 10px #000000;\n"]);
+  var data = _taggedTemplateLiteral(["\n    max-width: 50%;\n    margin: auto;\n    padding: 20px 30px;\n    display: flex;\n    flex-direction: column;\n    font-size: 20px;\n    margin: 20px auto;\n    color: white;\n    background: #3f65b7;\n    background-clip: padding-box;\n    border: 1px solid #172b4e;\n    border-bottom-color: #142647;\n    border-radius: 5px;\n    background-image: -webkit-radial-gradient(cover, #437dd6, #3960a6);\n    background-image: -moz-radial-gradient(cover, #437dd6, #3960a6);\n    background-image: -o-radial-gradient(cover, #437dd6, #3960a6);\n    background-image: radial-gradient(cover, #437dd6, #3960a6);\n    -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 2px 10px rgba(0, 0, 0, 0.5);\n    box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 2px 10px rgba(0, 0, 0, 0.5);\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -38933,11 +38927,7 @@ var Textarea = _styledComponents.default.textarea(_templateObject5());
 
 exports.Textarea = Textarea;
 
-var Button = _styledComponents.default.button(_templateObject6()); // margin-bottom: 10px;
-// outline: none;
-// cursor: pointer;
-// border-radius: 4px;
-
+var Button = _styledComponents.default.button(_templateObject6());
 
 exports.Button = Button;
 },{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"src/components/Form/index.js":[function(require,module,exports) {
@@ -39242,7 +39232,7 @@ function _templateObject3() {
 }
 
 function _templateObject2() {
-  var data = _taggedTemplateLiteral(["\n    padding-bottom: 20px;\n    padding-top: 20px;\n    font-size: 45px;\n    line-height: 40px;\n    color: #272343;\n"]);
+  var data = _taggedTemplateLiteral(["\n    padding-bottom: 20px;\n    font-size: 45px;\n    line-height: 40px;\n    color: #272343;\n"]);
 
   _templateObject2 = function _templateObject2() {
     return data;
@@ -39584,7 +39574,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54732" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63068" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

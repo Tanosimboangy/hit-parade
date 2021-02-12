@@ -1,77 +1,115 @@
 import styled from 'styled-components';
 
 export const Container = styled.form`
-    max-width: 60%;
+    max-width: 50%;
     margin: auto;
-    border-radius: 16px;
     padding: 20px 30px;
-    background-color: white;
     display: flex;
     flex-direction: column;
     font-size: 20px;
-    -moz-box-shadow:    inset 0 0 10px #000000;
-    -webkit-box-shadow: inset 0 0 10px #000000;
-    box-shadow:         inset 0 0 10px #000000;
+    margin: 20px auto;
+    color: white;
+    background: #3f65b7;
+    background-clip: padding-box;
+    border: 1px solid #172b4e;
+    border-bottom-color: #142647;
+    border-radius: 5px;
+    background-image: -webkit-radial-gradient(cover, #437dd6, #3960a6);
+    background-image: -moz-radial-gradient(cover, #437dd6, #3960a6);
+    background-image: -o-radial-gradient(cover, #437dd6, #3960a6);
+    background-image: radial-gradient(cover, #437dd6, #3960a6);
+    -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 2px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 2px 10px rgba(0, 0, 0, 0.5);
 `; 
 export const Header = styled.h2`
-    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.4);
 `; 
 export const Input = styled.input`
     border: 1px solid gray;
     border-radius: 4px;
     padding: 10px 20px;
-    font-size: 16px;
     margin-bottom: 10px;
     outline: none;
     cursor: pointer;
-
-    :hover {
-        box-shadow: 1px 1px 5px blue;
-    } 
-`; 
+    color: white;
+    font-size: 16px;
+    background: #2b3e5d;
+    border: 1px solid #15243b;
+    border-top-color: #0d1827;
+    border-radius: 4px;
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0));
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0));
+    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0));
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0));
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.2); 
+    `; 
 export const Select = styled.select`
     border: 1px solid gray;
     border-radius: 4px;
     padding: 10px 20px;
-    font-size: 16px;
     margin-bottom: 10px;
+    font-size: 16px;
+    color: white;
     outline: none;
     cursor: pointer;
-
-    :hover {
-        box-shadow: 1px 1px 5px blue;
-    } 
-`; 
+    background: #2b3e5d;
+    border: 1px solid #15243b;
+    border-top-color: #0d1827;
+    border-radius: 4px;
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0));
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0));
+    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0));
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0));
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.2); 
+    `; 
 export const Textarea = styled.textarea`
     border: 1px solid gray;
     border-radius: 4px;
-    padding: 10px 20px;
+    padding: 10px;
     font-size: 16px;
     margin-bottom: 10px;
+    color: white;
     outline: none;
     cursor: pointer;
-
-    :hover {
-        box-shadow: 1px 1px 5px blue;
-    } 
+    display: block;
+    background: #2b3e5d;
+    border: 1px solid #15243b;
+    border-top-color: #0d1827;
+    border-radius: 4px;
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0));
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0));
+    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0));
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.2) 20%, rgba(0, 0, 0, 0));
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.2); 
 `; 
 export const Button = styled.button`
-    background-color: white;
-    color: black;
     font-weight: 700;
-    border: 1px solid #636262;
-    border-radius: 8px;
     padding: 10px 30px;
     font-size: 16px;
     outline: none;
-    
-    :hover {
-        background-color: green;
-        color: yellow;
-    }
+    display: block;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    color: #294779;
+    text-align: center;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.3);
+    background: #adcbfa;
+    background-clip: padding-box;
+    border: 1px solid #284473;
+    border-bottom-color: #223b66;
+    border-radius: 4px;
+    background-image: -webkit-linear-gradient(top, #d0e1fe, #96b8ed);
+    background-image: -moz-linear-gradient(top, #d0e1fe, #96b8ed);
+    background-image: -o-linear-gradient(top, #d0e1fe, #96b8ed);
+    background-image: linear-gradient(to bottom, #d0e1fe, #96b8ed);
+    -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), inset 0 0 7px rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.15);
+    box-shadow: inset 0 1px rgba(255, 255, 255, 0.5), inset 0 0 7px rgba(255, 255, 255, 0.4), 0 1px 1px rgba(0, 0, 0, 0.15);
 `; 
-
-// margin-bottom: 10px;
-// outline: none;
-// cursor: pointer;
-// border-radius: 4px;

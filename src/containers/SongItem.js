@@ -8,8 +8,8 @@ import favorite from "../../img/favorite.svg";
 import List from "../components/SongItem";
 import { favoriteSong, like, dislike } from "../actions";
 import {useDispatch} from "react-redux"
-import fullshopping_cart from "../../img/fullshopping_cart.svg";
-import lineshopping_cart from "../../img/lineshopping_cart.svg";
+// import fullshopping_cart from "../../img/fullshopping_cart.svg";
+// import lineshopping_cart from "../../img/lineshopping_cart.svg";
 
 function SongItem({ song }) {
     const dispatch = useDispatch();
