@@ -35718,7 +35718,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var Container = _styledComponents.default.ul(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    color: white;\n    background: #272343;\n    border-radius: 5px;\n    padding: 35px;\n    margin-bottom: 16px;\n    font-size: 20px;\n\n    @media(max-width: 320px) {\n        flex-wrap: wrap;\n        padding: 30px;\n    }\n\n    li {\n        margin-bottom: 10px; \n    }\n"])));
+var Container = _styledComponents.default.ul(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    display: flex;\n    flex-direction: row;\n    justify-content: space-between;\n    align-items: center;\n    color: white;\n    background: #272343;\n    border-radius: 5px;\n    padding: 35px;\n    margin-bottom: 16px;\n    font-size: 20px;\n\n    @media(max-width: 320px) {\n        flex-wrap: wrap;\n        padding: 30px;\n    }\n"])));
 
 exports.Container = Container;
 
@@ -37917,11 +37917,7 @@ function SongItem(_ref) {
     },
     src: song.isFavorited ? _favorite.default : _favorite_border.default,
     alt: "heart"
-  })), /*#__PURE__*/_react.default.createElement(_SongItem.default.Details, null, /*#__PURE__*/_react.default.createElement("h3", {
-    className: "song_title"
-  }, song.title), /*#__PURE__*/_react.default.createElement("small", {
-    className: "song_artist"
-  }, song.artist)), /*#__PURE__*/_react.default.createElement(_SongItem.default.Like, null, song.like, /*#__PURE__*/_react.default.createElement("img", {
+  })), /*#__PURE__*/_react.default.createElement(_SongItem.default.Details, null, /*#__PURE__*/_react.default.createElement("h3", null, song.title), /*#__PURE__*/_react.default.createElement("small", null, song.artist)), /*#__PURE__*/_react.default.createElement(_SongItem.default.Like, null, song.like, /*#__PURE__*/_react.default.createElement("img", {
     src: _arrow_up.default,
     onClick: function onClick() {
       return dispatch((0, _actions.like)(song.id));
@@ -38473,7 +38469,7 @@ var Wrapper = _styledComponents.default.div(_templateObject || (_templateObject 
 
 exports.Wrapper = Wrapper;
 
-var Header = _styledComponents.default.h1(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    padding-bottom: 20px;\n    font-size: 45px;\n    line-height: 40px;\n    color: #272343;\n"])));
+var Header = _styledComponents.default.h1(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    padding-bottom: 18px;\n    font-size: 45px;\n    line-height: 40px;\n    color: #272343;\n    text-align: center;\n"])));
 
 exports.Header = Header;
 

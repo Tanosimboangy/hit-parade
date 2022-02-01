@@ -16,10 +16,6 @@ export const Container = styled.ul`
         flex-wrap: wrap;
         padding: 30px;
     }
-
-    li {
-        margin-bottom: 10px; 
-    }
 `; 
 export const Heart = styled.li`
     img {

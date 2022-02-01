@@ -6,15 +6,15 @@
       Source
     </a>
     <span>|</span>
-    <a href="https://jacquit-rest-countries.netlify.app">
+    <a href="https://jacquit-hit-parade.netlify.app/">
       Demo
     </a>
   </h2>
 </div>
 
 ## **Overview**
-![image](./src/Img/bg-rest-countries-light.png)
-![image](./src/Img/rest-countries-bg.png)
+![image](./src/webroot/img/hit_parade_sm.png)
+![image](./src/webroot/img/hit_parade_lg.png)
 
 ## **Built with**
 

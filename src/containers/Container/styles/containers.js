@@ -12,10 +12,11 @@ export const Wrapper = styled.div`
     }
 `; 
 export const Header = styled.h1`
-    padding-bottom: 20px;
+    padding-bottom: 18px;
     font-size: 45px;
     line-height: 40px;
     color: #272343;
+    text-align: center;
 `; 
 
 export const List = styled.div`

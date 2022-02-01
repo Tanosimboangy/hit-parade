@@ -13,25 +13,7 @@ body {
   font-style: normal;
   font-weight: normal;
 }
-body a {
-  text-decoration: none;
-}
-body ul {
-  margin: 0;
-  padding: 0;
-}
-body ul li {
-  list-style: none;
-}
-body h1, body h2, body h3, body h4, body h5, body h6, body p {
-  margin: 0;
-}
-body h1 {
-  padding-bottom: 20px;
-  font-size: 45px;
-  line-height: 40px;
-  color: #272343;
-}
+
 body .wrapper {
   max-width: 100%;
   margin: auto;

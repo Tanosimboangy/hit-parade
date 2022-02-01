@@ -32,8 +32,8 @@ function SongItem({ song }) {
                     alt="heart"/>
             </List.Heart>
             <List.Details>
-                <h3 className="song_title">{song.title}</h3>
-                <small className="song_artist">{song.artist}</small>
+                <h3>{song.title}</h3>
+                <small>{song.artist}</small>
             </List.Details>
             <List.Like>
                 {song.like} 
