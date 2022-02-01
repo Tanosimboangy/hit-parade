@@ -26,9 +26,10 @@
 ## **Features**
 
 - A home page where a list of songs is displayed.
-- Search for a specific country by name or region.
-- See the country details by clicking on a country card.
-- Switch between dark and light mode.
+- Users can upvote and downvote song items.
+- Users can add new song items in the list.
+- Users can see filtered songs by styles.
+- Users can add song items into the cart.
 
 ## **Getting started**
 

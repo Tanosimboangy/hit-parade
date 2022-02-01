@@ -22,7 +22,9 @@ export const Container = styled.ul`
     }
 `; 
 export const Heart = styled.li`
-    
+    img {
+        cursor: pointer;
+    }
 `; 
 export const Details = styled.li`
      
@@ -32,15 +34,23 @@ export const Like = styled.li`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;     
+    img {
+        cursor: pointer;
+    }
 `; 
 export const Dislike = styled.li`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    img {
+        cursor: pointer;
+    }
 `; 
 export const ShoppingCart = styled.li`
-    
+    img {
+        cursor: pointer;
+    }
 `; 
 export const Lyrics = styled.li`
     

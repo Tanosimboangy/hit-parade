@@ -1,5 +1,5 @@
 import React from "react";
-import headset from "../../webroot/img/headset.svg";
+import headset from "../webroot/img/headset.svg";
 import { useParams, Link } from 'react-router-dom';
 import {useSelector} from "react-redux";
 import Container  from "../components/StyleContents";

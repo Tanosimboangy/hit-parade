@@ -1,6 +1,6 @@
 import React from "react";
-import headset from "../../webroot/img/headset.svg";
-import List from "../components/Styles";
+import headset from "../webroot/img/headset.svg";
+import List from "../containers/Styles";
 import { Link } from 'react-router-dom';
 
 function Styles() {

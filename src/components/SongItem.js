@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import arrow_up from "../../webroot/img/arrow_down.svg";
-import favorite from "../../webroot/img/favorite.svg";
-import arrow_down from "../../webroot/img/arrow_down.svg";
-import more_horiz from "../../webroot/img/more_horiz.svg";
-import favorite_border from "../../webroot/img/favorite_border.svg";
-import fullshopping_cart from "../../webroot/img/fullshopping_cart.svg";
-import lineshopping_cart from "../../webroot/img/lineshopping_cart.svg";
+import arrow_up from "../webroot/img/arrow_up.svg";
+import favorite from "../webroot/img/favorite.svg";
+import arrow_down from "../webroot/img/arrow_down.svg";
+import more_horiz from "../webroot/img/more_horiz.svg";
+import favorite_border from "../webroot/img/favorite_border.svg";
+import fullshopping_cart from "../webroot/img/fullshopping_cart.svg";
+import lineshopping_cart from "../webroot/img/lineshopping_cart.svg";
 import List from "../containers/SongItem";
 import { favoriteSong, like, dislike, addToCart } from "../actions";
 import { useDispatch, useSelector} from "react-redux"
@@ -14,7 +14,6 @@ import { useDispatch, useSelector} from "react-redux"
 function SongItem({ song }) {
     const dispatch = useDispatch();
     const cartItems = useSelector(state => state.cartItems);
-    console.log(cartItems);
 
     function showCartIcon() {
 		const songInCart = cartItems.some(item => item.id === song.id);

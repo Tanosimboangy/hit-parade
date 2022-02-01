@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
-import Songs from '../src/components/Songs';
-import Styles from '../src/components/Styles';
-import StyleContents from '../src/components/StyleContents';
-import AddNewSongs from '../src/components/AddNewSongs';
-import AddToLyrics from '../src/components/AddToLyrics';
-import Carts from '../src/components/Carts';
-import Container from '../src/containers/Container';
+import Songs from '../components/Songs';
+import Styles from '../components/Styles';
+import StyleContents from '../components/StyleContents';
+import AddNewSongs from '../components/AddNewSongs';
+import AddToLyrics from '../components/AddToLyrics';
+import Carts from '../components/Carts';
+import Container from '../containers/Container';
 
 
 function App() {
