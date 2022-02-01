@@ -19,11 +19,11 @@ body h1, body h2, body h3, body h4, body h5, body h6, body p {
   margin: 0;
 }
 body h1 {
-  padding-bottom: 20px;
-  padding-top: 20px;
+  padding-bottom: 16px;
   font-size: 45px;
   line-height: 40px;
   color: #272343;
+  text-align: center;
 }
 body .wrapper {
   max-width: 100%;
@@ -172,5 +172,3 @@ body .wrapper .cart_songs p {
   font-family: "Lato";
   src: local(Lato), url(/Lato-Regular.1c034558.woff2) format("woff2"), url(/Lato-Regular.5200f20d.woff) format("woff");
 }
-
-/*# sourceMappingURL=/hit-parade-react.80ee2152.css.map */
