@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import {useSelector} from "react-redux";
-import Container from '../components/AddToLyrics';
+import Container from '../containers/AddToLyrics';
 
 function Song() {
 	const { songId } = useParams();

@@ -7,7 +7,7 @@ export const Container = styled.form`
     display: flex;
     flex-direction: column;
     font-size: 20px;
-    margin: 20px auto;
+    margin: auto;
     color: white;
     background: #3f65b7;
     background-clip: padding-box;

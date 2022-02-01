@@ -35819,7 +35819,7 @@ Lists.Lyrics = function ListsLyrics(_ref7) {
 
   return /*#__PURE__*/_react.default.createElement(_SongItem.Lyrics, restProps, children);
 };
-},{"react":"node_modules/react/index.js","./styles/SongItem":"../containers/SongItem/styles/SongItem.js"}],"../actions/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./styles/SongItem":"../containers/SongItem/styles/SongItem.js"}],"src/actions/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -37939,7 +37939,7 @@ function SongItem(_ref) {
 
 var _default = SongItem;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"../../node_modules/react-router-dom/esm/react-router-dom.js","../webroot/img/arrow_up.svg":"img/arrow_up.svg","../webroot/img/favorite.svg":"img/favorite.svg","../webroot/img/arrow_down.svg":"img/arrow_down.svg","../webroot/img/more_horiz.svg":"img/more_horiz.svg","../webroot/img/favorite_border.svg":"img/favorite_border.svg","../webroot/img/fullshopping_cart.svg":"img/fullshopping_cart.svg","../webroot/img/lineshopping_cart.svg":"img/lineshopping_cart.svg","../containers/SongItem":"../containers/SongItem/index.js","../actions":"../actions/index.js","react-redux":"node_modules/react-redux/es/index.js"}],"../components/Songs.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"../../node_modules/react-router-dom/esm/react-router-dom.js","../webroot/img/arrow_up.svg":"img/arrow_up.svg","../webroot/img/favorite.svg":"img/favorite.svg","../webroot/img/arrow_down.svg":"img/arrow_down.svg","../webroot/img/more_horiz.svg":"img/more_horiz.svg","../webroot/img/favorite_border.svg":"img/favorite_border.svg","../webroot/img/fullshopping_cart.svg":"img/fullshopping_cart.svg","../webroot/img/lineshopping_cart.svg":"img/lineshopping_cart.svg","../containers/SongItem":"../containers/SongItem/index.js","../actions":"src/actions/index.js","react-redux":"node_modules/react-redux/es/index.js"}],"../components/Songs.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38128,7 +38128,7 @@ function StyleContents() {
 
 var _default = StyleContents;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../webroot/img/headset.svg":"img/headset.svg","react-router-dom":"../../node_modules/react-router-dom/esm/react-router-dom.js","react-redux":"node_modules/react-redux/es/index.js","../components/StyleContents":"../components/StyleContents.js"}],"src/containers/Form/styles/form.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../webroot/img/headset.svg":"img/headset.svg","react-router-dom":"../../node_modules/react-router-dom/esm/react-router-dom.js","react-redux":"node_modules/react-redux/es/index.js","../components/StyleContents":"../components/StyleContents.js"}],"../containers/Form/styles/form.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38144,7 +38144,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var Container = _styledComponents.default.form(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    max-width: 50%;\n    margin: auto;\n    padding: 20px 30px;\n    display: flex;\n    flex-direction: column;\n    font-size: 20px;\n    margin: 20px auto;\n    color: white;\n    background: #3f65b7;\n    background-clip: padding-box;\n    border: 1px solid #172b4e;\n    border-bottom-color: #142647;\n    border-radius: 5px;\n    background-image: -webkit-radial-gradient(cover, #437dd6, #3960a6);\n    background-image: -moz-radial-gradient(cover, #437dd6, #3960a6);\n    background-image: -o-radial-gradient(cover, #437dd6, #3960a6);\n    background-image: radial-gradient(cover, #437dd6, #3960a6);\n    -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 2px 10px rgba(0, 0, 0, 0.5);\n    box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 2px 10px rgba(0, 0, 0, 0.5);\n"])));
+var Container = _styledComponents.default.form(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    max-width: 50%;\n    margin: auto;\n    padding: 20px 30px;\n    display: flex;\n    flex-direction: column;\n    font-size: 20px;\n    margin: auto;\n    color: white;\n    background: #3f65b7;\n    background-clip: padding-box;\n    border: 1px solid #172b4e;\n    border-bottom-color: #142647;\n    border-radius: 5px;\n    background-image: -webkit-radial-gradient(cover, #437dd6, #3960a6);\n    background-image: -moz-radial-gradient(cover, #437dd6, #3960a6);\n    background-image: -o-radial-gradient(cover, #437dd6, #3960a6);\n    background-image: radial-gradient(cover, #437dd6, #3960a6);\n    -webkit-box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 2px 10px rgba(0, 0, 0, 0.5);\n    box-shadow: inset 0 1px rgba(255, 255, 255, 0.3), inset 0 0 1px 1px rgba(255, 255, 255, 0.1), 0 2px 10px rgba(0, 0, 0, 0.5);\n"])));
 
 exports.Container = Container;
 
@@ -38227,7 +38227,7 @@ Form.Button = function FormButton(_ref6) {
 
   return /*#__PURE__*/_react.default.createElement(_form.Button, restProps, children);
 };
-},{"react":"node_modules/react/index.js","./styles/form":"src/containers/Form/styles/form.js"}],"../components/AddNewSongs.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./styles/form":"../containers/Form/styles/form.js"}],"../components/AddNewSongs.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38312,7 +38312,112 @@ function Add() {
 
 var _default = Add;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../containers/Form":"src/containers/Form/index.js","react-redux":"node_modules/react-redux/es/index.js","../actions":"../actions/index.js"}],"../components/AddToLyrics.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../containers/Form":"src/containers/Form/index.js","react-redux":"node_modules/react-redux/es/index.js","../actions":"src/actions/index.js"}],"../containers/AddToLyrics/styles/AddToLyrics.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Wrapper = exports.Text = exports.Lyrics = exports.Header = exports.Button = exports.Artist = void 0;
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var Wrapper = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral([""])));
+
+exports.Wrapper = Wrapper;
+
+var Artist = _styledComponents.default.h2(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["    \n    font-style: normal;\n    font-weight: normal;\n    font-size: 22px;\n    color: #000000;\n    margin-bottom: 16px;\n"])));
+
+exports.Artist = Artist;
+
+var Lyrics = _styledComponents.default.div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    max-width: 400px;\n    margin-right: auto;\n    padding: 2% 4% 6% 4%;\n    background: #272343;\n    border-radius: 5px;\n    margin-bottom: 20px;\n    color: #FFFFFE;\n"])));
+
+exports.Lyrics = Lyrics;
+
+var Header = _styledComponents.default.h3(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    margin-bottom: 20px;\n    font-size: 30px;\n"])));
+
+exports.Header = Header;
+
+var Text = _styledComponents.default.p(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n    font-size: 16px;\n"])));
+
+exports.Text = Text;
+
+var Button = _styledComponents.default.button(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n    display: block;\n    text-align: center;\n    font-weight: bold;\n    color:#fff;\n    text-decoration: none;\n    background-color: #429000;\n    padding:10px 5px;\n    -webkit-border-radius: 10px;\n    -moz-border-radius: 10px;\n    border-radius: 10px;\n    -webkit-box-sizing: border-box;\n    -moz-box-sizing: border-box;\n    box-sizing: border-box;\n    border: 5px solid #429000;\n    box-shadow: 5px 5px 0px 0px rgba(0, 0, 0, 0.15);\n\n    :active{\n        position: relative;\n        top:3px;\n        left:2px;\n        box-shadow: 0px 0px;\n    }\n\n    :hover{\n        background-color: #fff;\n        color:#429000;\n        font-weight: bold;\n    }\n"])));
+
+exports.Button = Button;
+},{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"../containers/AddToLyrics/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Container;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _AddToLyrics = require("./styles/AddToLyrics");
+
+var _excluded = ["children"],
+    _excluded2 = ["children"],
+    _excluded3 = ["children"],
+    _excluded4 = ["children"],
+    _excluded5 = ["children"],
+    _excluded6 = ["children"];
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function Container(_ref) {
+  var children = _ref.children,
+      restProps = _objectWithoutProperties(_ref, _excluded);
+
+  return /*#__PURE__*/_react.default.createElement(_AddToLyrics.Wrapper, restProps, children);
+}
+
+Container.Artist = function ContainerArtist(_ref2) {
+  var children = _ref2.children,
+      restProps = _objectWithoutProperties(_ref2, _excluded2);
+
+  return /*#__PURE__*/_react.default.createElement(_AddToLyrics.Artist, restProps, children);
+};
+
+Container.Lyrics = function ContainerLyrics(_ref3) {
+  var children = _ref3.children,
+      restProps = _objectWithoutProperties(_ref3, _excluded3);
+
+  return /*#__PURE__*/_react.default.createElement(_AddToLyrics.Lyrics, restProps, children);
+};
+
+Container.Header = function ContainerHeader(_ref4) {
+  var children = _ref4.children,
+      restProps = _objectWithoutProperties(_ref4, _excluded4);
+
+  return /*#__PURE__*/_react.default.createElement(_AddToLyrics.Header, restProps, children);
+};
+
+Container.Text = function ContainerText(_ref5) {
+  var children = _ref5.children,
+      restProps = _objectWithoutProperties(_ref5, _excluded5);
+
+  return /*#__PURE__*/_react.default.createElement(_AddToLyrics.Text, restProps, children);
+};
+
+Container.Button = function ContainerButton(_ref6) {
+  var children = _ref6.children,
+      restProps = _objectWithoutProperties(_ref6, _excluded6);
+
+  return /*#__PURE__*/_react.default.createElement(_AddToLyrics.Button, restProps, children);
+};
+},{"react":"node_modules/react/index.js","./styles/AddToLyrics":"../containers/AddToLyrics/styles/AddToLyrics.js"}],"../components/AddToLyrics.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38326,7 +38431,7 @@ var _reactRouterDom = require("react-router-dom");
 
 var _reactRedux = require("react-redux");
 
-var _AddToLyrics = _interopRequireDefault(require("../components/AddToLyrics"));
+var _AddToLyrics = _interopRequireDefault(require("../containers/AddToLyrics"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -38350,7 +38455,7 @@ function Song() {
 
 var _default = Song;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-router-dom":"../../node_modules/react-router-dom/esm/react-router-dom.js","react-redux":"node_modules/react-redux/es/index.js","../components/AddToLyrics":"../components/AddToLyrics.js"}],"img/delete_icon.svg":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-router-dom":"../../node_modules/react-router-dom/esm/react-router-dom.js","react-redux":"node_modules/react-redux/es/index.js","../containers/AddToLyrics":"../containers/AddToLyrics/index.js"}],"img/delete_icon.svg":[function(require,module,exports) {
 module.exports = "/delete_icon.684f9cef.svg";
 },{}],"../components/Carts.js":[function(require,module,exports) {
 "use strict";
@@ -38449,7 +38554,7 @@ function Carts() {
 
 var _default = Carts;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../webroot/img/delete_icon.svg":"img/delete_icon.svg","react-redux":"node_modules/react-redux/es/index.js","../actions":"../actions/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"../containers/Container/styles/containers.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../webroot/img/delete_icon.svg":"img/delete_icon.svg","react-redux":"node_modules/react-redux/es/index.js","../actions":"src/actions/index.js","styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"../containers/Container/styles/containers.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -39596,7 +39701,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "42121" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39503" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

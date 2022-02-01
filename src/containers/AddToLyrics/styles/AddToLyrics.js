@@ -1,13 +1,12 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div``; 
-export const Artist = styled.h2`
-    /* font-family: Montserrat; */
+export const Artist = styled.h2`    
     font-style: normal;
     font-weight: normal;
-    font-size: 34px;
+    font-size: 22px;
     color: #000000;
-    margin-bottom: 41px;
+    margin-bottom: 16px;
 `; 
 export const Lyrics = styled.div`
     max-width: 400px;
@@ -23,7 +22,7 @@ export const Header = styled.h3`
     font-size: 30px;
 `; 
 export const Text = styled.p`
-    font-size: 18px;
+    font-size: 16px;
 `; 
 export const Button = styled.button`
     display: block;
