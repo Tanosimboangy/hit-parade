@@ -128,6 +128,54 @@ export default {
       "lyrics": `Attention ça c’est salegy 400 Volt Instru Ça passé x 4 vibrer les hanches En bas, Ambanibany   Remonte un peu Vas y kawitry, un ptit peu, un ptit peu Encore monte un ptit peu Ay ay ay, chacun à son tour Mamie et papi son là, alefa Danse mamie, danse mamie, Tsy manaiky papi, avy papi Tsy manaiky resy papi, any nikatraoka, Alefa misaute sauté mzay jiaby Tourné la main comme ça x2 Tsika jaby mihetsika e!  x 4 Encore (Instru) Ça passe x 4 Ça va chauffer, zay valy e (Instru) Ça passe x 4 Alefa, tana io, tana io bouger vas y maman dance maman, dansé x4 stop dance papa, dansé x 4 stop danse petit, dansé x 4 Tsika jaby mihetsika e!  x 4 Attention 400volt, ça passe 2 x Izy koa fa latsaka ny ambiansy izay tsy mihetsika tsongoa Tsika jaby mihetsika e!  x 4 2 x Est-ce que les filles sexy sont là Danse somary mi sexy x4 Izy koa anao magnagno bagara e! dehors (Instru) Ça passe x 4 `,
       "like": 647,
       "dislike": 476 
+    },
+    {
+      "id": 1346834183574,
+      "title": "Vonikazo voarara",
+      "artist": "Arione Joy",
+      "price": 100,
+      "isFavorited": true,
+      "style": "Rnb",
+      "lyrics": `(I wanna love you
+        I wanna love you)
+        
+        'Zah saika hindrana ’lay tanany mba hoe ho anah
+        Tondro-molotra sy fitaka no setriny ahy
+        Tambitamby reny zary zava-poana
+        Satria izy kay tsy tokana fa manana olo-tiana ah...!
+        
+        Tiako aloha 'zah raha mba hoe mangala-toerana
+        Fa io 'nge tsy hitambarana fa dia ho anazy rery ihany
+        Naleoko hijanona ho mpiondana
+        F’enao ve moa tsy hitodika raha misy fo mitempo any
+        
+        Ka mba teneo anah izay tsy ampy (ampy)
+        Fa 'zaho nge vonona ny hiafy (hiafy)
+        Raha sanatria ianareo misaraka
+        Aza menatra manantona fa mbola misy fitia
+        [Ref x2]
+        Fa 'zaho nge wa tsy hanozona 'lay fiharahanareo
+        Ny hany sisa azo atao de hoe ny manadino anao (he he)
+        Ka veloma mampamangy, veloma mampamangy
+        
+        Ny foko no nidoboka fa 'zaho aloha tsy nahajery yeah
+        'Lay vetsom-po nirahiraina lasa fery yeah
+        Naleoko indray nanohy ny diako
+        Tsy vitako ny hanao veloma fa dia mampangy yeah Zaho tsy hanozona tsy hanaratsy razazavavy
+        Ranomasom-pifaliana ny aty f'aza manahy (yeah yeah)
+        Efa zatra miafy zaho
+        Zatra miafy zaho
+        
+        Ka mba teneo anah izay tsy ampy (ampy)
+        Fa 'zaho nge vonona ny hiafy (hiafy)
+        Raha sanatria ianareo misaraka
+        Aza menatra manantona fa mbola misy fitia
+        [Ref x2]
+        Fa ’zaho nge wa tsy hanozona ’lay fiharahanareo
+        Ny hany sisa azo atao de hoe ny manadino anao (he he)
+        Ka veloma mampamangy, veloma mampamangy`,
+      "like": 230,
+      "dislike": 32 
     }
   ]
 } 

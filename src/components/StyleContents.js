@@ -2,7 +2,7 @@ import React from "react";
 import headset from "../webroot/img/headset.svg";
 import { useParams, Link } from 'react-router-dom';
 import {useSelector} from "react-redux";
-import Container  from "../components/StyleContents";
+import Container  from "../containers/StyleContents";
 
 function StyleContents() {
     const { name } = useParams();

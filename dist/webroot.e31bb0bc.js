@@ -38085,7 +38085,100 @@ function Styles() {
 
 var _default = Styles;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../webroot/img/headset.svg":"img/headset.svg","../containers/Styles":"../containers/Styles/index.js","react-router-dom":"../../node_modules/react-router-dom/esm/react-router-dom.js"}],"../components/StyleContents.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../webroot/img/headset.svg":"img/headset.svg","../containers/Styles":"../containers/Styles/index.js","react-router-dom":"../../node_modules/react-router-dom/esm/react-router-dom.js"}],"../containers/StyleContents/styles/StyleContents.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.Wrapper = exports.Title = exports.Style = exports.Base = exports.Artist = void 0;
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var Wrapper = _styledComponents.default.div(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    \n"])));
+
+exports.Wrapper = Wrapper;
+
+var Style = _styledComponents.default.h2(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    font-size: 40px;\n    line-height: 35px;\n    color: #000000;\n    padding-bottom: 20px;\n    img {\n        width: 40px;\n    }\n"])));
+
+exports.Style = Style;
+
+var Base = _styledComponents.default.div(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    padding: 20px;\n    background: #272343;\n    border-radius: 5px;\n    color: #FFFFFE;\n    margin-bottom: 16px;\n    max-width: 50%;\n    margin-right: auto;\n"])));
+
+exports.Base = Base;
+
+var Title = _styledComponents.default.h3(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    font-size: 30px;\n    line-height: 44px;\n    margin-bottom: 4px;\n"])));
+
+exports.Title = Title;
+
+var Artist = _styledComponents.default.p(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n    font-size: 18px;\n    line-height: 22px;\n    background: #272343;\n    border-radius: 5px;\n"])));
+
+exports.Artist = Artist;
+},{"styled-components":"node_modules/styled-components/dist/styled-components.browser.esm.js"}],"../containers/StyleContents/index.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = Container;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _StyleContents = require("./styles/StyleContents");
+
+var _excluded = ["children"],
+    _excluded2 = ["children"],
+    _excluded3 = ["children"],
+    _excluded4 = ["children"],
+    _excluded5 = ["children"];
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+function Container(_ref) {
+  var children = _ref.children,
+      restProps = _objectWithoutProperties(_ref, _excluded);
+
+  return /*#__PURE__*/_react.default.createElement(_StyleContents.Wrapper, restProps, children);
+}
+
+Container.Style = function ContainerStyle(_ref2) {
+  var children = _ref2.children,
+      restProps = _objectWithoutProperties(_ref2, _excluded2);
+
+  return /*#__PURE__*/_react.default.createElement(_StyleContents.Style, restProps, children);
+};
+
+Container.Base = function ContainerBase(_ref3) {
+  var children = _ref3.children,
+      restProps = _objectWithoutProperties(_ref3, _excluded3);
+
+  return /*#__PURE__*/_react.default.createElement(_StyleContents.Base, restProps, children);
+};
+
+Container.Title = function ContainerTitle(_ref4) {
+  var children = _ref4.children,
+      restProps = _objectWithoutProperties(_ref4, _excluded4);
+
+  return /*#__PURE__*/_react.default.createElement(_StyleContents.Title, restProps, children);
+};
+
+Container.Artist = function ContainerArtist(_ref5) {
+  var children = _ref5.children,
+      restProps = _objectWithoutProperties(_ref5, _excluded5);
+
+  return /*#__PURE__*/_react.default.createElement(_StyleContents.Artist, restProps, children);
+};
+},{"react":"node_modules/react/index.js","./styles/StyleContents":"../containers/StyleContents/styles/StyleContents.js"}],"../components/StyleContents.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38101,7 +38194,7 @@ var _reactRouterDom = require("react-router-dom");
 
 var _reactRedux = require("react-redux");
 
-var _StyleContents = _interopRequireDefault(require("../components/StyleContents"));
+var _StyleContents = _interopRequireDefault(require("../containers/StyleContents"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -38128,7 +38221,7 @@ function StyleContents() {
 
 var _default = StyleContents;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","../webroot/img/headset.svg":"img/headset.svg","react-router-dom":"../../node_modules/react-router-dom/esm/react-router-dom.js","react-redux":"node_modules/react-redux/es/index.js","../components/StyleContents":"../components/StyleContents.js"}],"../containers/Form/styles/form.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../webroot/img/headset.svg":"img/headset.svg","react-router-dom":"../../node_modules/react-router-dom/esm/react-router-dom.js","react-redux":"node_modules/react-redux/es/index.js","../containers/StyleContents":"../containers/StyleContents/index.js"}],"../containers/Form/styles/form.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -38525,7 +38618,6 @@ function Carts() {
     return state.cartItems;
   });
   var dispatch = (0, _reactRedux.useDispatch)();
-  console.log(cartItems);
   (0, _react.useEffect)(function () {
     var newTotal = cartItems.reduce(function (total, song) {
       total += song.price;
@@ -39631,6 +39723,16 @@ var _default = {
     "lyrics": "Attention \xE7a c\u2019est salegy 400 Volt Instru \xC7a pass\xE9 x 4 vibrer les hanches En bas, Ambanibany   Remonte un peu Vas y kawitry, un ptit peu, un ptit peu Encore monte un ptit peu Ay ay ay, chacun \xE0 son tour Mamie et papi son l\xE0, alefa Danse mamie, danse mamie, Tsy manaiky papi, avy papi Tsy manaiky resy papi, any nikatraoka, Alefa misaute saut\xE9 mzay jiaby Tourn\xE9 la main comme \xE7a x2 Tsika jaby mihetsika e!  x 4 Encore (Instru) \xC7a passe x 4 \xC7a va chauffer, zay valy e (Instru) \xC7a passe x 4 Alefa, tana io, tana io bouger vas y maman dance maman, dans\xE9 x4 stop dance papa, dans\xE9 x 4 stop danse petit, dans\xE9 x 4 Tsika jaby mihetsika e!  x 4 Attention 400volt, \xE7a passe 2 x Izy koa fa latsaka ny ambiansy izay tsy mihetsika tsongoa Tsika jaby mihetsika e!  x 4 2 x Est-ce que les filles sexy sont l\xE0 Danse somary mi sexy x4 Izy koa anao magnagno bagara e! dehors (Instru) \xC7a passe x 4 ",
     "like": 647,
     "dislike": 476
+  }, {
+    "id": 1346834183574,
+    "title": "Vonikazo voarara",
+    "artist": "Arione Joy",
+    "price": 100,
+    "isFavorited": true,
+    "style": "Rnb",
+    "lyrics": "(I wanna love you\n        I wanna love you)\n        \n        'Zah saika hindrana \u2019lay tanany mba hoe ho anah\n        Tondro-molotra sy fitaka no setriny ahy\n        Tambitamby reny zary zava-poana\n        Satria izy kay tsy tokana fa manana olo-tiana ah...!\n        \n        Tiako aloha 'zah raha mba hoe mangala-toerana\n        Fa io 'nge tsy hitambarana fa dia ho anazy rery ihany\n        Naleoko hijanona ho mpiondana\n        F\u2019enao ve moa tsy hitodika raha misy fo mitempo any\n        \n        Ka mba teneo anah izay tsy ampy (ampy)\n        Fa 'zaho nge vonona ny hiafy (hiafy)\n        Raha sanatria ianareo misaraka\n        Aza menatra manantona fa mbola misy fitia\n        [Ref x2]\n        Fa 'zaho nge wa tsy hanozona 'lay fiharahanareo\n        Ny hany sisa azo atao de hoe ny manadino anao (he he)\n        Ka veloma mampamangy, veloma mampamangy\n        \n        Ny foko no nidoboka fa 'zaho aloha tsy nahajery yeah\n        'Lay vetsom-po nirahiraina lasa fery yeah\n        Naleoko indray nanohy ny diako\n        Tsy vitako ny hanao veloma fa dia mampangy yeah Zaho tsy hanozona tsy hanaratsy razazavavy\n        Ranomasom-pifaliana ny aty f'aza manahy (yeah yeah)\n        Efa zatra miafy zaho\n        Zatra miafy zaho\n        \n        Ka mba teneo anah izay tsy ampy (ampy)\n        Fa 'zaho nge vonona ny hiafy (hiafy)\n        Raha sanatria ianareo misaraka\n        Aza menatra manantona fa mbola misy fitia\n        [Ref x2]\n        Fa \u2019zaho nge wa tsy hanozona \u2019lay fiharahanareo\n        Ny hany sisa azo atao de hoe ny manadino anao (he he)\n        Ka veloma mampamangy, veloma mampamangy",
+    "like": 230,
+    "dislike": 32
   }]
 };
 exports.default = _default;
@@ -39701,7 +39803,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39503" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "32921" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

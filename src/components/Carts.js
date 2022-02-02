@@ -81,8 +81,7 @@ function Carts() {
 	const [total, setTotal] = useState(0);
 	const cartItems = useSelector(state => state.cartItems);
 	const dispatch = useDispatch();
-
-	console.log(cartItems)
+	
   
   	useEffect(() => {
 		const newTotal = cartItems.reduce((total, song) => {
